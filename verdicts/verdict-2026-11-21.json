@@ -1,0 +1,449 @@
+{
+  "date": "2026-11-21",
+  "run_id": "ghrec-20261121",
+  "overall": {
+    "status": "complete",
+    "expected_projects": 4,
+    "checked_projects": 4,
+    "learning_pick_checked": false,
+    "failures": []
+  },
+  "verdicts": [
+    {
+      "repo": "diggerhq/opencomputer",
+      "exists": true,
+      "canonical_repo": "diggerhq/opencomputer",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 831,
+          "verified": 833,
+          "status": "match"
+        },
+        "forks": {
+          "packet": 85,
+          "verified": 85,
+          "status": "match"
+        },
+        "license": {
+          "packet": "Apache-2.0",
+          "verified": "Apache-2.0",
+          "status": "match"
+        },
+        "language": {
+          "packet": "TypeScript",
+          "verified": "TypeScript",
+          "status": "match"
+        },
+        "updated_at": {
+          "packet": "2026-11-21T12:26:37Z",
+          "verified": "2026-11-21T12:43:29Z",
+          "status": "match"
+        },
+        "latest_commit_at": "2026-11-21T02:38:45Z",
+        "days_since_last_commit": 0,
+        "latest_release": {
+          "packet": "v0.6.0.50",
+          "verified": "v0.6.0.50",
+          "status": "match"
+        }
+      },
+      "claims": [
+        {
+          "claim": "开源 Devin 替代品",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/diggerhq/opencomputer/blob/main/README.md",
+              "quote": "OpenComputer is the open source, self hostable alternative to Devin."
+            },
+            {
+              "source": "GitHub API /repos",
+              "url": "https://api.github.com/repos/diggerhq/opencomputer",
+              "quote": "description: \"An open-source, faster Devin alternative\""
+            }
+          ],
+          "reason": "README 与仓库 description 一致声明其为 Devin 的开源自托管替代品；但“更快/替代”属项目自述定位，本次未做横向能力测试。"
+        },
+        {
+          "claim": "支持 Slack 接入",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/diggerhq/opencomputer/blob/main/README.md",
+              "quote": "The VM runs the gateway, Calvin: a thin bridge that listens for Slack events and starts a session with Claude Code, Codex or OpenCode, depending on your configuration."
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/diggerhq/opencomputer/blob/main/README.md",
+              "quote": "Mention `@Computer` in a Slack thread with a task, it works on its own computer, you & your team can watch and steer it as it goes, and the result lands as a pull request."
+            }
+          ],
+          "reason": "README 明确说明网关监听 Slack 事件并以 @Computer 提及方式触发会话，属直接证据。"
+        },
+        {
+          "claim": "支持自托管部署",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/diggerhq/opencomputer/blob/main/README.md",
+              "quote": "OpenComputer is built to be simple to self-host without giving up scale or security. The whole stack runs on a single VM, which we recommend locking down to outbound-only network access."
+            }
+          ],
+          "reason": "README 给出单 VM 自托管架构，并链接 AWS/GCP/Azure 自托管指引；但 README 内注释显示这些文档站点尚未上线，实际可操作性未核实。"
+        }
+      ],
+      "scores": {
+        "usage": 7,
+        "deployment": 5,
+        "learning": 7
+      },
+      "score_reasons": {
+        "usage": "把编码 agent 放进 Slack 线程、产出 PR 的工作流解决真实需求，团队可旁观并接管；但云版本按 credits/Pro 计费，自托管依赖多，普通用户获得价值的门槛不低。",
+        "deployment": "自托管需 Cloudflare Workers + Durable Objects、一台出网 VM、rootless Podman、Slack App 与代码托管凭据，以及模型 API Key；README 中自托管文档链接仍标注为待上线，部署成本明显高于“单 VM”的描述。",
+        "learning": "TypeScript 全栈代码覆盖网关、Durable Object、git 持久化与会话隔离，架构分层清晰可读；但仓库由自动化 bot 提交为主，缺少可用于学习的提交评审脉络。"
+      },
+      "grade": "B",
+      "grade_reason": "工作流与架构有实际价值，方向明确，但自托管链路重、文档未就绪、仓库仅约一年，属于可用但门槛偏高的一档。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 7,
+          "deployment": 6,
+          "learning": 7
+        },
+        "reported_grade": "B",
+        "assessment": "reasonable",
+        "note": "使用价值与学习价值判断一致；部署成本 Muse 给 6 分略乐观，自托管需 Cloudflare 全家桶加 Slack/GitHub 应用配置，独立评为 5 分。"
+      },
+      "flags": [
+        {
+          "code": "SELFHOST_DOCS_PENDING",
+          "severity": "low",
+          "evidence": "README 第 22 行注释：\"TODO: point each self-host button at its guide once the self-hosting docs are live.\"",
+          "impact": "自托管入口指向的文档尚未上线，实际部署时缺少可执行步骤，容易低估部署成本。"
+        },
+        {
+          "code": "MAINTENANCE_CONCENTRATION",
+          "severity": "low",
+          "evidence": "最近 5 次提交 author 均为 opencomputer-app[bot]，人类以 Co-authored-by 形式出现。",
+          "impact": "提交高度集中于自动化账号，潜在维护者集中、代码评审可追溯性偏弱。"
+        }
+      ],
+      "note": "元数据、Release、最近提交全部与数据包一致，仓库真实且当天仍在提交。核心风险在部署侧而非项目本身：自托管依赖 Cloudflare 与多种外部服务，文档站点未上线；另需注意仓库创建于 2025-12，仍处早期。"
+    },
+    {
+      "repo": "tejachavali/prefixwise",
+      "exists": true,
+      "canonical_repo": "tejachavali/prefixwise",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 28,
+          "verified": 28,
+          "status": "match"
+        },
+        "forks": {
+          "packet": 0,
+          "verified": 0,
+          "status": "match"
+        },
+        "license": {
+          "packet": "MIT",
+          "verified": "MIT",
+          "status": "match"
+        },
+        "language": {
+          "packet": "Python",
+          "verified": "Python",
+          "status": "match"
+        },
+        "updated_at": {
+          "packet": "2026-11-21T03:25:26Z",
+          "verified": "2026-11-21T03:25:26Z",
+          "status": "match"
+        },
+        "latest_commit_at": "2026-11-18T08:10:47Z",
+        "days_since_last_commit": 3,
+        "latest_release": {
+          "packet": "v0.12.1",
+          "verified": "v0.12.1",
+          "status": "match"
+        }
+      },
+      "claims": [
+        {
+          "claim": "agent token 缓存未命中账本",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/tejachavali/prefixwise/blob/main/README.md",
+              "quote": "Providers and engines report *how many* tokens missed the prompt cache, not *why*. Prefixwise sits between your agent and the model and does four things:"
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/tejachavali/prefixwise/blob/main/README.md",
+              "quote": "$ prefixwise run --ledger before.db -- python agent.py"
+            }
+          ],
+          "reason": "README 说明其作为代理位于 agent 与模型之间，把每次请求写入本地 ledger 并归因缓存未命中原因，直接支持“账本”这一说法。"
+        },
+        {
+          "claim": "记录 token 浪费情况",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/tejachavali/prefixwise/blob/main/README.md",
+              "quote": "Avoidable: 3,375 tokens ($0.0116), 12.5% of prompt tokens. Fix these, biggest first:"
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/tejachavali/prefixwise/blob/main/README.md",
+              "quote": "| Avoidable tokens | 3,375 | 0 |"
+            }
+          ],
+          "reason": "报告直接量化可避免 token 数及其美元成本，并区分“预期未命中”与“浪费”，属直接证据。"
+        }
+      ],
+      "scores": {
+        "usage": 6,
+        "deployment": 7,
+        "learning": 7
+      },
+      "score_reasons": {
+        "usage": "解决的是 prompt cache 未命中归因与成本量化这一具体痛点，对自建 agent/网关的团队有用；但受众窄，接管流量需改造调用入口，普通用户难以直接受益。",
+        "deployment": "pip 安装后以代理方式运行，支持本地与自托管引擎，不需要数据库集群；但需要把 agent 的 base_url 指过来，并配置上游 provider Key。",
+        "learning": "对缓存未命中做了 19 类归因，附基准、故障注入与 soak 数据，实验记录完整；但仅两周历史、单人维护，工程实践尚不足以作为长期范本。"
+      },
+      "grade": "B",
+      "grade_reason": "功能具体、文档与实验记录扎实、上手成本低，但仓库仅 15 天、28 stars、单人维护且受众窄，推荐价值尚未被时间验证。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 7,
+          "deployment": 7,
+          "learning": 7
+        },
+        "reported_grade": "C",
+        "assessment": "reasonable",
+        "note": "部署与学习价值一致；使用价值 Muse 给 7 分偏高，项目仅覆盖缓存成本归因这一细分场景，独立评为 6 分。另外 Muse 三个维度同为 7 分却定级 C，与我独立定级 B 存在分歧，理由见 note。"
+      },
+      "flags": [
+        {
+          "code": "MAINTENANCE_CONCENTRATION",
+          "severity": "low",
+          "evidence": "最近 5 次提交均为 tejachavali 本人；forks 为 0；仓库创建于 2026-11-06。",
+          "impact": "潜在维护者集中风险：单人维护、无外部贡献者，长期可用性依赖个人投入。"
+        },
+        {
+          "code": "EARLY_STAGE_UNPROVEN",
+          "severity": "low",
+          "evidence": "仓库创建于 2026-11-06，核查日仅 15 天历史，28 stars，PyPI 发布 4 天内。",
+          "impact": "缺少长期使用验证与社区反馈，接口和实现仍可能大幅变动。"
+        }
+      ],
+      "note": "四项元数据与 Release 完全一致（updated_at 精确到秒相同）。技术上真实可用且文档质量超出同类早期项目，但“推荐”价值受限于极短历史、单维护者与窄受众；我定 B 而非 C，理由是它能立刻解决可量化的问题且试错成本低。"
+    },
+    {
+      "repo": "mozilla/pdf.js",
+      "exists": true,
+      "canonical_repo": "mozilla/pdf.js",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 54164,
+          "verified": 54164,
+          "status": "match"
+        },
+        "forks": {
+          "packet": 10738,
+          "verified": 10738,
+          "status": "match"
+        },
+        "license": {
+          "packet": "Apache-2.0",
+          "verified": "Apache-2.0",
+          "status": "match"
+        },
+        "language": {
+          "packet": "JavaScript",
+          "verified": "JavaScript",
+          "status": "match"
+        },
+        "updated_at": {
+          "packet": "2026-11-21T06:41:51Z",
+          "verified": "2026-11-21T06:41:51Z",
+          "status": "match"
+        },
+        "latest_commit_at": "2026-11-21T11:44:34Z",
+        "days_since_last_commit": 0,
+        "latest_release": {
+          "packet": "v6.5.438",
+          "verified": "v6.5.438",
+          "status": "match"
+        }
+      },
+      "claims": [
+        {
+          "claim": "Web 端 PDF 解析渲染",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/mozilla/pdf.js/blob/master/README.md",
+              "quote": "PDF.js is a Portable Document Format (PDF) viewer that is built with HTML5."
+            },
+            {
+              "source": "GitHub API /repos",
+              "url": "https://api.github.com/repos/mozilla/pdf.js",
+              "quote": "description: \"PDF Reader in JavaScript\""
+            }
+          ],
+          "reason": "README 与仓库描述均指向在浏览器（HTML5）中解析并渲染 PDF，属直接证据。"
+        }
+      ],
+      "scores": {
+        "usage": 9,
+        "deployment": 8,
+        "learning": 9
+      },
+      "score_reasons": {
+        "usage": "浏览器内高保真 PDF 渲染的事实标准，Firefox 内置、npm 生态广泛引用，直接解决目标问题。",
+        "deployment": "可直接使用官方 dist 包或 pdfjs-dist，嵌入前端无需自建服务；只有从源码构建时才会遇到 gulp 工具链。",
+        "learning": "核心层与显示层分离、worker 渲染、字体与图像解码等实现完整，配套单测、参考测试与基准，是高质量工程范本。"
+      },
+      "grade": "S",
+      "grade_reason": "成熟度、实际价值与工程质量均为顶级，十五年持续维护且无重大风险，属于极少数可直接给出最高推荐等级的项目。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 9,
+          "deployment": 7,
+          "learning": 9
+        },
+        "reported_grade": "A",
+        "assessment": "reasonable",
+        "note": "使用与学习价值一致；部署成本 Muse 给 7 分偏保守，官方提供预构建 dist 与 npm 包，独立评为 8 分。定级上我给出 S（Muse 为 A），差异来自对成熟度权重的判断，不涉及分数差异。"
+      },
+      "flags": [],
+      "note": "元数据与 Release 全部精确一致，最新提交就在核查当天。唯一需要提醒的是 464 个未关闭 issue 与庞大代码库带来的上手曲线，但这是规模问题，不构成推荐风险。"
+    },
+    {
+      "repo": "NousResearch/hermes-agent",
+      "exists": true,
+      "canonical_repo": "NousResearch/hermes-agent",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 265102,
+          "verified": 265103,
+          "status": "match"
+        },
+        "forks": {
+          "packet": 59903,
+          "verified": 59903,
+          "status": "match"
+        },
+        "license": {
+          "packet": "MIT",
+          "verified": "MIT",
+          "status": "match"
+        },
+        "language": {
+          "packet": "Python",
+          "verified": "Python",
+          "status": "match"
+        },
+        "updated_at": {
+          "packet": "2026-11-21T12:22:35Z",
+          "verified": "2026-11-21T12:40:59Z",
+          "status": "match"
+        },
+        "latest_commit_at": "2026-11-21T12:40:39Z",
+        "days_since_last_commit": 0,
+        "latest_release": {
+          "packet": "v0.23.3",
+          "verified": "v0.23.3",
+          "status": "match"
+        }
+      },
+      "claims": [
+        {
+          "claim": "自我改进型 AI agent",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/NousResearch/hermes-agent/blob/main/README.md",
+              "quote": "The self-improving AI agent built by Nous Research. It's the only agent with a built-in learning loop — it creates skills from experience, improves them during use, nudges itself to persist knowledge, searches its own past conversations, and builds a deepening model of who you are across sessions."
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/NousResearch/hermes-agent/blob/main/README.md",
+              "quote": "Agent-curated memory with periodic nudges. Autonomous skill creation after complex tasks. Skills self-improve during use."
+            }
+          ],
+          "reason": "README 明确描述“技能自创建并在使用中自我改进”的学习闭环，文字上直接支持该断言；此为项目自述能力，本次未独立复现其效果。"
+        }
+      ],
+      "scores": {
+        "usage": 7,
+        "deployment": 7,
+        "learning": 7
+      },
+      "score_reasons": {
+        "usage": "记忆、技能沉淀、跨会话召回与多渠道入口对长期个人助理场景有价值，但需自备模型与部署，普通用户难以开箱获得收益。",
+        "deployment": "提供 Docker 镜像与一键安装脚本，可跑在 5 美元 VPS；但需要配置模型 provider、网关与插件目录，仍需较多手工步骤。",
+        "learning": "技能系统、记忆层、网关与存储抽象分层明确，规模庞大且有测试；但提交节奏极快、体量巨大，阅读与跟进成本高。"
+      },
+      "grade": "B",
+      "grade_reason": "能力面广、迭代极快、生态完整，但依赖外部模型与自建部署，且 issue 积压异常严重，综合推荐价值处于 B 档。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 7,
+          "deployment": 8,
+          "learning": 7
+        },
+        "reported_grade": "B",
+        "assessment": "reasonable",
+        "note": "使用与学习价值一致；部署成本 Muse 给 8 分偏乐观，除 Docker 外还需模型 provider、网关与插件配置，独立评为 7 分。"
+      },
+      "flags": [
+        {
+          "code": "ISSUE_BACKLOG_EXCESSIVE",
+          "severity": "medium",
+          "evidence": "GitHub API open_issues_count = 54226，同期 stars 265103、forks 59903；Release v0.23.3 说明两周内合并约 370 个 PR。",
+          "impact": "未关闭 issue 数量异常庞大，用户提问与实际缺陷难以被及时处理，采纳前需评估支持可获得性。"
+        },
+        {
+          "code": "FAST_MOVING_UPSTREAM",
+          "severity": "low",
+          "evidence": "v0.23.3 发布说明记录自 v0.23.2 起 1657 个非合并提交、3948 个文件变更、370 个 PR。",
+          "impact": "版本迭代极快，接口与配置可能频繁变动，长期维护与二次开发成本较高。"
+        }
+      ],
+      "note": "元数据与 Release 一致，仓库当天仍在高频提交。真实风险不在活跃度而在支持面：5.4 万个未关闭 issue 与两周 370 个 PR 的节奏，说明项目体量与响应能力不匹配；建议标注该点后再决定是否保留。"
+    }
+  ],
+  "learning_pick": {
+    "repo": null,
+    "exists": null,
+    "canonical_repo": null,
+    "owner_ok": null,
+    "archived": null,
+    "stars": {
+      "packet": null,
+      "verified": null,
+      "status": "not_applicable"
+    },
+    "license": {
+      "packet": null,
+      "verified": null,
+      "status": "not_applicable"
+    },
+    "flags": [],
+    "note": "数据包 learning_pick 为 null，本期没有学习资料库推荐，未执行轻量核查。"
+  }
+}
