@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-22",
+  "run_id": "ghrec-20261122",
+  "overall": {
+    "status": "failed",
+    "expected_projects": 0,
+    "checked_projects": 0,
+    "learning_pick_checked": false,
+    "failures": [
+      "PACKET_NOT_FOUND",
+      "查找过的路径: C:\\Users\\bik\\Documents\\deepseek-harness\\default-workspace\\packets\\ 下文件名含 2026-11-22 的 .json（无命中）",
+      "查找过的路径: C:\\Users\\bik\\Documents\\deepseek-harness\\default-workspace\\packets\\ 下今天(2026-11-22)修改的最新 .json（无命中，该目录仅有 dsh-packet-2026-11-21.json 与 README.md）",
+      "查找过的路径: C:\\Users\\bik\\Downloads\\ 下文件名含 packet 与 2026-11-22 的 .json（无命中）"
+    ]
+  },
+  "verdicts": [],
+  "learning_pick": {
+    "repo": null,
+    "exists": null,
+    "canonical_repo": null,
+    "owner_ok": null,
+    "archived": null,
+    "stars": {
+      "packet": null,
+      "verified": null,
+      "status": "not_applicable"
+    },
+    "license": {
+      "packet": null,
+      "verified": null,
+      "status": "not_applicable"
+    },
+    "flags": [],
+    "note": "当天数据包缺失，未进行核查。"
+  }
+}
