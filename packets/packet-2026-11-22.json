@@ -1,0 +1,152 @@
+{
+ "date": "2026-11-22",
+ "run_id": "ghrec-20261122",
+ "learning_pick": null,
+ "projects": [
+  {
+   "repo": "ItsNotRexed/Leonida",
+   "description": "Leonida Is A Native PC Recompilation Of The Xbox Version Of Grand Theft Auto 6",
+   "kind": "regular",
+   "backfill": false,
+   "is_new": true,
+   "deep_report": "projects/developer-tools/leonida.md",
+   "packet_metadata": {
+    "stars": 6788,
+    "forks": 514,
+    "license": "GPL-3.0",
+    "language": "Python",
+    "updated_at": "2026-11-22T04:06:28Z",
+    "latest_release": null
+   },
+   "claims": [
+    "Leonida 是一个对《侠盗猎车手 6》Xbox 版做的静态重编译项目",
+    "全部 26,503 个着色器已翻译 RDNA2→SPIR-V，全部通过 spirv-val",
+    "游戏尚未启动，尚不可玩",
+    "构建需要自己的 Xbox Series 包版本 1.0.2.1 与约 350 GB 空闲空间",
+    "仓库不包含游戏、密钥或可执行文件，也不解密、不绕过任何保护"
+   ],
+   "proposed_scores": {
+    "usage": 3,
+    "deployment": 2,
+    "learning": 9
+   },
+   "proposed_grade": "C"
+  },
+  {
+   "repo": "ShinMegamiBoson/lookatmyquant",
+   "description": "A quantization compiler that delivers 12× lower KL than Q4_K_M at the same file size",
+   "kind": "regular",
+   "backfill": false,
+   "is_new": true,
+   "deep_report": "projects/developer-tools/lookatmyquant.md",
+   "packet_metadata": {
+    "stars": 317,
+    "forks": 12,
+    "license": "MIT",
+    "language": "Python",
+    "updated_at": "2026-11-22T04:01:24Z",
+    "latest_release": "lm2-qwen35-4b-1.2gb"
+   },
+   "claims": [
+    "Gemma 4 E2B 的 GGUF 在相同文件大小下 KL 比 Q4_K_M 低 12 倍",
+    "Qwen3.5-4B 压到 1.2GB（约 2.3 bits/权重），解出 330/540 道数学题",
+    "Qwen3.8-27B 从 53.7GB 压到 7.2GB（2.1 bits/权重），解出与原件一样多的 401/540",
+    "最新 release 为 lm2-qwen35-4b-1.2gb，发布 2026-11-12",
+    "安装方式为 pip install git+https://github.com/ShinMegamiBoson/lookatmyquant.git"
+   ],
+   "proposed_scores": {
+    "usage": 6,
+    "deployment": 6,
+    "learning": 8
+   },
+   "proposed_grade": "B"
+  },
+  {
+   "repo": "sebaandrada-cell/PcapAnalyzer",
+   "description": "Free, self-hosted pcap analyzer with 27 problem detectors and AI investigation",
+   "kind": "regular",
+   "backfill": false,
+   "is_new": true,
+   "deep_report": "projects/ai-agent/pcapanalyzer.md",
+   "packet_metadata": {
+    "stars": 88,
+    "forks": 0,
+    "license": "Apache-2.0",
+    "language": "Python",
+    "updated_at": "2026-11-22T04:05:58Z",
+    "latest_release": null
+   },
+   "claims": [
+    "27 个问题检测器，覆盖 TCP/路径/DNS/应用/隧道/安全六类",
+    "抓包在本机分析，不出网络",
+    "AI 调查用你自己的 Anthropic API key；无 key 时走 demo 模式",
+    "应用只监听 127.0.0.1",
+    "状态为 beta，仅用合成 fixture 与公开样例测试"
+   ],
+   "proposed_scores": {
+    "usage": 7,
+    "deployment": 7,
+    "learning": 6
+   },
+   "proposed_grade": "B"
+  },
+  {
+   "repo": "telgatech/gpp",
+   "description": "A superset of Go with modern language features including classes, inheritance, generics, function overloading, named arguments, exceptions, extension methods, annotations, records, enums and more!",
+   "kind": "regular",
+   "backfill": false,
+   "is_new": true,
+   "deep_report": "projects/developer-tools/gpp.md",
+   "packet_metadata": {
+    "stars": 16,
+    "forks": 4,
+    "license": "BSD-3-Clause",
+    "language": "Go",
+    "updated_at": "2026-11-21T00:23:00Z",
+    "latest_release": null
+   },
+   "claims": [
+    "GPP 是 Go 的超集语言，加入类、继承、泛型、函数重载、命名参数等现代语言特性",
+    "需要 Go 1.27 或更新",
+    "无 release，Homebrew 需 --HEAD 直到有版本化发布",
+    "提供 gpp CLI、格式化器、文档、语言服务器、VS Code 扩展",
+    "独立开源项目，与 Google 或 Go 官方无关"
+   ],
+   "proposed_scores": {
+    "usage": 4,
+    "deployment": 5,
+    "learning": 7
+   },
+   "proposed_grade": "C"
+  },
+  {
+   "repo": "kborer/cells",
+   "description": "A living microscope slide in your terminal",
+   "kind": "regular",
+   "backfill": false,
+   "is_new": true,
+   "deep_report": "projects/developer-tools/cells.md",
+   "packet_metadata": {
+    "stars": 50,
+    "forks": 5,
+    "license": "NOASSERTION",
+    "language": "Python",
+    "updated_at": "2026-11-22T03:52:28Z",
+    "latest_release": "v0.1.3"
+   },
+   "claims": [
+    "LICENSE 文件实为 Zero-Clause BSD (0BSD)",
+    "最新 release v0.1.3，发布 2026-11-18",
+    "Python 3.10+，只依赖 curses，无第三方运行时依赖",
+    "安装方式为 pipx install terminal-cells；包名 terminal-cells，命令为 cells",
+    "Windows 用户需用 WSL"
+   ],
+   "proposed_scores": {
+    "usage": 4,
+    "deployment": 7,
+    "learning": 5
+   },
+   "proposed_grade": "C"
+  }
+ ]
+}
