@@ -2,35 +2,562 @@
   "date": "2026-11-22",
   "run_id": "ghrec-20261122",
   "overall": {
-    "status": "failed",
-    "expected_projects": 0,
-    "checked_projects": 0,
+    "status": "complete",
+    "expected_projects": 5,
+    "checked_projects": 5,
     "learning_pick_checked": false,
-    "failures": [
-      "PACKET_NOT_FOUND",
-      "查找过的路径: C:\\Users\\bik\\Documents\\deepseek-harness\\default-workspace\\packets\\ 下文件名含 2026-11-22 的 .json（无命中）",
-      "查找过的路径: C:\\Users\\bik\\Documents\\deepseek-harness\\default-workspace\\packets\\ 下今天(2026-11-22)修改的最新 .json（无命中，该目录仅有 dsh-packet-2026-11-21.json 与 README.md）",
-      "查找过的路径: C:\\Users\\bik\\Downloads\\ 下文件名含 packet 与 2026-11-22 的 .json（无命中）"
-    ]
+    "failures": []
   },
-  "verdicts": [],
+  "verdicts": [
+    {
+      "repo": "ItsNotRexed/Leonida",
+      "exists": true,
+      "canonical_repo": "ItsNotRexed/Leonida",
+      "archived": false,
+      "metadata": {
+        "stars": { "packet": 6788, "verified": 7004, "status": "match" },
+        "forks": { "packet": 514, "verified": 537, "status": "match" },
+        "license": { "packet": "GPL-3.0", "verified": "GPL-3.0", "status": "match" },
+        "language": { "packet": "Python", "verified": "Python", "status": "match" },
+        "updated_at": { "packet": "2026-11-22T04:06:28Z", "verified": "2026-11-22T04:42:07Z", "status": "match" },
+        "latest_commit_at": "2026-11-22T04:40:12Z",
+        "days_since_last_commit": 0,
+        "latest_release": { "packet": null, "verified": null, "status": "none" }
+      },
+      "claims": [
+        {
+          "claim": "Leonida 是一个对《侠盗猎车手 6》Xbox 版做的静态重编译项目",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://raw.githubusercontent.com/ItsNotRexed/Leonida/main/README.md",
+              "quote": "Leonida is a static recompilation project. The Xbox Series CPU is x86-64 like a PC, so the game's code is loaded and run natively, and the console's system software is reimplemented. The console's precompiled RDNA2 GPU programs are translated to SPIR-V for Vulkan."
+            }
+          ],
+          "reason": "README 明确说明项目是对 Xbox Series 版 GTA VI 的静态重编译，并描述 CPU 代码原生运行、系统软件重实现与 RDNA2→SPIR-V 转译。"
+        },
+        {
+          "claim": "全部 26,503 个着色器已翻译 RDNA2→SPIR-V，全部通过 spirv-val",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://raw.githubusercontent.com/ItsNotRexed/Leonida/main/README.md",
+              "quote": "Shaders: RDNA2 → SPIR-V translation | ✅ **All 26,503** (disassembled with LLVM 21; LLVM 23 leaves 1,471 rejected for now, #644): 2,236 VS, 12,101 PS, 2,689 CS, 9,282 mesh, 195 geometry. All pass `spirv-val`"
+            }
+          ],
+          "reason": "README 状态表给出 26,503 个着色器全部翻译且通过 spirv-val；同时标注 LLVM 23 下暂有 1,471 个被拒，属工具链版本差异，不影响该断言本身。"
+        },
+        {
+          "claim": "游戏尚未启动，尚不可玩",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://raw.githubusercontent.com/ItsNotRexed/Leonida/main/README.md",
+              "quote": "Early. The game does not boot yet. ... | Booting, story mode, anything playable | ❌ No |"
+            }
+          ],
+          "reason": "README 项目状态明确写明游戏尚未启动，且 Booting/story mode/playable 一栏为 ❌ No。"
+        },
+        {
+          "claim": "构建需要自己的 Xbox Series 包版本 1.0.2.1 与约 350 GB 空闲空间",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://raw.githubusercontent.com/ItsNotRexed/Leonida/main/README.md",
+              "quote": "Your own copy of the Xbox Series package, version 1.0.2.1. - Windows 10/11 x64, with about **350 GB** free for work files."
+            }
+          ],
+          "reason": "README 前置条件逐条列出自有 1.0.2.1 版本游戏包与约 350 GB 空闲空间。"
+        },
+        {
+          "claim": "仓库不包含游戏、密钥或可执行文件，也不解密、不绕过任何保护",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://raw.githubusercontent.com/ItsNotRexed/Leonida/main/README.md",
+              "quote": "This repository **does not contain the game, keys or an executable**, and it does not explain how to get them. You need your own copy, with its files already readable on disk. Nothing here decrypts or works around any protection."
+            }
+          ],
+          "reason": "README 以 IMPORTANT 段落明确声明不含游戏、密钥或可执行文件，且不解密、不绕过保护。"
+        }
+      ],
+      "scores": { "usage": 2, "deployment": 3, "learning": 8 },
+      "score_reasons": {
+        "usage": "游戏尚不能启动、无任何可玩内容，当前实际价值仅限于着色器/资产研究工具。",
+        "deployment": "需自有游戏包、约 350GB 空间及 Python/.NET/Vulkan/LLVM/VS2022 等多套工具链，虽有 Build.bat 但门槛很高。",
+        "learning": "README 与 docs 体系完整，RDNA2→SPIR-V 转译、PE loader、Vulkan 后端及 GPU 测试记录具备很高技术参考价值（未逐文件审阅源码）。"
+      },
+      "grade": "C",
+      "grade_reason": "核心目标尚未实现且构建门槛极高，推荐价值弱；较高的学习价值不足以支撑作为可玩游戏推荐。",
+      "reported_score_review": {
+        "reported_scores": { "usage": 3, "deployment": 2, "learning": 7 },
+        "reported_grade": "C",
+        "assessment": "reasonable",
+        "note": "三项独立分数与原始分数各相差 1 分，差异不明显；等级同为 C，整体合理。"
+      },
+      "flags": [
+        {
+          "code": "NOT_PLAYABLE",
+          "severity": "high",
+          "evidence": "README: \"Early. The game does not boot yet.\" 且 \"Booting, story mode, anything playable | ❌ No |\"（2026-11-22 核查）",
+          "impact": "核心目标（运行游戏）未实现，不能作为可玩项目推荐。"
+        },
+        {
+          "code": "HEAVY_BUILD",
+          "severity": "medium",
+          "evidence": "README 前置条件：自有 Xbox Series 1.0.2.1 包、约 350GB 空闲、Windows 10/11 x64、Python 3.12+、.NET 8 SDK、Vulkan SDK、LLVM 21+（AMDGPU）、VS2022。",
+          "impact": "部署成本高，普通用户难以实际验证或使用。"
+        },
+        {
+          "code": "MAINTAINER_CONCENTRATION",
+          "severity": "low",
+          "evidence": "最近 5 次提交作者均为 ItsNotRexed（2026-11-22 通过 commits API 查得）。",
+          "impact": "潜在维护者集中风险；仅凭 5 次提交不能断定单人维护。"
+        }
+      ],
+      "note": "项目真实存在、元数据与数据包基本一致（Stars/Forks 因核查时间晚于数据包约 35 分钟而略增，误差 3.18%/4.47% 均在 5% 内）；releases/latest 返回 404，记为 none。5 条断言均有 README 直接支持。技术方向很有意思，但当前不可玩。"
+    },
+    {
+      "repo": "ShinMegamiBoson/lookatmyquant",
+      "exists": true,
+      "canonical_repo": "ShinMegamiBoson/lookatmyquant",
+      "archived": false,
+      "metadata": {
+        "stars": { "packet": 317, "verified": 322, "status": "match" },
+        "forks": { "packet": 12, "verified": 13, "status": "mismatch" },
+        "license": { "packet": "MIT", "verified": "MIT", "status": "match" },
+        "language": { "packet": "Python", "verified": "Python", "status": "match" },
+        "updated_at": { "packet": "2026-11-22T04:01:24Z", "verified": "2026-11-22T04:40:50Z", "status": "match" },
+        "latest_commit_at": "2026-11-21T23:51:54Z",
+        "days_since_last_commit": 0,
+        "latest_release": { "packet": "lm2-qwen35-4b-1.2gb", "verified": "lm2-qwen35-4b-1.2gb", "status": "match" }
+      },
+      "claims": [
+        {
+          "claim": "Gemma 4 E2B 的 GGUF 在相同文件大小下 KL 比 Q4_K_M 低 12 倍",
+          "result": "unverifiable",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://raw.githubusercontent.com/ShinMegamiBoson/lookatmyquant/main/README.md",
+              "quote": "On Gemma 4 E2B, its GGUF has 12× lower KL than Q4_K_M at the same file size. The method and every result are on the site"
+            }
+          ],
+          "reason": "README 确有该数值，但属于项目自报基准结果，细节指向外部站点；GitHub 官方来源内无可独立复现的证据，按规范不将宣传性性能数字写成 true。"
+        },
+        {
+          "claim": "Qwen3.5-4B 压到 1.2GB（约 2.3 bits/权重），解出 330/540 道数学题",
+          "result": "unverifiable",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://raw.githubusercontent.com/ShinMegamiBoson/lookatmyquant/main/README.md",
+              "quote": "LookAtMyQuant 2 takes Qwen3.5-4B to 1.23 GB, 2.3 bits per weight. The file solves 330 of 540 exact-answer math problems."
+            }
+          ],
+          "reason": "README 自报的体积与数学成绩，外部链接与评测脚本需自行运行；GitHub 官方来源无法独立验证数值。"
+        },
+        {
+          "claim": "Qwen3.8-27B 从 53.7GB 压到 7.2GB（2.1 bits/权重），解出与原件一样多的 401/540",
+          "result": "unverifiable",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://raw.githubusercontent.com/ShinMegamiBoson/lookatmyquant/main/README.md",
+              "quote": "The same recipe takes Qwen3.8-27B from 53.7 GB to 7.2 GB, 2.1 bits per weight ... The file solves 401 of the 540 math problems, as many as the original"
+            }
+          ],
+          "reason": "同上：README 自报性能与模型文件位于外部 Hugging Face，GitHub 官方来源无法独立复现。"
+        },
+        {
+          "claim": "最新 release 为 lm2-qwen35-4b-1.2gb，发布 2026-11-12",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "GitHub API /repos/{owner}/{repo}/releases/latest",
+              "url": "https://api.github.com/repos/ShinMegamiBoson/lookatmyquant/releases/latest",
+              "quote": "tag_name: lm2-qwen35-4b-1.2gb; published_at: 2026-11-12T16:47:28Z; html_url: https://github.com/ShinMegamiBoson/lookatmyquant/releases/tag/lm2-qwen35-4b-1.2gb"
+            }
+          ],
+          "reason": "API 返回的最新 release 标签与数据包一致，发布日期为 2026-11-12。"
+        },
+        {
+          "claim": "安装方式为 pip install git+https://github.com/ShinMegamiBoson/lookatmyquant.git",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://raw.githubusercontent.com/ShinMegamiBoson/lookatmyquant/main/README.md",
+              "quote": "pip install git+https://github.com/ShinMegamiBoson/lookatmyquant.git"
+            }
+          ],
+          "reason": "README 的 Apple Silicon runtime 安装段落给出完全一致的 pip 命令。"
+        }
+      ],
+      "scores": { "usage": 6, "deployment": 5, "learning": 8 },
+      "score_reasons": {
+        "usage": "提供可运行的量化编译器与 Apple Silicon runtime、CLI/Python API 和示例，对模型压缩用户有实际价值，但性能数字需自行复现。",
+        "deployment": "pip 安装简单，但完整复现依赖 Modal GPU 作业、Hugging Face 下载及 Apple Silicon 环境，配置成本中等偏高。",
+        "learning": "README 详细记录测量/分配/构建/蒸馏流程、测试与代码地图，技术参考价值高（未逐文件审阅源码）。"
+      },
+      "grade": "B",
+      "grade_reason": "工具链完整且有明确使用场景，学习价值高；但性能自报、平台与外部服务依赖限制推荐强度。",
+      "reported_score_review": {
+        "reported_scores": { "usage": 6, "deployment": 6, "learning": 8 },
+        "reported_grade": "B",
+        "assessment": "reasonable",
+        "note": "usage 与 learning 与原始一致；deployment 独立打 5 分、比原始低 1 分，因完整流程依赖 GPU 外部服务与 Apple Silicon，差异不显著。等级同为 B。"
+      },
+      "flags": [
+        {
+          "code": "SELF_REPORTED_BENCHMARK",
+          "severity": "low",
+          "evidence": "README 中 12× KL、330/540、401/540、bits/weight 等均为项目自报，详细结果指向外部站点；GitHub 官方来源未提供独立复现证据。",
+          "impact": "性能数字不应作为已验证事实，采用前需自行跑评测。"
+        },
+        {
+          "code": "PAID_EXTERNAL_SERVICE",
+          "severity": "medium",
+          "evidence": "README: 'Large models run on Modal, one GPU per job'，并依赖 Hugging Face 模型与数据集下载。",
+          "impact": "复现大模型流程需要外部 GPU 服务与费用。"
+        }
+      ],
+      "note": "仓库真实存在，Stars 误差 1.58% 为 match；Forks 由 12 增至 13，误差 8.33% 为 mismatch（核查时间晚于数据包约 40 分钟）。Release 与安装命令核实无误，性能类断言按规范记为 unverifiable。"
+    },
+    {
+      "repo": "sebaandrada-cell/PcapAnalyzer",
+      "exists": true,
+      "canonical_repo": "sebaandrada-cell/PcapAnalyzer",
+      "archived": false,
+      "metadata": {
+        "stars": { "packet": 88, "verified": 93, "status": "mismatch" },
+        "forks": { "packet": 0, "verified": 0, "status": "match" },
+        "license": { "packet": "Apache-2.0", "verified": "Apache-2.0", "status": "match" },
+        "language": { "packet": "Python", "verified": "Python", "status": "match" },
+        "updated_at": { "packet": "2026-11-22T04:05:58Z", "verified": "2026-11-22T04:39:32Z", "status": "match" },
+        "latest_commit_at": "2026-11-21T08:37:52Z",
+        "days_since_last_commit": 0,
+        "latest_release": { "packet": null, "verified": null, "status": "none" }
+      },
+      "claims": [
+        {
+          "claim": "27 个问题检测器，覆盖 TCP/路径/DNS/应用/隧道/安全六类",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://raw.githubusercontent.com/sebaandrada-cell/PcapAnalyzer/master/README.md",
+              "quote": "**27 detectors** that run on every capture, each with a severity and a next step: - TCP: ... - Path: ... - Name and address services: ... - Applications: ... - Tunnels: ... - Security: ..."
+            }
+          ],
+          "reason": "README 明确列出 27 个检测器，并按 TCP、Path、Name/address(DNS/DHCP/ARP)、Applications、Tunnels、Security 六类组织。"
+        },
+        {
+          "claim": "抓包在本机分析，不出网络",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://raw.githubusercontent.com/sebaandrada-cell/PcapAnalyzer/master/README.md",
+              "quote": "It runs on your own machine, so captures never leave your network. ... The capture is analysed on your machine."
+            }
+          ],
+          "reason": "README 在开头与 Privacy 段落明确抓包留在本机；注意可选 AI 调查会把工具返回的数据发给 Anthropic，README 对此另有说明，不影响本断言的核心含义。"
+        },
+        {
+          "claim": "AI 调查用你自己的 Anthropic API key；无 key 时走 demo 模式",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://raw.githubusercontent.com/sebaandrada-cell/PcapAnalyzer/master/README.md",
+              "quote": "It uses your own Anthropic API key; without one, a demo mode runs the full flow with text generated from the analysis, at no cost."
+            }
+          ],
+          "reason": "README AI investigation 段落逐字给出该行为。"
+        },
+        {
+          "claim": "应用只监听 127.0.0.1",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://raw.githubusercontent.com/sebaandrada-cell/PcapAnalyzer/master/README.md",
+              "quote": "The app listens on `127.0.0.1` only. Do not expose it on a network without an authenticated reverse proxy"
+            }
+          ],
+          "reason": "README Quick start 明确写只监听 127.0.0.1。"
+        },
+        {
+          "claim": "状态为 beta，仅用合成 fixture 与公开样例测试",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://raw.githubusercontent.com/sebaandrada-cell/PcapAnalyzer/master/README.md",
+              "quote": "Status: beta. ... PcapAnalyzer is a beta. It has been tested with synthetic fixtures and public sample captures"
+            }
+          ],
+          "reason": "README 开头与 Feedback 段落分别明确 beta 状态和测试范围。"
+        }
+      ],
+      "scores": { "usage": 7, "deployment": 6, "learning": 6 },
+      "score_reasons": {
+        "usage": "27 个检测器、Wireshark 风格视图、PDF 报告直击排障痛点，功能完整度较高；但仍是 beta、缺少真实环境验证。",
+        "deployment": "Docker Compose 一键启动较方便，但需 Docker、tshark 及访问令牌，非 Docker 路径还需 Python/Node 手工配置。",
+        "learning": "README 列出检测器分类、隐私设计与技术参考入口，有一定工程参考价值；架构细节主要在系统外部文档，学习深度中等。"
+      },
+      "grade": "B",
+      "grade_reason": "功能实用且思路清晰，但 beta 阶段、Stars/Forks 很少、无 Release，仍有成熟度与验证范围上的门槛。",
+      "reported_score_review": {
+        "reported_scores": { "usage": 7, "deployment": 7, "learning": 6 },
+        "reported_grade": "B",
+        "assessment": "reasonable",
+        "note": "usage 与 learning 与原始一致；deployment 独立打 6 分、比原始低 1 分，因依赖 Docker/tshark/令牌，差异不显著。等级同为 B。"
+      },
+      "flags": [
+        {
+          "code": "BETA_STATUS",
+          "severity": "low",
+          "evidence": "README: \"Status: beta.\" 且 \"tested with synthetic fixtures and public sample captures\"。",
+          "impact": "缺少真实抓包环境验证，生产使用需自行评估检测结果可靠性。"
+        }
+      ],
+      "note": "仓库真实存在，非归档；Stars 由 88 增至 93，误差 5.68% 为 mismatch（核查时间晚于数据包约 34 分钟），Forks 仍为 0。releases/latest 404 记为 none。默认分支 main 的 README 两次请求均遇代理 TLS 断连，按规范回退到 master 成功获取。"
+    },
+    {
+      "repo": "telgatech/gpp",
+      "exists": true,
+      "canonical_repo": "telgatech/gpp",
+      "archived": false,
+      "metadata": {
+        "stars": { "packet": 16, "verified": 16, "status": "match" },
+        "forks": { "packet": 4, "verified": 4, "status": "match" },
+        "license": { "packet": "BSD-3-Clause", "verified": "BSD-3-Clause", "status": "match" },
+        "language": { "packet": "Go", "verified": "Go", "status": "match" },
+        "updated_at": { "packet": "2026-11-21T00:23:00Z", "verified": "2026-11-21T00:23:00Z", "status": "match" },
+        "latest_commit_at": "2026-11-21T14:50:35Z",
+        "days_since_last_commit": 0,
+        "latest_release": { "packet": null, "verified": null, "status": "none" }
+      },
+      "claims": [
+        {
+          "claim": "GPP 是 Go 的超集语言，加入类、继承、泛型、函数重载、命名参数等现代语言特性",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://raw.githubusercontent.com/telgatech/gpp/main/README.md",
+              "quote": "A superset of Go with modern language features. ... - Classes ... - Multiple inheritance ... - Generic classes and functions ... - Overloading ... - Named arguments and defaults"
+            }
+          ],
+          "reason": "README 标题与语言特性清单逐项列出类、继承、泛型、重载、命名参数等能力。"
+        },
+        {
+          "claim": "需要 Go 1.27 或更新",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://raw.githubusercontent.com/telgatech/gpp/main/README.md",
+              "quote": "GPP requires Go 1.27 or newer. This enables generic methods declared directly on classes in generated projects"
+            }
+          ],
+          "reason": "README Install and build 段落明确要求 Go 1.27+，徽章亦为 Go 1.27+。"
+        },
+        {
+          "claim": "无 release，Homebrew 需 --HEAD 直到有版本化发布",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "GitHub API /repos/{owner}/{repo}/releases/latest",
+              "url": "https://api.github.com/repos/telgatech/gpp/releases/latest",
+              "quote": "HTTP 404（仓库正常，releases/latest 无结果）"
+            },
+            {
+              "source": "README",
+              "url": "https://raw.githubusercontent.com/telgatech/gpp/main/README.md",
+              "quote": "brew install --HEAD telgatech/gpp/gpp ... The formula currently tracks main, so --HEAD is required until a versioned release."
+            }
+          ],
+          "reason": "API 确认没有可获取的 latest release，README 确认 Homebrew 公式跟踪 main、需 --HEAD。"
+        },
+        {
+          "claim": "提供 gpp CLI、格式化器、文档、语言服务器、VS Code 扩展",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://raw.githubusercontent.com/telgatech/gpp/main/README.md",
+              "quote": "It provides one `gpp` executable with project commands: init|compile|build|run|clean|fmt|fiximports|test|doc|env|doctor|version|lsp ... Formatter ... Source documentation ... Language server ... The GPP VS Code extension"
+            }
+          ],
+          "reason": "README 的 Go compatibility and tooling 与 Visual Studio Code 段落分别列出 CLI、formatter、source docs、language server 及 VS Code 扩展（扩展位于 telgatech/gpp-vscode）。"
+        },
+        {
+          "claim": "独立开源项目，与 Google 或 Go 官方无关",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://raw.githubusercontent.com/telgatech/gpp/main/README.md",
+              "quote": "GPP is an independent open source project and is not affiliated with or endorsed by Google or the Go project."
+            }
+          ],
+          "reason": "README 开头的 Notice 逐字声明独立性。"
+        }
+      ],
+      "scores": { "usage": 5, "deployment": 6, "learning": 7 },
+      "score_reasons": {
+        "usage": "语言特性丰富且保留 Go 工具链，但项目早期、无版本发布、社区规模很小（16 Stars），生产可用性未经证明。",
+        "deployment": "go install @main 或 brew --HEAD 即可安装，依赖清晰；但无版本化发布且必须 Go 1.27+，可复现性偏弱。",
+        "learning": "编译器、格式化器、LSP、代码生成与大量特性文档构成较完整的工程体系，技术参考价值较高（未逐文件审阅源码）。"
+      },
+      "grade": "C",
+      "grade_reason": "项目处于早期、缺少 Release、采用量很低，虽有完整特性设计但推荐价值偏弱，需等待版本化与社区验证。",
+      "reported_score_review": {
+        "reported_scores": { "usage": 4, "deployment": 5, "learning": 7 },
+        "reported_grade": "C",
+        "assessment": "reasonable",
+        "note": "learning 与原始一致；usage/deployment 各高 1 分，因特性文档与安装路径比原始分体现的更完整，但仍在合理区间。等级同为 C。"
+      },
+      "flags": [
+        {
+          "code": "NO_RELEASE",
+          "severity": "low",
+          "evidence": "releases/latest 返回 404；README: 'The formula currently tracks main, so --HEAD is required until a versioned release.'",
+          "impact": "无稳定版本，依赖 main 分支，升级与可复现性较弱。"
+        },
+        {
+          "code": "MAINTAINER_CONCENTRATION",
+          "severity": "low",
+          "evidence": "最近 5 次提交作者均为 sr215（2026-11-22 通过 commits API 查得）。",
+          "impact": "潜在维护者集中风险；仅凭 5 次提交不能断定单人维护。"
+        }
+      ],
+      "note": "仓库真实存在，元数据与数据包完全一致；releases/latest 404 记为 none。5 条断言均有 README/API 直接支持。Go 超集语言方向 ambitious，但当前采用度很低。"
+    },
+    {
+      "repo": "kborer/cells",
+      "exists": true,
+      "canonical_repo": "kborer/cells",
+      "archived": false,
+      "metadata": {
+        "stars": { "packet": 50, "verified": 50, "status": "match" },
+        "forks": { "packet": 5, "verified": 5, "status": "match" },
+        "license": { "packet": "NOASSERTION", "verified": "NOASSERTION", "status": "match" },
+        "language": { "packet": "Python", "verified": "Python", "status": "match" },
+        "updated_at": { "packet": "2026-11-22T03:52:28Z", "verified": "2026-11-22T03:52:28Z", "status": "match" },
+        "latest_commit_at": "2026-11-22T02:55:16Z",
+        "days_since_last_commit": 0,
+        "latest_release": { "packet": "v0.1.3", "verified": "v0.1.3", "status": "match" }
+      },
+      "claims": [
+        {
+          "claim": "LICENSE 文件实为 Zero-Clause BSD (0BSD)",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "LICENSE 原文",
+              "url": "https://raw.githubusercontent.com/kborer/cells/main/LICENSE",
+              "quote": "Zero-Clause BSD ... Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted."
+            },
+            {
+              "source": "README",
+              "url": "https://raw.githubusercontent.com/kborer/cells/main/README.md",
+              "quote": "Zero-Clause BSD (LICENSE) (`0BSD`): use, modify, and redistribute for any purpose, without an attribution requirement."
+            }
+          ],
+          "reason": "LICENSE 文件原文开头即 Zero-Clause BSD，README 亦标注 0BSD；GitHub API 的 license.spdx_id 为 NOASSERTION 属识别限制。"
+        },
+        {
+          "claim": "最新 release v0.1.3，发布 2026-11-18",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "GitHub API /repos/{owner}/{repo}/releases/latest",
+              "url": "https://api.github.com/repos/kborer/cells/releases/latest",
+              "quote": "tag_name: v0.1.3; name: cells 0.1.3; published_at: 2026-11-18T14:20:58Z"
+            }
+          ],
+          "reason": "API 返回最新 release 为 v0.1.3，发布日期 2026-11-18。"
+        },
+        {
+          "claim": "Python 3.10+，只依赖 curses，无第三方运行时依赖",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://raw.githubusercontent.com/kborer/cells/main/README.md",
+              "quote": "Python 3.10+ on Linux or macOS, with `curses`; Windows users can use WSL. No third-party runtime dependencies."
+            }
+          ],
+          "reason": "README 安装段落逐字给出 Python 3.10+、curses 与无第三方运行时依赖。"
+        },
+        {
+          "claim": "安装方式为 pipx install terminal-cells；包名 terminal-cells，命令为 cells",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://raw.githubusercontent.com/kborer/cells/main/README.md",
+              "quote": "pipx install terminal-cells ... cells ... The package is **terminal-cells**; the command is **cells**."
+            }
+          ],
+          "reason": "README 给出该 pipx 命令并明确包名与命令名。"
+        },
+        {
+          "claim": "Windows 用户需用 WSL",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://raw.githubusercontent.com/kborer/cells/main/README.md",
+              "quote": "Python 3.10+ on Linux or macOS, with `curses`; Windows users can use WSL."
+            }
+          ],
+          "reason": "README 只列出 Linux/macOS 原生支持并明确 Windows 用户走 WSL；未提供原生 Windows 安装路径，断言实质成立。"
+        }
+      ],
+      "scores": { "usage": 4, "deployment": 8, "learning": 5 },
+      "score_reasons": {
+        "usage": "终端微生物动画属于趣味性展示，解决实际问题的能力有限，适合作为屏保/玩具而非生产力工具。",
+        "deployment": "pipx 一行安装、仅依赖 curses，开箱即用；Windows 需 WSL 略减分。",
+        "learning": "有生物学说明、交互工具与终端兼容文档，模拟代码可学习但技术深度与架构复杂度有限。"
+      },
+      "grade": "C",
+      "grade_reason": "部署体验好但用途偏娱乐、实际价值有限，推荐价值较弱；0BSD 许可证与活跃提交是加分项但不足以提升等级。",
+      "reported_score_review": {
+        "reported_scores": { "usage": 4, "deployment": 7, "learning": 5 },
+        "reported_grade": "C",
+        "assessment": "reasonable",
+        "note": "usage 与 learning 与原始一致；deployment 独立打 8 分、比原始高 1 分，因 pipx 安装且无第三方运行时依赖。等级同为 C。"
+      },
+      "flags": [
+        {
+          "code": "LICENSE_SPDX_UNKNOWN",
+          "severity": "low",
+          "evidence": "GitHub API license.spdx_id = NOASSERTION；但 LICENSE 原文为 'Zero-Clause BSD'，README 标注 0BSD。",
+          "impact": "自动化许可证扫描可能无法识别；实际授权为宽松的 0BSD，不构成授权风险。"
+        }
+      ],
+      "note": "仓库真实存在，元数据与数据包完全一致；Release v0.1.3 与 2026-11-18 发布日期核实无误。5 条断言均有 README/LICENSE/API 直接支持。许可证 API 返回 NOASSERTION 按规范如实记录，并核对 LICENSE 原文为 0BSD。"
+    }
+  ],
   "learning_pick": {
     "repo": null,
     "exists": null,
     "canonical_repo": null,
     "owner_ok": null,
     "archived": null,
-    "stars": {
-      "packet": null,
-      "verified": null,
-      "status": "not_applicable"
-    },
-    "license": {
-      "packet": null,
-      "verified": null,
-      "status": "not_applicable"
-    },
+    "stars": { "packet": null, "verified": null, "status": "not_applicable" },
+    "license": { "packet": null, "verified": null, "status": "not_applicable" },
     "flags": [],
-    "note": "当天数据包缺失，未进行核查。"
+    "note": "数据包 learning_pick 为 null，按规范不核查，各字段填空/null。"
   }
 }
