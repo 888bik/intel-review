@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-23",
+  "run_id": "ghrec-20261123",
+  "overall": {
+    "status": "failed",
+    "expected_projects": 0,
+    "checked_projects": 0,
+    "learning_pick_checked": false,
+    "failures": [
+      "PACKET_NOT_FOUND",
+      "查找路径 1: packets\\ 下文件名含 2026-11-23 的 .json — 未命中（该目录仅有 dsh-packet-2026-11-21.json）",
+      "查找路径 2: packets\\ 下今天（2026-11-23 Asia/Shanghai）修改的最新 .json — 无（最新修改为 dsh-packet-2026-11-21.json，mtime 2026-11-21 20:43:44 +08）",
+      "查找路径 3: C:\\Users\\bik\\Downloads\\ 下文件名含 packet 且含 2026-11-23 的 .json — 未命中（仅有 packet-2026-11-22.json，mtime 2026-11-22 12:41:44 +08）"
+    ]
+  },
+  "verdicts": [],
+  "learning_pick": {
+    "repo": null,
+    "exists": null,
+    "canonical_repo": null,
+    "owner_ok": null,
+    "archived": null,
+    "stars": {
+      "packet": null,
+      "verified": null,
+      "status": "not_applicable"
+    },
+    "license": {
+      "packet": null,
+      "verified": null,
+      "status": "not_applicable"
+    },
+    "flags": [],
+    "note": "数据包缺失，未进行学习资料库核查。"
+  },
+  "note": "按规范第 5 步：未找到当天（2026-11-23）数据包，禁止编造，verdicts 为空，overall.status=failed。已列出全部查找路径；历史数据包（2026-11-21、2026-11-22）不得顶替当天数据。"
+}
