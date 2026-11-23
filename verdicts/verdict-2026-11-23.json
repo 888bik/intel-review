@@ -2,36 +2,346 @@
   "date": "2026-11-23",
   "run_id": "ghrec-20261123",
   "overall": {
-    "status": "failed",
-    "expected_projects": 0,
-    "checked_projects": 0,
-    "learning_pick_checked": false,
-    "failures": [
-      "PACKET_NOT_FOUND",
-      "查找路径 1: packets\\ 下文件名含 2026-11-23 的 .json — 未命中（该目录仅有 dsh-packet-2026-11-21.json）",
-      "查找路径 2: packets\\ 下今天（2026-11-23 Asia/Shanghai）修改的最新 .json — 无（最新修改为 dsh-packet-2026-11-21.json，mtime 2026-11-21 20:43:44 +08）",
-      "查找路径 3: C:\\Users\\bik\\Downloads\\ 下文件名含 packet 且含 2026-11-23 的 .json — 未命中（仅有 packet-2026-11-22.json，mtime 2026-11-22 12:41:44 +08）"
-    ]
+    "status": "complete",
+    "expected_projects": 5,
+    "checked_projects": 5,
+    "learning_pick_checked": true,
+    "failures": []
   },
-  "verdicts": [],
+  "verdicts": [
+    {
+      "repo": "gulivan/worker755",
+      "exists": true,
+      "canonical_repo": "gulivan/worker755",
+      "archived": false,
+      "metadata": {
+        "stars": {"packet": 142, "verified": 149, "status": "match"},
+        "forks": {"packet": 3, "verified": 4, "status": "mismatch"},
+        "license": {"packet": "MIT", "verified": "MIT", "status": "match"},
+        "language": {"packet": "TypeScript", "verified": "TypeScript", "status": "match"},
+        "updated_at": {"packet": "2026-11-22T20:05:12Z", "verified": "2026-11-23T05:12:29Z", "status": "match"},
+        "latest_commit_at": "2026-11-22T20:04:08Z",
+        "days_since_last_commit": 0,
+        "latest_release": {"packet": null, "verified": null, "status": "none"}
+      },
+      "claims": [
+        {
+          "claim": "经理是 Claude、GPT、Gemini、DeepSeek、GLM、Kimi 之一，按编排器方式设置——任务队列、对机器的只读访问、一个「生成 subagent」的工具（subagent 就是你）。",
+          "result": "true",
+          "evidence": [{"source": "README", "url": "https://github.com/gulivan/worker755#readme", "quote": "The manager (a real LLM: Claude, GPT, Gemini, DeepSeek, GLM, Kimi) is set up like any orchestrator. It has a task queue, read-only access to the machine, and a tool that \"spawns a subagent\". The subagent is you."}],
+          "reason": "README 逐字描述了经理模型清单、任务队列、只读访问与生成 subagent 工具。"
+        },
+        {
+          "claim": "指令落在终端里，限时 90 秒执行。",
+          "result": "true",
+          "evidence": [{"source": "README", "url": "https://github.com/gulivan/worker755#readme", "quote": "Its instructions land in your terminal with a 90-second clock."}, {"source": "README", "url": "https://github.com/gulivan/worker755#configuration", "quote": "INSTRUCTION_TIMEOUT_MS | 90000 | Time per instruction"}],
+          "reason": "README 正文与配置表均明确 90 秒（90000ms）时限。"
+        },
+        {
+          "claim": "登录后账号有约一次班次的启动额度，之后充值（$10–$200）按使用量付费；或自带 OpenRouter / Vercel AI Gateway key。",
+          "result": "true",
+          "evidence": [{"source": "README", "url": "https://github.com/gulivan/worker755#play", "quote": "With sign-in on (worker755.com), an account gets a starter credit worth about one shift, then tops up ($10 to $200) and pays for what it uses; after a top-up any offered model can run on the server's key."}, {"source": "README", "url": "https://github.com/gulivan/worker755#play", "quote": "Your API key: bring an OpenRouter or Vercel AI Gateway key and pick any offered model."}],
+          "reason": "README Play 段落逐条对应启动额度、$10–$200 充值与自带两种 key。"
+        },
+        {
+          "claim": "Node 24+；npm run setup、npm run build、npm start（http://127.0.0.1:8755）；离线 npm run mock。",
+          "result": "true",
+          "evidence": [{"source": "README", "url": "https://github.com/gulivan/worker755#run-it", "quote": "Needs Node 24 or newer (the server runs TypeScript directly). npm run setup / npm run build / npm start # http://127.0.0.1:8755"}, {"source": "README", "url": "https://github.com/gulivan/worker755#run-it", "quote": "Offline, with a scripted manager and no network: npm run mock"}],
+          "reason": "README Run it 段落给出全部命令、Node 24+ 与地址。"
+        },
+        {
+          "claim": "Ollama、llama.cpp 的 llama-server、vLLM 或任何 OpenAI 兼容接口（LOCAL_LLM_URL 指向它，选 Local，无需 key）。",
+          "result": "true",
+          "evidence": [{"source": "README", "url": "https://github.com/gulivan/worker755#local-models", "quote": "The manager can run on your own model server: Ollama, llama.cpp's llama-server, vLLM, or anything else with an OpenAI-compatible API. Point LOCAL_LLM_URL at it and pick Local under \"Your API key\"; no key is asked for."}],
+          "reason": "README Local models 段落逐字支持该断言。"
+        }
+      ],
+      "scores": {"usage": 6, "deployment": 7, "learning": 7},
+      "score_reasons": {
+        "usage": "浏览器小游戏形态新颖、即时可玩且有免费班次，但作为娱乐产品实际生产力价值有限，宣称的玩法价值未经独立体验验证。",
+        "deployment": "Node 24+ 一条命令即可本地起，提供 Docker、compose 与离线 mock 模式，部署路径清晰；但依赖外部 LLM key 或自带模型才能跑完整玩法。",
+        "learning": "server/ 编排器循环、shell/ 内存文件系统与 SQLite 类引擎、隐藏 ground-truth 校验设计有参考价值，但仓库较新、规模有限。"
+      },
+      "grade": "B",
+      "grade_reason": "创意与工程完成度不错、部署友好，但核心价值是游戏而非通用工具，且缺乏 Release、 forks 极少，定 B。",
+      "reported_score_review": {
+        "reported_scores": {"usage": 5, "deployment": 7, "learning": 8},
+        "reported_grade": "B",
+        "assessment": "reasonable",
+        "note": "独立评分 usage 6 略高于原始 5、learning 7 略低于原始 8，差异均在 1 分内，等级同为 B，整体合理。"
+      },
+      "flags": [
+        {"code": "NO_RELEASE", "severity": "low", "evidence": "/releases/latest 返回 404，仓库无可用 Release。", "impact": "用户只能从源码部署；对以源码形态发布的游戏影响有限。"},
+        {"code": "DEPS_EXTERNAL_LLM", "severity": "low", "evidence": "README 说明完整玩法需 OpenRouter/Vercel key、账号充值或自带本地模型。", "impact": "无模型时仅能跑离线 mock，实际使用依赖外部服务或本地硬件。"},
+        {"code": "SINGLE_MAINTAINER_PATTERN", "severity": "low", "evidence": "最近 5 次提交作者均为 gulivan。", "impact": "潜在维护者集中风险，不能据此断言单人维护。"}
+      ],
+      "note": "2026-11-11 新建的浏览器游戏，元数据基本吻合（forks 实测 4 高于包内 3，误差 33% 但绝对值极小）；全部 5 条 claims 有 README 直接证据。无 Release，近期提交活跃。"
+    },
+    {
+      "repo": "mahmoud-emad/opennotebook",
+      "exists": true,
+      "canonical_repo": "mahmoud-emad/opennotebook",
+      "archived": false,
+      "metadata": {
+        "stars": {"packet": 11, "verified": 12, "status": "mismatch"},
+        "forks": {"packet": 1, "verified": 1, "status": "match"},
+        "license": {"packet": "MIT", "verified": "MIT", "status": "match"},
+        "language": {"packet": "Python", "verified": "Python", "status": "match"},
+        "updated_at": {"packet": "2026-11-19T20:04:19Z", "verified": "2026-11-23T04:21:58Z", "status": "match"},
+        "latest_commit_at": "2026-11-19T20:04:15Z",
+        "days_since_last_commit": 3,
+        "latest_release": {"packet": "v0.3.0", "verified": "v0.3.0", "status": "match"}
+      },
+      "claims": [
+        {
+          "claim": "OpenNotebook 是一个开源、自托管的 NotebookLM 替代品。",
+          "result": "true",
+          "evidence": [{"source": "README", "url": "https://github.com/mahmoud-emad/opennotebook#readme", "quote": "The open-source, self-hosted NotebookLM alternative."}, {"source": "README", "url": "https://github.com/mahmoud-emad/opennotebook#why-opennotebook", "quote": "It runs on your machine or server with Docker Compose. Your sources stay in your own Postgres."}],
+          "reason": "README 标题与 Why 段落明确开源、自托管定位。"
+        },
+        {
+          "claim": "幻灯片或手绘白板，10 种风格，含章节与逐字字幕。",
+          "result": "true",
+          "evidence": [{"source": "README", "url": "https://github.com/mahmoud-emad/opennotebook#what-it-makes", "quote": "Slides or a hand-drawn whiteboard in ten looks, with chapters and captions that follow along word by word."}],
+          "reason": "README 功能表逐字对应。"
+        },
+        {
+          "claim": "/api/mcp（streamable HTTP），agent 可列出集合、添加来源、提问并获得带引用的答案，API key 鉴权。",
+          "result": "true",
+          "evidence": [{"source": "README", "url": "https://github.com/mahmoud-emad/opennotebook#agents-mcp", "quote": "The studio is also an MCP server at /api/mcp (streamable HTTP). An agent can list collections, create one, add links, YouTube videos or notes, read sources, and ask questions answered with citations. It signs in with an API key, sent as Authorization: Bearer <key>"}],
+          "reason": "README Agents (MCP) 段落逐字支持端点、能力、鉴权方式。"
+        },
+        {
+          "claim": "OpenRouter、OpenAI、Anthropic、Gemini、Azure OpenAI、Mistral、Groq、DeepSeek、Cohere、Qwen、Fireworks、Cerebras、Together、xAI、本地 Ollama 或 LM Studio、任何 OpenAI 兼容服务；可按任务混用。",
+          "result": "true",
+          "evidence": [{"source": "README", "url": "https://github.com/mahmoud-emad/opennotebook#try-it", "quote": "You need Docker and an AI provider: OpenRouter, OpenAI, Azure OpenAI, Anthropic, Google Gemini, Mistral, Groq, DeepSeek, Cohere, Qwen, Fireworks, Cerebras, Together, xAI, a local Ollama or LM Studio, or any OpenAI-compatible server."}, {"source": "README", "url": "https://github.com/mahmoud-emad/opennotebook#why-opennotebook", "quote": "Mix providers per task."}],
+          "reason": "README 逐项列出全部提供商并明确可按任务混用。"
+        }
+      ],
+      "scores": {"usage": 7, "deployment": 6, "learning": 7},
+      "score_reasons": {
+        "usage": "功能覆盖广（自托管、引用溯源、MCP、多模型），切中 NotebookLM 替代需求，但项目极新（stars 约 12、2026-10 才建仓），成熟度与真实可用性未验证。",
+        "deployment": "提供 Docker Compose 与发布镜像、首次引导配置密钥，路径清晰；但依赖 Docker、Postgres 18/pgvector、外部 LLM key，组件较多。",
+        "learning": "FastAPI+Postgres+pgvector+Procrastinate 与 React 分层清晰、架构有参考价值，但仓库很小、缺乏可观察到的测试深度，未给更高分。"
+      },
+      "grade": "B",
+      "grade_reason": "定位清晰、架构完整、功能承诺多，但处于早期（stars 个位数级别、近 3 天提交多为 dependabot），许可与成熟度存疑，定 B。",
+      "reported_score_review": {
+        "reported_scores": {"usage": 7, "deployment": 6, "learning": 8},
+        "reported_grade": "B",
+        "assessment": "reasonable",
+        "note": "独立评分仅 learning 比原始低 1 分（8→7），其余一致，等级同为 B，基本合理。"
+      },
+      "flags": [
+        {"code": "EARLY_STAGE", "severity": "medium", "evidence": "仓库 2026-10-04 创建，stars 实测 12，最近 5 次提交 3 次为 dependabot[bot]。", "impact": "项目处于早期，社区验证与人手维护强度不足，功能稳定性待观察。"},
+        {"code": "META_MISMATCH_STARS", "severity": "low", "evidence": "数据包 stars=11，实测 12，误差 9.1%（绝对差仅 1）。", "impact": "绝对值极小，属打包时刻与核查时刻的正常波动。"}
+      ],
+      "note": "自托管 NotebookLM 替代，功能与生态承诺丰富且 README 证据充分；但极早期、许可表述需注意（README 标注 MIT，正文/内容许可细节以仓库 LICENSE 文件为准），stars 绝对值小。最近提交 3 天前，无停更风险。"
+    },
+    {
+      "repo": "mjwsolo/localcode",
+      "exists": true,
+      "canonical_repo": "mjwsolo/localcode",
+      "archived": false,
+      "metadata": {
+        "stars": {"packet": 64, "verified": 76, "status": "mismatch"},
+        "forks": {"packet": 0, "verified": 0, "status": "match"},
+        "license": {"packet": "Apache-2.0", "verified": "Apache-2.0", "status": "match"},
+        "language": {"packet": "C++", "verified": "C++", "status": "match"},
+        "updated_at": {"packet": "2026-11-22T21:12:08Z", "verified": "2026-11-23T05:35:30Z", "status": "match"},
+        "latest_commit_at": "2026-11-22T20:40:38Z",
+        "days_since_last_commit": 0,
+        "latest_release": {"packet": "v0.5.43", "verified": "v0.5.43", "status": "match"}
+      },
+      "claims": [
+        {
+          "claim": "localcode 是一个在 Apple Silicon Mac 上、用本地模型做 agentic 编码的命令行工具。",
+          "result": "true",
+          "evidence": [{"source": "README", "url": "https://github.com/mjwsolo/localcode#readme", "quote": "Agentic coding. Local models. On your Mac."}, {"source": "README", "url": "https://github.com/mjwsolo/localcode#requirements", "quote": "Mac with Apple Silicon, macOS 13 or newer"}],
+          "reason": "README 标语与 Requirements 段落直接支持 Apple Silicon Mac 本地编码 CLI 定位。"
+        },
+        {
+          "claim": "12 个模型、169 个量化选项，覆盖编码、图像输入与类型化决策；从 Hugging Face 下载（并行、可断点续传）；/models 切换；会推荐最适合你 Mac 内存的最强模型并标星。",
+          "result": "true",
+          "evidence": [{"source": "README", "url": "https://github.com/mjwsolo/localcode#models", "quote": "Choose from 12 models and 169 quant options for coding, image input and typed decisions. Models download from Hugging Face. Downloads run in parallel and can resume if interrupted. Switch with /models. LocalCode recommends the most capable one that fits your Mac's memory and marks it with a star."}],
+          "reason": "README Models 段落逐字支持全部细节。"
+        },
+        {
+          "claim": "Gemma 4/Qwen 3.6/Qwen 3.8/Muse Glimmer 用厂商自有投机解码器（约 2 倍）；复制起草（3.5–4 倍）。",
+          "result": "true",
+          "evidence": [{"source": "README", "url": "https://github.com/mjwsolo/localcode#optimisations", "quote": "Drafting: the vendor's own drafter guesses tokens ahead (about 2x faster replies on Gemma 4, Qwen 3.6, Qwen 3.8 and Muse Glimmer)"}, {"source": "README", "url": "https://github.com/mjwsolo/localcode#optimisations", "quote": "Copy drafting: when the model rewrites a file it already read, it copies instead of generating (3.5 to 4x faster on rewrites)"}],
+          "reason": "README Optimisations 段落给出完全一致的模型清单与倍数。属项目自述的加速数据，作为 README 记载事实判 true，但性能未经独立复测。"},
+        {
+          "claim": "网络的用途被严格限定为三类：模型下载、web_search/web_fetch 工具、你添加的 MCP 服务器。",
+          "result": "true",
+          "evidence": [{"source": "README", "url": "https://github.com/mjwsolo/localcode#network", "quote": "Inference is local. Three features use the network: model downloads, the web_search and web_fetch tools, and any MCP servers you add."}],
+          "reason": "README Network 段落逐字列出三类网络用途。"
+        }
+      ],
+      "scores": {"usage": 6, "deployment": 6, "learning": 7},
+      "score_reasons": {
+        "usage": "本地 agentic 编码方向明确、无云 key 依赖，但仅限 Apple Silicon Mac 且需 16GB+ 内存，适用面窄，性能数字为自述未复核。",
+        "deployment": "uv pip install 即可安装，但要求 Apple Silicon/macOS 13+/16GB，并需下载数十 GB 模型，硬件与存储门槛高。",
+        "learning": "C++ 实现的本地模型服务器、投机解码/8-bit KV cache/预热等优化有技术参考价值，且有 per-release 真机测试流程，但平台受限、社区小。"
+      },
+      "grade": "B",
+      "grade_reason": "本地编码方向有真实价值、优化细节扎实，但平台与硬件门槛高、stars 少，定 B。",
+      "reported_score_review": {
+        "reported_scores": {"usage": 7, "deployment": 6, "learning": 8},
+        "reported_grade": "B",
+        "assessment": "too_high",
+        "note": "独立评分 usage 6（原始 7）、learning 7（原始 8），因适用平台窄、自述性能未独立验证而略下调，等级仍为 B。原始评分整体偏高 1 分。"
+      },
+      "flags": [
+        {"code": "PLATFORM_LIMITED", "severity": "medium", "evidence": "README 要求 Apple Silicon Mac、macOS 13+、16GB 统一内存。", "impact": "排除 Windows/Linux 与低配 Mac 用户，适用面明显受限。"},
+        {"code": "META_MISMATCH_STARS", "severity": "low", "evidence": "数据包 stars=64，实测 76，误差 18.8%。", "impact": "数据包生成后 star 增长较快，绝对值仍小，不影响项目判断。"},
+        {"code": "SELF_REPORTED_BENCHMARKS", "severity": "low", "evidence": "2x/3.5–4x 加速为 README 自述，未提供独立复测。", "impact": "性能宣传应按 unverifiable 处理，不作为推荐加分依据。"}
+      ],
+      "note": "Apple Silicon 本地编码 CLI，全部 4 条 claims 有 README 直接证据；元数据仅 stars 偏差较大（绝对值小）。近期提交活跃、无停更风险，无 Release 之外未见明显风险。"
+    },
+    {
+      "repo": "openjdk/jdk",
+      "exists": true,
+      "canonical_repo": "openjdk/jdk",
+      "archived": false,
+      "metadata": {
+        "stars": {"packet": 23550, "verified": 23566, "status": "match"},
+        "forks": {"packet": 6617, "verified": 6557, "status": "match"},
+        "license": {"packet": "GPL-2.0", "verified": "GPL-2.0", "status": "match"},
+        "language": {"packet": "Java", "verified": "Java", "status": "match"},
+        "updated_at": {"packet": "2026-11-20T03:39:45Z", "verified": "2026-11-23T02:29:23Z", "status": "match"},
+        "latest_commit_at": "2026-11-21T04:12:08Z",
+        "days_since_last_commit": 1,
+        "latest_release": {"packet": null, "verified": null, "status": "none"}
+      },
+      "claims": [
+        {
+          "claim": "openjdk/jdk 是 OpenJDK 的主线开发仓库——Java 平台标准版与 HotSpot JVM 的官方开源实现源码所在地。",
+          "result": "true",
+          "evidence": [{"source": "GitHub API", "url": "https://api.github.com/repos/openjdk/jdk", "quote": "description: \"JDK main-line development https://openjdk.org/projects/jdk\""}, {"source": "README", "url": "https://github.com/openjdk/jdk#readme", "quote": "See <https://openjdk.org/> for more information about the OpenJDK Community and the JDK"}],
+          "reason": "API 描述与 README 均指向 OpenJDK 主线开发，full_name=openjdk/jdk 且 owner 为官方组织。"
+        },
+        {
+          "claim": "GitHub API 的 SPDX 标识为 GPL-2.0；仓库 LICENSE 文件为 GPL-2.0 with Classpath Exception。",
+          "result": "true",
+          "evidence": [{"source": "GitHub API", "url": "https://api.github.com/repos/openjdk/jdk", "quote": "license.spdx_id: \"GPL-2.0\""}, {"source": "LICENSE", "url": "https://github.com/openjdk/jdk/blob/master/LICENSE", "quote": "\"CLASSPATH\" EXCEPTION TO THE GPL ... As a special exception, the copyright holders of this library give you permission to link this library with independent modules to produce an executable"}],
+          "reason": "API 的 spdx_id 实测为 GPL-2.0，LICENSE 文件确有 Classpath Exception 专章，断言准确。"
+        },
+        {
+          "claim": "README 只有寥寥几行，构建说明指向 doc/building.md，问题跟踪指向 bugs.openjdk.org。",
+          "result": "true",
+          "evidence": [{"source": "README", "url": "https://github.com/openjdk/jdk#readme", "quote": "For build instructions please see the online documentation ... doc/building.md (markdown version) ... see <https://bugs.openjdk.org> for JDK issue tracking."}],
+          "reason": "README 实测仅 12 行，构建与 issue 链接与断言完全一致。"
+        },
+        {
+          "claim": "GitHub /releases/latest 返回 404，本项目不使用 GitHub Releases 发布。",
+          "result": "true",
+          "evidence": [{"source": "GitHub API", "url": "https://api.github.com/repos/openjdk/jdk/releases/latest", "quote": "HTTP 404 Not Found: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/releases/releases#get-the-latest-release\"}"}, {"source": "README", "url": "https://github.com/openjdk/jdk#readme", "quote": "README 全文未出现任何 GitHub Releases 引用（仅指向 openjdk.org 与 bugs.openjdk.org）"}],
+          "reason": "实测 /releases/latest 确为 404，且 README 全文无 Releases 发布渠道，前一半为直接证据、后一半为合理归纳。"
+        }
+      ],
+      "scores": {"usage": 6, "deployment": 4, "learning": 10},
+      "score_reasons": {
+        "usage": "Java 生态基石、官方权威实现，作为运行时/平台价值极高；但它是供集成与开发的 JDK 源码，并非开箱即用的应用，普通终端用户直接“使用价值”有限。",
+        "deployment": "构建 JDK 需要专门 boot JDK、较长编译时间与多平台工具链，文档虽详尽但门槛高；不作为二进制分发，部署成本明显偏高。",
+        "learning": "Java SE 与 HotSpot JVM 官方源码，架构、模块划分、工程规范与文档均为顶级，学习价值满分。"
+      },
+      "grade": "A",
+      "grade_reason": "作为 Java 平台官方实现，技术权威性、源码学习价值与生态地位无可替代，但部署门槛高、非应用形态，未给 S，定 A。",
+      "reported_score_review": {
+        "reported_scores": {"usage": 6, "deployment": 4, "learning": 10},
+        "reported_grade": "A",
+        "assessment": "reasonable",
+        "note": "独立评分与原始三维度完全一致，等级同为 A，判断合理。"
+      },
+      "flags": [
+        {"code": "HIGH_BUILD_COMPLEXITY", "severity": "low", "evidence": "README 将构建指向 doc/building.md，JDK 构建需要 boot JDK 与多平台工具链。", "impact": "普通用户无法直接编译使用，部署/参与门槛高。"},
+        {"code": "NO_RELEASE", "severity": "low", "evidence": "/releases/latest 为 404，项目通过 openjdk.org 分发二进制。", "impact": "GitHub 上没有 Release，但项目有官方发布渠道，影响有限。"}
+      ],
+      "note": "OpenJDK 官方主线仓库，元数据全线吻合，4 条 claims 均有 API/README/LICENSE 直接证据。无归档、无停更风险；GPL-2.0+Classpath Exception 许可与断言一致。"
+    },
+    {
+      "repo": "DietrichGebert/ponytail",
+      "exists": true,
+      "canonical_repo": "DietrichGebert/ponytail",
+      "archived": false,
+      "metadata": {
+        "stars": {"packet": 196986, "verified": 197014, "status": "match"},
+        "forks": {"packet": 11113, "verified": 11115, "status": "match"},
+        "license": {"packet": "MIT", "verified": "MIT", "status": "match"},
+        "language": {"packet": "JavaScript", "verified": "JavaScript", "status": "match"},
+        "updated_at": {"packet": "2026-11-22T02:31:58Z", "verified": "2026-11-23T05:32:18Z", "status": "match"},
+        "latest_commit_at": "2026-11-22T02:31:58Z",
+        "days_since_last_commit": 0,
+        "latest_release": {"packet": "v5.3.3", "verified": "v5.3.3", "status": "match"}
+      },
+      "claims": [
+        {
+          "claim": "Ponytail 本质上就是一个提示词（skills/ponytail/SKILL.md），仓库其余部分只是把这个提示词加载进不同 agent 的适配器。",
+          "result": "true",
+          "evidence": [{"source": "README", "url": "https://github.com/DietrichGebert/ponytail#the-prompt", "quote": "Ponytail is one prompt: skills/ponytail/SKILL.md. The compact version, for agents that read a rules file, is AGENTS.md. Everything else in this repo loads that prompt into different agents."}, {"source": "SKILL.md", "url": "https://github.com/DietrichGebert/ponytail/blob/main/skills/ponytail/SKILL.md", "quote": "文件 skills/ponytail/SKILL.md 实际存在（实测 3496 字节）"}],
+          "reason": "README The prompt 段落逐字断言，且 SKILL.md 文件确实存在，结构描述可核实。"
+        },
+        {
+          "claim": "代码行数为无 skill 基线的 47%、输出 token 55%、成本 74%、时间 59%；agent 自己的测试能抓住 66% 注入 bug（无 skill 为 46%）。",
+          "result": "unverifiable",
+          "evidence": [{"source": "README", "url": "https://github.com/DietrichGebert/ponytail#numbers", "quote": "图片 alt 文本：Lines of code: Ponytail v4.13 52%, Ponytail 5 47%. Output tokens: 57% and 55%. Cost: 84% and 74%. Time: 62% and 59%."}, {"source": "README", "url": "https://github.com/DietrichGebert/ponytail#numbers", "quote": "the agent's own tests catch 66% of injected bugs (no skill 46%)"}],
+          "reason": "这些是 README 中的宣传性 benchmark 数字，仅在图表 alt 文本出现，本次仅凭 README 无法独立验证测试方法或结果真实性，按规范不得写成 true。原文与断言数字一致，但证据为自述。"
+        },
+        {
+          "claim": "写代码前停在第一个成立的台阶——① 这东西需要存在吗 ② 代码库里已有吗 ③ 标准库能做吗 ④ 原生平台功能 ⑤ 已安装的依赖 ⑥ 能否一行搞定 ⑦ 只有那时才写最小可用实现，有逻辑时附一个小测试。",
+          "result": "true",
+          "evidence": [{"source": "README", "url": "https://github.com/DietrichGebert/ponytail#how-it-works", "quote": "图片 alt：Before writing code, stop at the first rung that holds: 1 does this need to exist, 2 already in this codebase, 3 does the standard library do it, 4 a native platform feature, 5 an installed dependency, 6 can it be one line, 7 only then the minimum that works, plus one small test if it has logic."}],
+          "reason": "README How it works 段落的图片 alt 文本逐条列出七级台阶，与断言完全一致。"
+        },
+        {
+          "claim": "Claude Code 提示框上方的状态带——当前任务成本、token 数与 agent 时间、复用已有代码的比例、改动后测试是否通过。",
+          "result": "true",
+          "evidence": [{"source": "README", "url": "https://github.com/DietrichGebert/ponytail#new-in-53-the-band", "quote": "In Claude Code, ponytail now shows a band above the prompt: what the current task costs, how many tokens and how much agent time it used, how often it reused existing code instead of writing new code, and whether the tests passed after the last change."}],
+          "reason": "README 5.3 段落逐字对应状态带四项内容。"
+        },
+        {
+          "claim": "/plugin marketplace add DietrichGebert/ponytail",
+          "result": "true",
+          "evidence": [{"source": "README", "url": "https://github.com/DietrichGebert/ponytail#install", "quote": "/plugin marketplace add DietrichGebert/ponytail"}],
+          "reason": "README Install 段落逐字给出该安装命令。"
+        }
+      ],
+      "scores": {"usage": 7, "deployment": 8, "learning": 6},
+      "score_reasons": {
+        "usage": "“最懒高级工程师”提示词理念清晰、适配 20+ agent，能切实减少冗余代码；但本质是提示词，效果依赖底层 agent 与模型，benchmark 数字未独立验证。",
+        "deployment": "通过 /plugin marketplace add 一条命令安装，或复制 AGENTS.md/SKILL.md，几乎零依赖、开箱即用。",
+        "learning": "仓库核心是一个 SKILL 提示词文件，其余为 agent 适配器，工程参考价值主要在提示词写法而非代码架构，学习深度有限。"
+      },
+      "grade": "B",
+      "grade_reason": "创意与实用性突出、部署极简，但本质是提示词仓库、性能宣传未经独立验证、stars 异常高需谨慎，定 B。",
+      "reported_score_review": {
+        "reported_scores": {"usage": 7, "deployment": 8, "learning": 7},
+        "reported_grade": "B",
+        "assessment": "reasonable",
+        "note": "独立评分 usage 7、deployment 8 与原始一致，learning 6 比原始 7 低 1 分（因仓库主体为提示词、代码学习价值有限），等级同为 B，整体合理。"
+      },
+      "flags": [
+        {"code": "SELF_REPORTED_BENCHMARKS", "severity": "medium", "evidence": "47%/55%/74%/59%、66% vs 46% 等数据在 README 以图片 alt 形式自述，未提供本次可独立复验的结果。", "impact": "宣传性性能/测试质量数字按 unverifiable 处理，不应作为推荐核心依据。"},
+        {"code": "STAR_GROWTH_UNVERIFIABLE", "severity": "low", "evidence": "stars 实测 197014，仓库 2026-06-12 创建，约 5 个月累计近 20 万星。", "impact": "本次数据源无法判断 Stars 增长是否异常，仅作提示，不作为结论。"},
+        {"code": "CONTRIBUTOR_CONCENTRATION", "severity": "low", "evidence": "最近 5 次提交中 4 次作者为 DietrichGebert 或 Afloat16。", "impact": "潜在维护者集中风险，不能据此断言单人维护。"}
+      ],
+      "note": "高热度提示词仓库，全部 5 条 claims 中 4 条有 README/SKILL.md 直接证据，唯一性能数字为宣传性自述判 unverifiable。元数据吻合、近期活跃、无 Release 之外未见重大风险。"
+    }
+  ],
   "learning_pick": {
-    "repo": null,
-    "exists": null,
-    "canonical_repo": null,
-    "owner_ok": null,
-    "archived": null,
-    "stars": {
-      "packet": null,
-      "verified": null,
-      "status": "not_applicable"
-    },
-    "license": {
-      "packet": null,
-      "verified": null,
-      "status": "not_applicable"
-    },
-    "flags": [],
-    "note": "数据包缺失，未进行学习资料库核查。"
+    "repo": "tamnd/riemann-handbook",
+    "exists": true,
+    "canonical_repo": "tamnd/riemann-handbook",
+    "owner_ok": true,
+    "archived": false,
+    "stars": {"packet": 54, "verified": 54, "status": "match"},
+    "license": {"packet": "MIT", "verified": "MIT", "status": "mismatch"},
+    "flags": [
+      {"code": "LICENSE_SCOPE", "severity": "medium", "evidence": "README 第 43 行：正文为 CC BY 4.0，构建器为 MIT；数据包整库标 MIT。", "impact": "仓库内容并非整体 MIT，任务数据包许可证标注与仓库实际不符。"},
+      {"code": "CLAIM_UNVERIFIED", "severity": "medium", "evidence": "README 开头明确：The claim is not checked. Nobody has built the Lean project in full yet, and no person has checked the written statements against the Lean code.", "impact": "该手册讲解的黎曼猜想证明尚未被验证，作为学习资料需明确其结论未被确认。"}
+    ],
+    "note": "轻量核查：仓库存在、owner 正确、未归档、stars 吻合；但许可证为正文 CC BY 4.0 + 构建器 MIT 的混合，与数据包单一 MIT 标注不符，且 README 自述所讲解的证明未被验证。未做功能断言核查。"
   },
-  "note": "按规范第 5 步：未找到当天（2026-11-23）数据包，禁止编造，verdicts 为空，overall.status=failed。已列出全部查找路径；历史数据包（2026-11-21、2026-11-22）不得顶替当天数据。"
+  "note": "当天数据包从 GitHub raw 拉取（packets/packet-2026-11-23.json），5 个常规项目 + 1 个学习资料库全部核查完成。所有 GitHub 官方接口与 README 均获取成功，无失败接口。元数据多数吻合，个别 stars/forks 绝对值偏差记为 mismatch 但不影响整体判断。"
 }
