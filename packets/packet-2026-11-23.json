@@ -1,0 +1,153 @@
+{
+  "date": "2026-11-23",
+  "run_id": "ghrec-20261123",
+  "projects": [
+    {
+      "repo": "gulivan/worker755",
+      "description": "A browser game where an AI manager thinks you are its subagent. Play at worker755.com",
+      "kind": "regular",
+      "backfill": false,
+      "is_new": true,
+      "deep_report": "projects/ai-agent/worker755.md",
+      "packet_metadata": {
+        "stars": 142,
+        "forks": 3,
+        "license": "MIT",
+        "language": "TypeScript",
+        "updated_at": "2026-11-22T20:05:12Z",
+        "latest_release": null
+      },
+      "claims": [
+        "经理是 Claude、GPT、Gemini、DeepSeek、GLM、Kimi 之一，按编排器方式设置——任务队列、对机器的只读访问、一个「生成 subagent」的工具（subagent 就是你）。",
+        "指令落在终端里，限时 90 秒执行。",
+        "登录后账号有约一次班次的启动额度，之后充值（$10–$200）按使用量付费；或自带 OpenRouter / Vercel AI Gateway key。",
+        "Node 24+；`npm run setup`、`npm run build`、`npm start`（http://127.0.0.1:8755）；离线 `npm run mock`。",
+        "Ollama、llama.cpp 的 llama-server、vLLM 或任何 OpenAI 兼容接口（`LOCAL_LLM_URL` 指向它，选 Local，无需 key）。"
+      ],
+      "proposed_scores": {
+        "usage": 5,
+        "deployment": 7,
+        "learning": 8
+      },
+      "proposed_grade": "B"
+    },
+    {
+      "repo": "mahmoud-emad/opennotebook",
+      "description": "Open-source study studio in the spirit of NotebookLM: turn your sources into narrated decks, video and audio overviews, mind maps and notes, every claim cited.",
+      "kind": "regular",
+      "backfill": false,
+      "is_new": true,
+      "deep_report": "projects/productivity/opennotebook.md",
+      "packet_metadata": {
+        "stars": 11,
+        "forks": 1,
+        "license": "MIT",
+        "language": "Python",
+        "updated_at": "2026-11-19T20:04:19Z",
+        "latest_release": "v0.3.0"
+      },
+      "claims": [
+        "OpenNotebook 是一个开源、自托管的 NotebookLM 替代品。",
+        "幻灯片或手绘白板，10 种风格，含章节与逐字字幕。",
+        "`/api/mcp`（streamable HTTP），agent 可列出集合、添加来源、提问并获得带引用的答案，API key 鉴权。",
+        "OpenRouter、OpenAI、Anthropic、Gemini、Azure OpenAI、Mistral、Groq、DeepSeek、Cohere、Qwen、Fireworks、Cerebras、Together、xAI、本地 Ollama 或 LM Studio、任何 OpenAI 兼容服务；可按任务混用。"
+      ],
+      "proposed_scores": {
+        "usage": 7,
+        "deployment": 6,
+        "learning": 8
+      },
+      "proposed_grade": "B"
+    },
+    {
+      "repo": "mjwsolo/localcode",
+      "description": "Agentic coding. Local models. On your Mac.",
+      "kind": "regular",
+      "backfill": false,
+      "is_new": true,
+      "deep_report": "projects/ai-agent/localcode.md",
+      "packet_metadata": {
+        "stars": 64,
+        "forks": 0,
+        "license": "Apache-2.0",
+        "language": "C++",
+        "updated_at": "2026-11-22T21:12:08Z",
+        "latest_release": "v0.5.43"
+      },
+      "claims": [
+        "localcode 是一个在 Apple Silicon Mac 上、用本地模型做 agentic 编码的命令行工具。",
+        "12 个模型、169 个量化选项，覆盖编码、图像输入与类型化决策；从 Hugging Face 下载（并行、可断点续传）；`/models` 切换；会推荐最适合你 Mac 内存的最强模型并标星。",
+        "Gemma 4/Qwen 3.6/Qwen 3.8/Muse Glimmer 用厂商自有投机解码器（约 2 倍）；复制起草（3.5–4 倍）。",
+        "网络的用途被严格限定为三类：模型下载、web_search/web_fetch 工具、你添加的 MCP 服务器。"
+      ],
+      "proposed_scores": {
+        "usage": 7,
+        "deployment": 6,
+        "learning": 8
+      },
+      "proposed_grade": "B"
+    },
+    {
+      "repo": "openjdk/jdk",
+      "description": "JDK main-line development https://openjdk.org/projects/jdk",
+      "kind": "regular",
+      "backfill": false,
+      "is_new": false,
+      "deep_report": "projects/ai-agent/jdk.md",
+      "packet_metadata": {
+        "stars": 23550,
+        "forks": 6617,
+        "license": "GPL-2.0",
+        "language": "Java",
+        "updated_at": "2026-11-20T03:39:45Z",
+        "latest_release": null
+      },
+      "claims": [
+        "openjdk/jdk 是 OpenJDK 的主线开发仓库——Java 平台标准版与 HotSpot JVM 的官方开源实现源码所在地。",
+        "GitHub API 的 SPDX 标识为 GPL-2.0；仓库 LICENSE 文件为 **GPL-2.0 with Classpath Exception**。",
+        "README 只有寥寥几行，构建说明指向 `doc/building.md`，问题跟踪指向 bugs.openjdk.org。",
+        "GitHub `/releases/latest` 返回 404，本项目不使用 GitHub Releases 发布。"
+      ],
+      "proposed_scores": {
+        "usage": 6,
+        "deployment": 4,
+        "learning": 10
+      },
+      "proposed_grade": "A"
+    },
+    {
+      "repo": "DietrichGebert/ponytail",
+      "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+      "kind": "regular",
+      "backfill": false,
+      "is_new": false,
+      "deep_report": "projects/ai-agent/ponytail.md",
+      "packet_metadata": {
+        "stars": 196986,
+        "forks": 11113,
+        "license": "MIT",
+        "language": "JavaScript",
+        "updated_at": "2026-11-22T02:31:58Z",
+        "latest_release": "v5.3.3"
+      },
+      "claims": [
+        "**Ponytail 本质上就是一个提示词**（`skills/ponytail/SKILL.md`），仓库其余部分只是把这个提示词加载进不同 agent 的适配器。",
+        "代码行数为无 skill 基线的 47%、输出 token 55%、成本 74%、时间 59%；agent 自己的测试能抓住 66% 注入 bug（无 skill 为 46%）。",
+        "写代码前停在第一个成立的台阶——① 这东西需要存在吗 ② 代码库里已有吗 ③ 标准库能做吗 ④ 原生平台功能 ⑤ 已安装的依赖 ⑥ 能否一行搞定 ⑦ 只有那时才写最小可用实现，有逻辑时附一个小测试。",
+        "Claude Code 提示框上方的状态带——当前任务成本、token 数与 agent 时间、复用已有代码的比例、改动后测试是否通过。",
+        "/plugin marketplace add DietrichGebert/ponytail"
+      ],
+      "proposed_scores": {
+        "usage": 7,
+        "deployment": 8,
+        "learning": 7
+      },
+      "proposed_grade": "B"
+    }
+  ],
+  "learning_pick": {
+    "repo": "tamnd/riemann-handbook",
+    "stars": 54,
+    "license": "MIT"
+  }
+}
