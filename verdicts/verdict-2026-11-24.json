@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-24",
+  "run_id": "ghrec-20261124",
+  "overall": {
+    "status": "failed",
+    "expected_projects": 0,
+    "checked_projects": 0,
+    "learning_pick_checked": false,
+    "failures": [
+      "PACKET_NOT_FOUND",
+      "SEARCHED: packets/*2026-11-24*.json (0 hit)",
+      "SEARCHED: packets/*.json modified on 2026-11-24 (0 hit; packets/ only holds dsh-packet-2026-11-21.json and README.md)",
+      "SEARCHED: C:/Users/bik/Downloads/*packet*2026-11-24* (0 hit; Downloads only holds packet-2026-11-22.json)",
+      "SEARCHED: C:/Users/bik/Downloads/*.json modified on 2026-11-24 (0 hit)",
+      "SEARCHED: recursive *.json named *2026-11-24* under C:/Users/bik (0 hit)",
+      "SEARCHED: recursive *packet* files under workspace, Downloads, Desktop, Documents (only 2026-11-21/2026-11-22/2026-11-23 artifacts)",
+      "SEARCHED: GitHub 888bik/intel-review packets/ directory at 2026-11-24T04:30Z-04:42Z (only packet-2026-11-22.json, packet-2026-11-23.json; no packet-2026-11-24.json)",
+      "SEARCHED: GitHub 888bik/intel-review full git tree recursive=1 (145 paths, no 2026-11-24 artifact)",
+      "PACKET_ABSENT: no packet received in chat for 2026-11-24 either; nothing was verified and no scores were produced",
+      "PRIOR_DAY_PACKET_NOT_REUSED: packet-2026-11-23.json and packet-2026-11-22.json exist but belong to earlier dates and were deliberately not substituted"
+    ]
+  },
+  "verdicts": [],
+  "learning_pick": {
+    "repo": null,
+    "exists": null,
+    "canonical_repo": null,
+    "owner_ok": null,
+    "archived": null,
+    "stars": {
+      "packet": null,
+      "verified": null,
+      "status": "not_applicable"
+    },
+    "license": {
+      "packet": null,
+      "verified": null,
+      "status": "not_applicable"
+    },
+    "flags": [],
+    "note": "数据包缺失，学习资料库未核查。"
+  },
+  "note": "2026-11-24 的数据包在约定的三个投放位置以及 GitHub intel-review 仓库 packets/ 目录中均不存在，因此本次未做任何仓库核查、未产生任何评分与等级，也未沿用 11-23 或 11-22 的旧数据包。overall.status=failed，failures 中列出全部查找路径。等待 Muse/zhao 重新投放当天数据包后重跑。"
+}
