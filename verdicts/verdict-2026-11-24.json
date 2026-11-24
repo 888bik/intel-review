@@ -2,25 +2,796 @@
   "date": "2026-11-24",
   "run_id": "ghrec-20261124",
   "overall": {
-    "status": "failed",
-    "expected_projects": 0,
-    "checked_projects": 0,
+    "status": "complete",
+    "expected_projects": 5,
+    "checked_projects": 5,
     "learning_pick_checked": false,
-    "failures": [
-      "PACKET_NOT_FOUND",
-      "SEARCHED: packets/*2026-11-24*.json (0 hit)",
-      "SEARCHED: packets/*.json modified on 2026-11-24 (0 hit; packets/ only holds dsh-packet-2026-11-21.json and README.md)",
-      "SEARCHED: C:/Users/bik/Downloads/*packet*2026-11-24* (0 hit; Downloads only holds packet-2026-11-22.json)",
-      "SEARCHED: C:/Users/bik/Downloads/*.json modified on 2026-11-24 (0 hit)",
-      "SEARCHED: recursive *.json named *2026-11-24* under C:/Users/bik (0 hit)",
-      "SEARCHED: recursive *packet* files under workspace, Downloads, Desktop, Documents (only 2026-11-21/2026-11-22/2026-11-23 artifacts)",
-      "SEARCHED: GitHub 888bik/intel-review packets/ directory at 2026-11-24T04:30Z-04:42Z (only packet-2026-11-22.json, packet-2026-11-23.json; no packet-2026-11-24.json)",
-      "SEARCHED: GitHub 888bik/intel-review full git tree recursive=1 (145 paths, no 2026-11-24 artifact)",
-      "PACKET_ABSENT: no packet received in chat for 2026-11-24 either; nothing was verified and no scores were produced",
-      "PRIOR_DAY_PACKET_NOT_REUSED: packet-2026-11-23.json and packet-2026-11-22.json exist but belong to earlier dates and were deliberately not substituted"
-    ]
+    "failures": []
   },
-  "verdicts": [],
+  "verdicts": [
+    {
+      "repo": "qier222/YesPlayMusic",
+      "exists": true,
+      "canonical_repo": "qier222/YesPlayMusic",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 33672,
+          "verified": 33673,
+          "status": "match"
+        },
+        "forks": {
+          "packet": 4671,
+          "verified": 4671,
+          "status": "match"
+        },
+        "license": {
+          "packet": "GPL-3.0",
+          "verified": "GPL-3.0",
+          "status": "match"
+        },
+        "language": {
+          "packet": "C",
+          "verified": "C",
+          "status": "match"
+        },
+        "updated_at": {
+          "packet": "2026-11-23T17:35:32Z",
+          "verified": "2026-11-24T04:36:19Z",
+          "status": "match"
+        },
+        "latest_commit_at": "2026-11-23T17:35:22Z",
+        "days_since_last_commit": 0,
+        "latest_release": {
+          "packet": "v3.0.0",
+          "verified": "v3.0.0",
+          "status": "match"
+        }
+      },
+      "claims": [
+        {
+          "claim": "YesPlayMusic 3.0 是一个用 Flutter 从头重写的高颜值桌面音乐播放器：本身不内置任何在线音乐服务，本地音乐开箱即用，在线曲库、歌单、歌词、评论等都来自第三方插件。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/qier222/YesPlayMusic/blob/main/README.md",
+              "quote": "YesPlayMusic 3.0 是用 Flutter 从头重写的桌面音乐播放器。它本身**不内置任何在线音乐服务**：开箱即可播放本地音乐，在线曲库、歌单、歌词、评论等都来自第三方插件。"
+            },
+            {
+              "source": "GitHub API commits",
+              "url": "https://api.github.com/repos/qier222/YesPlayMusic/commits?per_page=5",
+              "quote": "39c2a873 2026-11-23T17:03:37Z \"YesPlayMusic 3.0：用 Flutter 重写\""
+            }
+          ],
+          "reason": "README 正文与提交信息都直接写明用 Flutter 重写、且不内置在线音乐服务。"
+        },
+        {
+          "claim": "README 官方插件列表明确覆盖 Emby、Jellyfin 等，回应这些服务器的桌面播放需求。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/qier222/YesPlayMusic/blob/main/README.md",
+              "quote": "**官方插件** | Emby | Emby 服务器 | Jellyfin | Jellyfin 服务器 | Plex | Plex 服务器 | Subsonic | Navidrome、Gonic、Airsonic、Ampache 等兼容 Subsonic 的服务器"
+            }
+          ],
+          "reason": "官方插件表格明确列出 Emby、Jellyfin、Plex、Subsonic 四类媒体服务器。"
+        },
+        {
+          "claim": "应用内置 MCP Server（默认只监听 127.0.0.1:18888，可开 Token 鉴权与只读模式），可让 Claude、Cursor 等 AI Agent 搜歌、播放、管理队列和歌单；只支持 stdio 的客户端可用仓库里的 bin/ypm_mcp_bridge.dart 桥接。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/qier222/YesPlayMusic/blob/main/README.md",
+              "quote": "应用内置一个 MCP Server，可以让 Claude、Cursor 等 AI Agent 帮你搜歌、播放、管理队列和歌单。在 设置 → MCP 里开启，默认只监听 `127.0.0.1:18888`，可以开启 Token 鉴权和只读模式。…只支持 stdio 的客户端可以用仓库里的 `bin/ypm_mcp_bridge.dart` 桥接。"
+            }
+          ],
+          "reason": "监听地址、端口、鉴权/只读开关与桥接文件路径均与 README 原文一致。"
+        },
+        {
+          "claim": "README 明确「本项目不接受 Pull Request，来自 fork 的 PR 会被自动关闭」——想贡献代码的用户只能提 Issue。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/qier222/YesPlayMusic/blob/main/README.md",
+              "quote": "本项目**不接受 Pull Request**，来自 fork 的 PR 会被自动关闭。"
+            }
+          ],
+          "reason": "README「反馈」段落原文一致，措辞与断言完全相同。"
+        },
+        {
+          "claim": "跨 macOS（Apple Silicon）、Windows、Linux 三平台。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/qier222/YesPlayMusic/blob/main/README.md",
+              "quote": "macOS 12+ | YesPlayMusic-<版本>-macos.dmg | 只支持 Apple Silicon（M 系列芯片）；Windows 10/11 x64 | -windows-x64-setup.exe 或 -portable.zip；Linux x64 | -linux-x64.tar.gz"
+            }
+          ],
+          "reason": "下载表格给出三个平台各自的产物，且 macOS 明确限定 Apple Silicon，与断言一致。"
+        }
+      ],
+      "scores": {
+        "usage": 8,
+        "deployment": 7,
+        "learning": 6
+      },
+      "score_reasons": {
+        "usage": "本地音乐开箱可用、插件补齐在线曲库，媒体服务器（Emby/Jellyfin/Plex/Subsonic）用户能直接获得价值，3.0 刚发布的完整桌面播放器，功能面覆盖音乐库、歌词、评论、系统集成。",
+        "deployment": "三平台都有预编译安装包，装完即可用；但 Windows 包无代码签名、macOS 仅 Apple Silicon、Linux 需自行安装 libmpv，源码构建还要 Flutter 3.50+ 与各平台工具链。",
+        "learning": "插件沙箱（QuickJS + permissions 清单）与内置 MCP Server 的设计有参考价值，但这是应用型项目，未读源码，可迁移的工程实践集中在插件权限模型一处。"
+      },
+      "grade": "A",
+      "grade_reason": "33k stars、昨日刚发 3.0.0 的活跃桌面应用，核心能力扎实、文档与截图完整、三平台可装，限制（不接受 PR、Windows 未签名、macOS 仅 AS）属可接受范围，推荐价值高。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 8,
+          "deployment": 7,
+          "learning": 6
+        },
+        "reported_grade": "B",
+        "assessment": "reasonable",
+        "note": "三维分数与我的独立评分完全一致，无需说明分差；仅等级上我判 A（Muse 判 B），差异来自对「不接受 PR + 平台限制」权重的判断，不影响分数对照结论。"
+      },
+      "flags": [
+        {
+          "code": "CONTRIBUTION_RESTRICTED",
+          "severity": "low",
+          "evidence": "README：本项目不接受 Pull Request，来自 fork 的 PR 会被自动关闭。",
+          "impact": "社区无法通过 PR 参与修复，问题处理完全依赖作者个人节奏。"
+        },
+        {
+          "code": "PLATFORM_LIMIT",
+          "severity": "low",
+          "evidence": "README 下载表：macOS 12+ 只支持 Apple Silicon；Windows 安装包没有代码签名，需手动绕过 SmartScreen；Linux 需系统装有 libmpv。",
+          "impact": "Intel Mac 用户无法使用，Windows 首次安装有额外摩擦。"
+        }
+      ],
+      "note": "元数据全部一致（stars 差 1，误差 0.003%）。3.0.0 于 2026-11-23 发布，最近提交同日，维护活跃。需注意这是刚发布的重大重写版本，README 未提供 2.x 到 3.x 的迁移说明；插件机制意味着第三方音乐源的可用性不受本项目控制。"
+    },
+    {
+      "repo": "SandeepAi369/Agent-first-browse",
+      "exists": true,
+      "canonical_repo": "SandeepAi369/Agent-first-browse",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 25,
+          "verified": 25,
+          "status": "match"
+        },
+        "forks": {
+          "packet": 5,
+          "verified": 5,
+          "status": "match"
+        },
+        "license": {
+          "packet": "Apache-2.0",
+          "verified": "Apache-2.0",
+          "status": "match"
+        },
+        "language": {
+          "packet": "Python",
+          "verified": "Python",
+          "status": "match"
+        },
+        "updated_at": {
+          "packet": "2026-11-24T02:03:13Z",
+          "verified": "2026-11-24T02:20:39Z",
+          "status": "match"
+        },
+        "latest_commit_at": "2026-11-24T02:03:11Z",
+        "days_since_last_commit": 0,
+        "latest_release": {
+          "packet": "v1.0.0",
+          "verified": "v1.0.0",
+          "status": "match"
+        }
+      },
+      "claims": [
+        {
+          "claim": "Agent First Browse 是一个「以可访问性树优先感知」的自主浏览器 agent：让 AI agent 看见、点击、输入并自主完成真实网页任务，主打速度快、token 高效，并带原生 MCP 与 CLI 控制。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/SandeepAi369/Agent-first-browse/blob/main/README.md",
+              "quote": "**Fast, token-efficient autonomous browser control for AI agents.** *Accessibility-tree-first perception · LangGraph verification · Native zero-API MCP & CLI*"
+            },
+            {
+              "source": "GitHub API repo",
+              "url": "https://api.github.com/repos/SandeepAi369/Agent-first-browse",
+              "quote": "description: \"Fast, token-efficient AI browser agent that sees, clicks, types, and completes real web tasks autonomously - with native MCP & CLI control.\""
+            }
+          ],
+          "reason": "README 副标题与仓库 description 都直接这样自述；注意这是项目自述定位，README 中的 12× 提速等具体数字为作者自测，未在本条断言内被验证。"
+        },
+        {
+          "claim": "Tier-1 DOM 扫描结果过少（< 2 个元素）时自动升级到 CDP/Playwright 可访问性树（如自定义 ARIA 组件场景）；整体标榜 accessibility-tree-first 感知。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/SandeepAi369/Agent-first-browse/blob/main/README.md",
+              "quote": "**🌳 Tier-2 Accessibility-Tree Rescue** | Automatically escalates to CDP/Playwright Accessibility Trees whenever Tier-1 DOM scans go sparse (`< 2` elements) on custom ARIA web components."
+            },
+            {
+              "source": "README 基准表",
+              "url": "https://github.com/SandeepAi369/Agent-first-browse/blob/main/README.md",
+              "quote": "`sparse_aria` (custom ARIA roles) | `0` elements found (blind) | `4` elements found (`tier=2` A11y) | **Automatic Tier-2 A11y rescue**"
+            }
+          ],
+          "reason": "触发条件「< 2 elements」、升级目标 CDP/Playwright Accessibility Tree、场景 custom ARIA 均与 README 原文逐字对应。"
+        },
+        {
+          "claim": "通过 MCP 把浏览器能力接入 Antigravity、Claude Code、Cursor、VS Code、Gemini CLI 等 agent。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/SandeepAi369/Agent-first-browse/blob/main/README.md",
+              "quote": "Drive real Chromium either **autonomously** through the LangGraph verification brain or **directly from any AI coding agent** (Antigravity, Claude Code, Cursor, VS Code, Gemini CLI) with zero external LLM API keys"
+            },
+            {
+              "source": "README MCP 工具表",
+              "url": "https://github.com/SandeepAi369/Agent-first-browse/blob/main/README.md",
+              "quote": "eval_start / eval_perceive / eval_act / eval_compare / eval_screenshot / eval_metrics / eval_stop（7 tools, zero API keys）"
+            }
+          ],
+          "reason": "五个客户端名称在 README 中逐一列出，并给出 stdio MCP 配置示例与 7 个工具清单。"
+        },
+        {
+          "claim": "安装命令：pip install agent-first-browse && python -m playwright install chromium；源码安装后 agent-first-browse run --mode v2 自主运行。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/SandeepAi369/Agent-first-browse/blob/main/README.md",
+              "quote": "pip install agent-first-browse && python -m playwright install chromium … agent-first-browse run --mode v2 \"Open https://news.ycombinator.com and find the top 3 stories\""
+            }
+          ],
+          "reason": "两条命令与 README Quick Start 完全一致；自主模式另需按 README 配置 .env 里的模型 key，断言未提及此前提。"
+        }
+      ],
+      "scores": {
+        "usage": 6,
+        "deployment": 6,
+        "learning": 7
+      },
+      "score_reasons": {
+        "usage": "无障碍树感知 + 遮挡剪枝 + 陈旧引用重绑定确实对应浏览器 agent 的真实痛点，但仅支持 Linux/WSL/macOS、自主模式要自备模型 key，实际效果只有作者自测数据可参考。",
+        "deployment": "pip 安装加一条 playwright 装 Chromium 就能跑，MCP/CLI 免 API key；但需要 Python 3.11+ 虚拟环境，headed 模式在无头 Linux 还要额外装 Xvfb。",
+        "learning": "感知管线分层（settle→DOM/A11y→遮挡过滤→delta 压缩）与 guardrails、测试矩阵文档组织得清楚，适合研究 agent 感知设计；但未读源码，无法评估实现质量，且大量结论来自项目自述。"
+      },
+      "grade": "B",
+      "grade_reason": "解决的是真实问题、架构分层有想法、文档齐全，但 25 stars、单人短周期开发、性能数字全为自测，成熟度不足以给 A。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 6,
+          "deployment": 6,
+          "learning": 8
+        },
+        "reported_grade": "B",
+        "assessment": "reasonable",
+        "note": "usage/deployment 一致；learning 我判 7（低 1 分），因为学习价值主要来自 README 自述的架构与 528 项测试徽章，我没有读源码去确认这些工程实践真的落地。分差 1 分，属合理范围。"
+      },
+      "flags": [
+        {
+          "code": "SELF_REPORTED_BENCHMARKS",
+          "severity": "low",
+          "evidence": "README 的 12.0× 提速、54.8% token 节省、528 passing tests 等数字均为项目自测/自述，未提供第三方复现或原始日志。",
+          "impact": "性能与质量结论不能当作已验证事实，推荐时不应引用具体倍数。"
+        },
+        {
+          "code": "RELEASE_VERSION_MISMATCH",
+          "severity": "low",
+          "evidence": "GitHub release tag 为 v1.0.0（发布于 2026-06-21），而 2026-11-24 最新提交信息为 \"build(packaging): prepare agent-first-browse 0.1.0 for PyPI release\"。",
+          "impact": "发布版本号与 PyPI 打包版本不一致，用户按 v1.0.0 预期安装可能拿到 0.1.0 的包。"
+        },
+        {
+          "code": "MAINTAINER_CONCENTRATION",
+          "severity": "low",
+          "evidence": "最近 5 次提交（2026-11-23 至 2026-11-24）作者全部为 SandeepAi369。",
+          "impact": "仅能观察到近期提交集中，存在潜在维护者集中风险，无法据此断言单人维护。"
+        }
+      ],
+      "note": "元数据一致。仓库 2026-04 创建，6 月发 v1.0.0 后到 11 月才密集更新，近期提交集中在 README 与打包元数据（含一次把项目 keywords 换成 20 个 topics），代码层面的更新证据较少。README 的 benchmark 全部标注为作者在 headed Chromium 上的自测，属宣传性数据。"
+    },
+    {
+      "repo": "zed-industries/gpui",
+      "exists": true,
+      "canonical_repo": "zed-industries/gpui",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 667,
+          "verified": 714,
+          "status": "mismatch"
+        },
+        "forks": {
+          "packet": 9,
+          "verified": 10,
+          "status": "mismatch"
+        },
+        "license": {
+          "packet": null,
+          "verified": null,
+          "status": "unknown"
+        },
+        "language": {
+          "packet": null,
+          "verified": null,
+          "status": "unknown"
+        },
+        "updated_at": {
+          "packet": "2026-11-23T19:17:45Z",
+          "verified": "2026-11-24T04:55:39Z",
+          "status": "match"
+        },
+        "latest_commit_at": "2026-11-23T19:15:11Z",
+        "days_since_last_commit": 0,
+        "latest_release": {
+          "packet": null,
+          "verified": null,
+          "status": "none"
+        }
+      },
+      "claims": [
+        {
+          "claim": "GPUI 是一个快速、混合立即模式与保留模式、GPU 加速的 Rust UI 框架，出自 Zed 与 Delta 的创造者之手。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "GitHub API repo description",
+              "url": "https://api.github.com/repos/zed-industries/gpui",
+              "quote": "description: \"A GPU-accelerated, open-source UI framework for Rust that combines immediate and retained modes.\""
+            },
+            {
+              "source": "GitHub API repo",
+              "url": "https://api.github.com/repos/zed-industries/gpui",
+              "quote": "owner.login: \"zed-industries\""
+            }
+          ],
+          "reason": "「GPU 加速、Rust、混合立即与保留模式」由仓库 description 直接支持，owner 为 zed-industries 也与「出自 Zed」相符；但「Delta 的创造者」这一来源细节在 README 与 description 中均无对应文字，属未获证据支持的部分。"
+        },
+        {
+          "claim": "README 只有一句话「See you in a few weeks.」——这更像一个占位说明，项目详情主要在官网 https://gpui.rs/。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/zed-industries/gpui/blob/main/README.md",
+              "quote": "# gpui / See you in a few weeks. / - [Website](https://gpui.rs/) / - [crates.io](https://crates.io/crates/gpui)"
+            }
+          ],
+          "reason": "README 全文 108 字节，正文仅一句 See you in a few weeks. 加两个链接，确实是占位说明。"
+        },
+        {
+          "claim": "许可证：未注明（GitHub API 未识别；仓库根目录无 LICENSE / LICENSE-APACHE 文件，2026-11-24 实查均为 404）。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "GitHub API repo",
+              "url": "https://api.github.com/repos/zed-industries/gpui",
+              "quote": "license: null"
+            },
+            {
+              "source": "raw.githubusercontent.com 实查",
+              "url": "https://raw.githubusercontent.com/zed-industries/gpui/main/LICENSE",
+              "quote": "HTTP 404: 404: Not Found（LICENSE、LICENSE-APACHE、LICENSE-MIT 三个路径 2026-11-24 实查均 404）"
+            },
+            {
+              "source": "GitHub API contents",
+              "url": "https://api.github.com/repos/zed-industries/gpui/contents/",
+              "quote": "仓库根目录只有一个文件：file README.md 108 字节"
+            }
+          ],
+          "reason": "API license 为 null，三个常见许可证文件路径实查均 404，根目录仅有 README.md，与断言一致。"
+        },
+        {
+          "claim": "官网说明：For the near future, GPUI is tied to Zed, so contributions will need to be made there and kept in sync with it.",
+          "result": "unverifiable",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/zed-industries/gpui/blob/main/README.md",
+              "quote": "README 全文仅：See you in a few weeks. / Website / crates.io —— 无此段文字"
+            }
+          ],
+          "reason": "该表述据称来自官网 gpui.rs，而本次数据源限定为 GitHub 官方源（API/README/Release/commits），仓库内找不到对应原文，无法验证。"
+        }
+      ],
+      "scores": {
+        "usage": 1,
+        "deployment": 1,
+        "learning": 2
+      },
+      "score_reasons": {
+        "usage": "仓库里没有任何代码，只有 108 字节的占位 README，用户无法从这个仓库获得可用的 UI 框架，等于不可用。",
+        "deployment": "没有 crate 源码、没有 Release、没有构建说明，不存在可部署的产物；crates.io 链接指向的是别处分发。",
+        "learning": "仓库无源码可读，README 也不含设计说明，只能从仓库描述了解一句定位，学习价值接近于零。"
+      },
+      "grade": "C",
+      "grade_reason": "仓库实为空占位（size 0、仅 1 次提交 Add README、无许可证、无 Release），无法使用也无法学习，推荐价值弱。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 5,
+          "deployment": 3,
+          "learning": 8
+        },
+        "reported_grade": "C",
+        "assessment": "too_high",
+        "note": "usage 高 4 分、deployment 高 2 分、learning 高 6 分。Muse 的 usage 5 与 learning 8 明显把「GPUI 这个框架在 Zed 主仓库里的地位」当成了本仓库的内容，而 zed-industries/gpui 目前是空占位：API size=0，contents 只有 README.md，commits 只有一条 Add README。等级 C 与我的判断一致，但分数需要大幅下修。"
+      },
+      "flags": [
+        {
+          "code": "EMPTY_PLACEHOLDER_REPO",
+          "severity": "high",
+          "evidence": "GitHub API：size=0，language=null；contents/ 只有 README.md（108 字节）；commits?per_page=5 仅返回 1 条 \"Add README\"（2026-11-23T19:15:11Z）。",
+          "impact": "仓库没有任何可用的框架代码，不能作为 UI 框架推荐给用户，本次推荐实质为空。"
+        },
+        {
+          "code": "NO_LICENSE",
+          "severity": "medium",
+          "evidence": "API license 为 null；raw 实查 LICENSE / LICENSE-APACHE / LICENSE-MIT 均为 404；根目录仅有 README.md。",
+          "impact": "无许可证意味着默认保留所有权利，即使后续放入代码，使用与再分发也缺少授权依据。"
+        },
+        {
+          "code": "METADATA_MISMATCH",
+          "severity": "medium",
+          "evidence": "stars 数据包 667 → 实测 714（误差 6.58%）；forks 数据包 9 → 实测 10（误差 10%），均超过 5% 阈值。",
+          "impact": "数据包元数据已过期，说明数据包生成与本仓库的真实状态存在时间差。"
+        },
+        {
+          "code": "STARS_CONTENT_MISMATCH",
+          "severity": "low",
+          "evidence": "714 stars、10 forks 对应的是一个 size=0、仅一条 Add README 提交的空仓库。",
+          "impact": "关注度来自对 Zed 官方框架的预期而非仓库现有内容，不能作为质量依据；本次数据源无法判断 stars 增长是否异常。"
+        }
+      ],
+      "note": "这是本次核查里问题最严重的一个：数据包把一个空占位仓库当成「GPU 加速 Rust UI 框架」推荐。真实 GPUI 的代码在 zed-industries/zed 主仓库内，本仓库 2026-11-23 才由 JosephTLyons 提交了一条 Add README。仓库 description 仍在描述框架能力，容易让读者误判。claims 中「官网说明」一条因数据源限制无法验证。"
+    },
+    {
+      "repo": "Tekush1/narayanastra",
+      "exists": true,
+      "canonical_repo": "Tekush1/narayanastra",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 4,
+          "verified": 4,
+          "status": "match"
+        },
+        "forks": {
+          "packet": 0,
+          "verified": 0,
+          "status": "match"
+        },
+        "license": {
+          "packet": "MIT",
+          "verified": "MIT",
+          "status": "match"
+        },
+        "language": {
+          "packet": "Rust",
+          "verified": "Rust",
+          "status": "match"
+        },
+        "updated_at": {
+          "packet": "2026-11-23T21:09:58Z",
+          "verified": "2026-11-24T02:23:23Z",
+          "status": "match"
+        },
+        "latest_commit_at": "2026-11-23T20:55:02Z",
+        "days_since_last_commit": 0,
+        "latest_release": {
+          "packet": "v2.0.0",
+          "verified": "v2.0.0",
+          "status": "match"
+        }
+      },
+      "claims": [
+        {
+          "claim": "Narayanastra 是一个「入侵后」（post-compromise）的 Linux rootkit 与后门扫描器：用一条命令、无需安装，通过「用两种独立方式向系统提问并对比答案」来发现被隐藏的进程、rootkit、后门与持久化。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/Tekush1/narayanastra/blob/main/README.md",
+              "quote": "**Post-Compromise Rootkit & Backdoor Scanner for Linux** … Narayanastra asks the system the same question **in two independent ways** and compares the answers. If they don't match, something is hiding"
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/Tekush1/narayanastra/blob/main/README.md",
+              "quote": "- **Nothing to install.** One file, no agent, no setup. Download it, run it, done."
+            }
+          ],
+          "reason": "副标题、交叉视图对比机制、一条命令免安装三点均与 README 原文一致。"
+        },
+        {
+          "claim": "不用 ps/ss/find 这种会被 hook 的 shell 命令，而是用原始 getdents64 系统调用直接列 /proc（免疫 LD_PRELOAD 的 readdir 钩子）。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/Tekush1/narayanastra/blob/main/README.md",
+              "quote": "**Doesn't trust the compromised host** — no shelling out to `ps`/`ss`/`find`; `/proc` is listed with raw `getdents64` syscalls (immune to `LD_PRELOAD` readdir hooks)"
+            }
+          ],
+          "reason": "README 技术要点逐字对应：不调用 ps/ss/find、用 getdents64 列 /proc、免疫 LD_PRELOAD readdir 钩子。"
+        },
+        {
+          "claim": "单文件、免安装、静态二进制（约 3.5MB musl 构建），每个发现标 Danger/Warning/Info 并附证据。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/Tekush1/narayanastra/blob/main/README.md",
+              "quote": "**Single static binary** (~3.5 MB musl build) — drop it on the box and run."
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/Tekush1/narayanastra/blob/main/README.md",
+              "quote": "- **Clear answers.** Every finding is marked Danger / Warning / Info, with the evidence behind it."
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/Tekush1/narayanastra/blob/main/README.md",
+              "quote": "The Linux builds are **static musl binaries** — `LD_PRELOAD` and `/etc/ld.so.preload` userland rootkits cannot inject into them."
+            }
+          ],
+          "reason": "体积、musl 静态构建、Danger/Warning/Info 三级与「附证据」四点均有原文对应。"
+        },
+        {
+          "claim": "12 个 Linux 并行模块：ROOTKIT、PROCESS、NETWORK、FILES、MEMORY、LOGS、ANTIFOR、PERSIST、IOURING、EBPF、KHOOKS、CONTAINER；7 项 Windows PowerShell 检查。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/Tekush1/narayanastra/blob/main/README.md",
+              "quote": "### Linux (12 parallel modules)：ROOTKIT / PROCESS / NETWORK / FILES / MEMORY / LOGS / ANTIFOR / PERSIST / IOURING / EBPF / KHOOKS / CONTAINER"
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/Tekush1/narayanastra/blob/main/README.md",
+              "quote": "### Windows (7 checks via PowerShell)：Persistence / DLL Injection / Processes / Network / Credentials / Drivers / Event Logs"
+            }
+          ],
+          "reason": "12 个 Linux 模块名与 7 项 Windows 检查名逐一列出，数量与名称完全吻合。"
+        },
+        {
+          "claim": "退出码约定：0=干净、1=警告、2=发现危险、3=扫描未能完成。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/Tekush1/narayanastra/blob/main/README.md",
+              "quote": "Exit code `0` means clean, `1` means warnings, `2` means danger found, `3` means the scan could not finish."
+            }
+          ],
+          "reason": "退出码四处定义与断言完全一致（README 中另有一处重复表述：0 clean · 1 warnings · 2 danger · 3 scanner error）。"
+        }
+      ],
+      "scores": {
+        "usage": 7,
+        "deployment": 9,
+        "learning": 8
+      },
+      "score_reasons": {
+        "usage": "针对「服务器是否已被入侵」这个真实且高价值的问题，交叉视图检测思路对路，输出带 MITRE ATT&CK 与可读证据，离线镜像与容器扫描覆盖了实际 IR 场景；但项目极新，尚无外部使用验证，误报率无法评估。",
+        "deployment": "单个静态 musl 二进制，下载 chmod 即跑，无 agent、无依赖、无配置；连远程扫描都是上传后自动清理，部署成本接近下限，仅 --full 与部分检查需要 root。",
+        "learning": "交叉视图检测（getdents64 vs kill/getpgid、sock_diag vs /proc/net、bpf() vs fdinfo/kallsyms）与 12 线程 mpsc 事件汇总的架构值得研究，README 还给了架构图与 Limitations 自述；但未读源码，无法确认实现质量。"
+      },
+      "grade": "B",
+      "grade_reason": "思路扎实、部署极轻、文档专业，但仓库 2026-11-22 才创建、4 stars、无任何外部验证，成熟度只能到 B。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 7,
+          "deployment": 8,
+          "learning": 9
+        },
+        "reported_grade": "B",
+        "assessment": "reasonable",
+        "note": "usage 一致；deployment 我判 9（高 1 分），因为单静态二进制、免安装、远程模式自带清理，成本比「有 Docker 文档」那一档更低；learning 我判 8（低 1 分），因为 9–10 需要源码与测试体系都经得起检验，而我没读源码。分差均为 1 分，整体合理。"
+      },
+      "flags": [
+        {
+          "code": "NEW_REPO_UNVERIFIED",
+          "severity": "medium",
+          "evidence": "仓库 created_at 为 2026-11-22T20:50:52Z，而 v2.0.0 于 2026-11-23T20:08:12Z 发布——建库不到 24 小时即出现 2.0.0 版本；stars 4、forks 0、无外部 issue 或第三方评测。",
+          "impact": "版本号与实际历史不匹配（可能由别处迁移而来），且完全没有外部验证，安全工具的误报/漏报率无法评估，推荐时需明确这是未经检验的新项目。"
+        },
+        {
+          "code": "MAINTAINER_CONCENTRATION",
+          "severity": "low",
+          "evidence": "最近 5 次提交（2026-11-23）作者全部为 Tekush1。",
+          "impact": "仅能观察到近期提交集中，存在潜在维护者集中风险，不足以断言单人维护。"
+        },
+        {
+          "code": "ROOT_REQUIRED_FOR_FULL",
+          "severity": "low",
+          "evidence": "README：quick scan 标注 no root needed / root recommended；--full 需 sudo；部分检查需要 root、tracefs 或未锁定的 /proc/kcore。",
+          "impact": "完整检测能力依赖 root 权限，受限环境下覆盖度下降（README 的 Limitations 已说明会如实报告视图不可用）。"
+        }
+      ],
+      "note": "元数据全部一致。README 罕见地写了 Limitations，明确承认「没有用户态扫描器能完全战胜控制所有视图的内核 rootkit」，这种自述提升了可信度。主要风险是项目年龄：2 天、4 stars、0 forks、v2.0.0 与建库时间不匹配，任何生产使用都应先在小范围验证误报。"
+    },
+    {
+      "repo": "ltrgoddard/gall",
+      "exists": true,
+      "canonical_repo": "ltrgoddard/gall",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 7,
+          "verified": 7,
+          "status": "match"
+        },
+        "forks": {
+          "packet": 0,
+          "verified": 0,
+          "status": "match"
+        },
+        "license": {
+          "packet": "MIT",
+          "verified": "MIT",
+          "status": "match"
+        },
+        "language": {
+          "packet": "Rust",
+          "verified": "Rust",
+          "status": "match"
+        },
+        "updated_at": {
+          "packet": "2026-11-23T23:00:21Z",
+          "verified": "2026-11-23T09:55:45Z",
+          "status": "mismatch"
+        },
+        "latest_commit_at": "2026-11-23T22:58:01Z",
+        "days_since_last_commit": 0,
+        "latest_release": {
+          "packet": "v0.1.0",
+          "verified": "v0.1.0",
+          "status": "match"
+        }
+      },
+      "claims": [
+        {
+          "claim": "Gall 是一个在 Apple silicon Mac 上运行 Thinking Machines 的 Inkling-2-Mini 模型、并在本机提供 OpenAI 兼容 API 的应用，用 Rust 宿主 + Metal 内核实现，默认回答后一秒钟即卸载模型、把会话状态存盘以节省内存。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/ltrgoddard/gall/blob/main/README.md",
+              "quote": "Gall runs Thinking Machines' Inkling-2-Mini on an Apple silicon Mac with 24 GB of memory and serves it as an OpenAI-compatible API on your own machine."
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/ltrgoddard/gall/blob/main/README.md",
+              "quote": "The engine is a Rust host with Metal kernels. … By default it unloads the model one second after each answer and saves the conversation state to disk"
+            }
+          ],
+          "reason": "模型、平台、OpenAI 兼容 API、Rust 宿主 + Metal 内核、一秒后卸载并存盘，五点均有原文对应。"
+        },
+        {
+          "claim": "本机 OpenAI 兼容 API：端点 http://127.0.0.1:9940/v1，模型名 inkling-2-mini；供自己的客户端连接。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/ltrgoddard/gall/blob/main/README.md",
+              "quote": "The endpoint is `http://127.0.0.1:9940/v1`. Gall supplies the model server; you use your own chat or coding client."
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/ltrgoddard/gall/blob/main/README.md",
+              "quote": "Use `inkling-2-mini` as the model name."
+            }
+          ],
+          "reason": "端点地址与模型名逐字一致。"
+        },
+        {
+          "claim": "用 Rust 写宿主、用 Metal 写内核，直接读取 Unsloth 的 UD-IQ3_XXS GGUF 文件（不用 ggml、也不用 MLX）。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/ltrgoddard/gall/blob/main/README.md",
+              "quote": "The engine is a Rust host with Metal kernels. It reads the Unsloth UD-IQ3_XXS GGUF file in place. It does not use ggml or MLX."
+            }
+          ],
+          "reason": "量化文件名、GGUF 就地读取、明确不用 ggml/MLX 均与原文一致。"
+        },
+        {
+          "claim": "在 M2 MacBook Air 上约每秒 20 token；模型下载 12.7GB，进度在菜单栏；可用 Gall.dmg.sha256 校验。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/ltrgoddard/gall/blob/main/README.md",
+              "quote": "On an M2 MacBook Air, Gall generates about 20 tokens per second. … Let Gall download the model files (12.7 GB). Progress appears in the menu bar."
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/ltrgoddard/gall/blob/main/README.md",
+              "quote": "Compare the download with `Gall.dmg.sha256` from the same release if you want to check it."
+            }
+          ],
+          "reason": "20 token/s、12.7GB 模型、菜单栏进度、sha256 校验四点均有原文；注意性能表标明这是单次运行而非平均值，且风扇无 MacBook Air 满载约 2.5 分钟后降速约 10%。"
+        },
+        {
+          "claim": "当前 release 未 Apple 公证，首次启动需手动放行（System Settings 或 xattr）。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/ltrgoddard/gall/blob/main/README.md",
+              "quote": "The current release is not notarized by Apple, so macOS blocks the first launch. … open **System Settings** > **Privacy & Security** … select **Open Anyway**"
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/ltrgoddard/gall/blob/main/README.md",
+              "quote": "To skip step 3 from a terminal, run `xattr -dr com.apple.quarantine /Applications/Gall.app`"
+            }
+          ],
+          "reason": "未公证、System Settings 放行、xattr 命令行跳过三条路径都在 README 中明确写出。"
+        }
+      ],
+      "scores": {
+        "usage": 5,
+        "deployment": 5,
+        "learning": 7
+      },
+      "score_reasons": {
+        "usage": "能在本机跑起一个 26B MoE（3.4B 激活）模型并给出 OpenAI 兼容端点，价值明确；但只支持 Apple silicon + 24GB 内存、只服务一个模型、只有一个 M2 Air 的实测数据，适用人群很窄。",
+        "deployment": "dmg 拖进 Applications 即可，但首次启动要绕过公证拦截，还要下载 12.7GB 模型，要求 macOS 15+ 与 24GB 内存，实际部署门槛中等。",
+        "learning": "从零写 Metal 推理内核、就地读 GGUF、不依赖 ggml/MLX，并在 README 给出内存布局、投机解码与对拍 llama.cpp 的 KL 散度验证方法，技术文档质量高于同类；但未读源码，无法评估代码工程水平。"
+      },
+      "grade": "B",
+      "grade_reason": "技术含量与文档诚实度都高于平均，但硬件与模型面极窄、项目仅 3 天、7 stars、单作者，推荐价值有明确边界。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 6,
+          "deployment": 5,
+          "learning": 8
+        },
+        "reported_grade": "C",
+        "assessment": "reasonable",
+        "note": "deployment 一致；usage 我判 5（低 1 分），因为 24GB 内存 + Apple silicon + 单一模型的组合把可用人群压得很窄；learning 我判 7（低 1 分），因为 8 分以上需要源码与测试体系经得起检验，而我未读源码。分差均为 1 分。等级我判 B、Muse 判 C，差异来自对技术参考价值的权重。"
+      },
+      "flags": [
+        {
+          "code": "NARROW_HARDWARE",
+          "severity": "medium",
+          "evidence": "README：需要 Apple silicon Mac、macOS 15 或更高、至少 24 GB 内存、14 GB 可用磁盘；开发与测量只用了一台 M2 MacBook Air（macOS 27.2），其他机器与系统版本未测试。",
+          "impact": "绝大多数 Mac 用户无法使用，且性能与稳定性数据只有单机样本，不能外推到 M3/M4 或 32GB 以上机型。"
+        },
+        {
+          "code": "NOT_NOTARIZED",
+          "severity": "low",
+          "evidence": "README：The current release is not notarized by Apple, so macOS blocks the first launch（需在系统设置里点 Open Anyway 或用 xattr 去除隔离属性）。",
+          "impact": "首次安装需手动绕过系统安全拦截，对企业环境不友好。"
+        },
+        {
+          "code": "NEW_REPO_UNVERIFIED",
+          "severity": "low",
+          "evidence": "仓库 created_at 为 2026-11-21T15:01:29Z，最新 release 为 v0.1.0（2026-11-22T21:36:22Z），stars 7、forks 0。",
+          "impact": "3 天的新项目、无外部使用验证，属于早期实验性发布。"
+        },
+        {
+          "code": "MAINTAINER_CONCENTRATION",
+          "severity": "low",
+          "evidence": "最近 5 次提交（2026-11-23）作者全部为 ltrgoddard。",
+          "impact": "仅能观察到近期提交集中，存在潜在维护者集中风险。"
+        }
+      ],
+      "note": "stars/forks/license/language/release 全部一致，唯一不符的是 updated_at：数据包写 2026-11-23T23:00:21Z，API 实际 updated_at 为 2026-11-23T09:55:45Z，而数据包那个时间恰好等于 pushed_at——数据包把 pushed_at 当成了 updated_at，且比真实 updated_at 更晚，不属于正常时间差。README 的质量值得肯定：性能表标注「individual runs, not averages」，并主动说明 100k 上下文配置不等于 100k 吞吐测量、最长实测只有 29.9k。"
+    }
+  ],
   "learning_pick": {
     "repo": null,
     "exists": null,
@@ -38,7 +809,7 @@
       "status": "not_applicable"
     },
     "flags": [],
-    "note": "数据包缺失，学习资料库未核查。"
+    "note": "数据包 learning_pick 为 null，本次无学习资料库推荐，未做核查。"
   },
-  "note": "2026-11-24 的数据包在约定的三个投放位置以及 GitHub intel-review 仓库 packets/ 目录中均不存在，因此本次未做任何仓库核查、未产生任何评分与等级，也未沿用 11-23 或 11-22 的旧数据包。overall.status=failed，failures 中列出全部查找路径。等待 Muse/zhao 重新投放当天数据包后重跑。"
+  "note": "5 个常规项目全部完成核查，learning_pick 为 null 未核查。最严重的问题是 zed-industries/gpui：仓库 size=0、仅 108 字节占位 README、唯一提交是 Add README、无许可证无 Release，数据包却按 5/3/8 分推荐，实测 stars/forks 也已超出 5% 阈值。其次是 SandeepAi369/Agent-first-browse，元数据一致但性能数字全为自测，且 release tag v1.0.0 与 PyPI 打包的 0.1.0 不一致。YesPlayMusic 与 narayanastra 数据质量最好；narayanastra 与 gall 都是 2–3 天的新仓库，外部验证为零。gall 的 updated_at 字段在数据包里被填成了 pushed_at。"
 }
