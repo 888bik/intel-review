@@ -1,0 +1,150 @@
+{
+  "date": "2026-11-24",
+  "run_id": "ghrec-20261124",
+  "projects": [
+    {
+      "repo": "qier222/YesPlayMusic",
+      "description": "A better-looking desktop music player for local files, media servers, and plugins. For macOS, Windows and Linux.",
+      "kind": "regular",
+      "backfill": false,
+      "is_new": true,
+      "deep_report": "projects/productivity/YesPlayMusic.md",
+      "packet_metadata": {
+        "stars": 33672,
+        "forks": 4671,
+        "license": "GPL-3.0",
+        "language": "C",
+        "updated_at": "2026-11-23T17:35:32Z",
+        "latest_release": "v3.0.0"
+      },
+      "claims": [
+        "YesPlayMusic 3.0 是一个用 Flutter 从头重写的高颜值桌面音乐播放器：本身不内置任何在线音乐服务，本地音乐开箱即用，在线曲库、歌单、歌词、评论等都来自第三方插件。",
+        "README 官方插件列表明确覆盖 Emby、Jellyfin 等，回应这些服务器的桌面播放需求。",
+        "应用内置 MCP Server（默认只监听 127.0.0.1:18888，可开 Token 鉴权与只读模式），可让 Claude、Cursor 等 AI Agent 搜歌、播放、管理队列和歌单；只支持 stdio 的客户端可用仓库里的 bin/ypm_mcp_bridge.dart 桥接。",
+        "README 明确「本项目不接受 Pull Request，来自 fork 的 PR 会被自动关闭」——想贡献代码的用户只能提 Issue。",
+        "跨 macOS（Apple Silicon）、Windows、Linux 三平台。"
+      ],
+      "proposed_scores": {
+        "usage": 8,
+        "deployment": 7,
+        "learning": 6
+      },
+      "proposed_grade": "B"
+    },
+    {
+      "repo": "SandeepAi369/Agent-first-browse",
+      "description": "Fast, token-efficient AI browser agent that sees, clicks, types, and completes real web tasks autonomously - with native MCP & CLI control.",
+      "kind": "regular",
+      "backfill": false,
+      "is_new": true,
+      "deep_report": "projects/ai-agent/Agent-first-browse.md",
+      "packet_metadata": {
+        "stars": 25,
+        "forks": 5,
+        "license": "Apache-2.0",
+        "language": "Python",
+        "updated_at": "2026-11-24T02:03:13Z",
+        "latest_release": "v1.0.0"
+      },
+      "claims": [
+        "Agent First Browse 是一个「以可访问性树优先感知」的自主浏览器 agent：让 AI agent 看见、点击、输入并自主完成真实网页任务，主打速度快、token 高效，并带原生 MCP 与 CLI 控制。",
+        "Tier-1 DOM 扫描结果过少（< 2 个元素）时自动升级到 CDP/Playwright 可访问性树（如自定义 ARIA 组件场景）；整体标榜 accessibility-tree-first 感知。",
+        "通过 MCP 把浏览器能力接入 Antigravity、Claude Code、Cursor、VS Code、Gemini CLI 等 agent。",
+        "安装命令：pip install agent-first-browse && python -m playwright install chromium；源码安装后 agent-first-browse run --mode v2 自主运行。"
+      ],
+      "proposed_scores": {
+        "usage": 6,
+        "deployment": 6,
+        "learning": 8
+      },
+      "proposed_grade": "B"
+    },
+    {
+      "repo": "zed-industries/gpui",
+      "description": "A GPU-accelerated, open-source UI framework for Rust that combines immediate and retained modes.",
+      "kind": "regular",
+      "backfill": false,
+      "is_new": true,
+      "deep_report": "projects/developer-tools/gpui.md",
+      "packet_metadata": {
+        "stars": 667,
+        "forks": 9,
+        "license": null,
+        "language": null,
+        "updated_at": "2026-11-23T19:17:45Z",
+        "latest_release": null
+      },
+      "claims": [
+        "GPUI 是一个快速、混合立即模式与保留模式、GPU 加速的 Rust UI 框架，出自 Zed 与 Delta 的创造者之手。",
+        "README 只有一句话「See you in a few weeks.」——这更像一个占位说明，项目详情主要在官网 https://gpui.rs/。",
+        "许可证：未注明（GitHub API 未识别；仓库根目录无 LICENSE / LICENSE-APACHE 文件，2026-11-24 实查均为 404）。",
+        "官网说明：For the near future, GPUI is tied to Zed, so contributions will need to be made there and kept in sync with it."
+      ],
+      "proposed_scores": {
+        "usage": 5,
+        "deployment": 3,
+        "learning": 8
+      },
+      "proposed_grade": "C"
+    },
+    {
+      "repo": "Tekush1/narayanastra",
+      "description": "Find out if your Linux server has been hacked. One command, no install: finds hidden processes, rootkits, backdoors and persistence. Free, open source, written in Rust.",
+      "kind": "regular",
+      "backfill": false,
+      "is_new": true,
+      "deep_report": "projects/developer-tools/narayanastra.md",
+      "packet_metadata": {
+        "stars": 4,
+        "forks": 0,
+        "license": "MIT",
+        "language": "Rust",
+        "updated_at": "2026-11-23T21:09:58Z",
+        "latest_release": "v2.0.0"
+      },
+      "claims": [
+        "Narayanastra 是一个「入侵后」（post-compromise）的 Linux rootkit 与后门扫描器：用一条命令、无需安装，通过「用两种独立方式向系统提问并对比答案」来发现被隐藏的进程、rootkit、后门与持久化。",
+        "不用 ps/ss/find 这种会被 hook 的 shell 命令，而是用原始 getdents64 系统调用直接列 /proc（免疫 LD_PRELOAD 的 readdir 钩子）。",
+        "单文件、免安装、静态二进制（约 3.5MB musl 构建），每个发现标 Danger/Warning/Info 并附证据。",
+        "12 个 Linux 并行模块：ROOTKIT、PROCESS、NETWORK、FILES、MEMORY、LOGS、ANTIFOR、PERSIST、IOURING、EBPF、KHOOKS、CONTAINER；7 项 Windows PowerShell 检查。",
+        "退出码约定：0=干净、1=警告、2=发现危险、3=扫描未能完成。"
+      ],
+      "proposed_scores": {
+        "usage": 7,
+        "deployment": 8,
+        "learning": 9
+      },
+      "proposed_grade": "B"
+    },
+    {
+      "repo": "ltrgoddard/gall",
+      "description": "A from-scratch Metal inference engine for Inkling 2 Mini on Apple silicon",
+      "kind": "regular",
+      "backfill": false,
+      "is_new": true,
+      "deep_report": "projects/ai-agent/gall.md",
+      "packet_metadata": {
+        "stars": 7,
+        "forks": 0,
+        "license": "MIT",
+        "language": "Rust",
+        "updated_at": "2026-11-23T23:00:21Z",
+        "latest_release": "v0.1.0"
+      },
+      "claims": [
+        "Gall 是一个在 Apple silicon Mac 上运行 Thinking Machines 的 Inkling-2-Mini 模型、并在本机提供 OpenAI 兼容 API 的应用，用 Rust 宿主 + Metal 内核实现，默认回答后一秒钟即卸载模型、把会话状态存盘以节省内存。",
+        "本机 OpenAI 兼容 API：端点 http://127.0.0.1:9940/v1，模型名 inkling-2-mini；供自己的客户端连接。",
+        "用 Rust 写宿主、用 Metal 写内核，直接读取 Unsloth 的 UD-IQ3_XXS GGUF 文件（不用 ggml、也不用 MLX）。",
+        "在 M2 MacBook Air 上约每秒 20 token；模型下载 12.7GB，进度在菜单栏；可用 Gall.dmg.sha256 校验。",
+        "当前 release 未 Apple 公证，首次启动需手动放行（System Settings 或 xattr）。"
+      ],
+      "proposed_scores": {
+        "usage": 6,
+        "deployment": 5,
+        "learning": 8
+      },
+      "proposed_grade": "C"
+    }
+  ],
+  "learning_pick": null
+}
