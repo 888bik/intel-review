@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-25",
+  "run_id": "ghrec-20261125",
+  "overall": {
+    "status": "failed",
+    "expected_projects": 0,
+    "checked_projects": 0,
+    "learning_pick_checked": false,
+    "failures": [
+      "PACKET_NOT_FOUND"
+    ],
+    "searched_paths": [
+      "packets\\ 下文件名含 2026-11-25 的 .json —— 不存在",
+      "packets\\ 下 2026-11-25 当天修改的 .json —— 不存在（最新为 packets\\dsh-packet-2026-11-21.json，2026-11-21 20:43）",
+      "C:\\Users\\bik\\Downloads\\ 下文件名同时含 packet 与 2026-11-25 的 .json —— 不存在（Downloads 内唯一 packet 文件为 packet-2026-11-22.json，2026-11-22 12:41）",
+      "C:\\Users\\bik\\Downloads\\ 下 2026-11-25 当天新增/修改的全部文件 —— 仅有 vibe_3.3.8_x64-setup.exe，无 json",
+      "C:\\Users\\bik\\Desktop、C:\\Users\\bik\\Documents、C:\\Users\\bik\\OneDrive 下含 packet 的 .json —— 无 2026-11-25 数据包",
+      "C:\\Users\\bik 递归（深度 3）下含 packet 且 2026-11-25 修改的 .json —— 不存在",
+      "workspace 递归（深度 4）下 2026-11-25 修改的 .json —— 不存在",
+      "workspace\\tmp\\2026-11-25\\ —— 目录本身不存在（现存 tmp 仅 2026-11-23、2026-11-24）"
+    ]
+  },
+  "verdicts": [],
+  "learning_pick": null
+}
