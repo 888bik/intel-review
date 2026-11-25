@@ -2,24 +2,620 @@
   "date": "2026-11-25",
   "run_id": "ghrec-20261125",
   "overall": {
-    "status": "failed",
-    "expected_projects": 0,
-    "checked_projects": 0,
-    "learning_pick_checked": false,
-    "failures": [
-      "PACKET_NOT_FOUND"
-    ],
-    "searched_paths": [
-      "packets\\ 下文件名含 2026-11-25 的 .json —— 不存在",
-      "packets\\ 下 2026-11-25 当天修改的 .json —— 不存在（最新为 packets\\dsh-packet-2026-11-21.json，2026-11-21 20:43）",
-      "C:\\Users\\bik\\Downloads\\ 下文件名同时含 packet 与 2026-11-25 的 .json —— 不存在（Downloads 内唯一 packet 文件为 packet-2026-11-22.json，2026-11-22 12:41）",
-      "C:\\Users\\bik\\Downloads\\ 下 2026-11-25 当天新增/修改的全部文件 —— 仅有 vibe_3.3.8_x64-setup.exe，无 json",
-      "C:\\Users\\bik\\Desktop、C:\\Users\\bik\\Documents、C:\\Users\\bik\\OneDrive 下含 packet 的 .json —— 无 2026-11-25 数据包",
-      "C:\\Users\\bik 递归（深度 3）下含 packet 且 2026-11-25 修改的 .json —— 不存在",
-      "workspace 递归（深度 4）下 2026-11-25 修改的 .json —— 不存在",
-      "workspace\\tmp\\2026-11-25\\ —— 目录本身不存在（现存 tmp 仅 2026-11-23、2026-11-24）"
-    ]
+    "status": "complete",
+    "expected_projects": 4,
+    "checked_projects": 4,
+    "learning_pick_checked": true,
+    "failures": []
   },
-  "verdicts": [],
-  "learning_pick": null
+  "verdicts": [
+    {
+      "repo": "GenesisAgentInfra/genesis",
+      "exists": true,
+      "canonical_repo": "GenesisAgentInfra/genesis",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 72,
+          "verified": 72,
+          "status": "match"
+        },
+        "forks": {
+          "packet": 10,
+          "verified": 10,
+          "status": "match"
+        },
+        "license": {
+          "packet": "Apache-2.0",
+          "verified": "Apache-2.0",
+          "status": "match"
+        },
+        "language": {
+          "packet": "HTML",
+          "verified": "HTML",
+          "status": "match"
+        },
+        "updated_at": {
+          "packet": "2026-11-25T02:42:15Z",
+          "verified": "2026-11-25T03:50:39Z",
+          "status": "match"
+        },
+        "latest_commit_at": "2026-11-25T02:42:14Z",
+        "days_since_last_commit": 0,
+        "latest_release": {
+          "packet": "v0.1.0",
+          "verified": "v0.1.0",
+          "status": "match"
+        }
+      },
+      "claims": [
+        {
+          "claim": "Genesis 是一个把代码库转成「业务流程图」、并标出你的编码 agent 的改动哪些未测试或有风险的本地 CLI 与技能（skill），运行在 Claude Code 与 Codex 内。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/GenesisAgentInfra/genesis",
+              "quote": "Genesis turns your codebase into a business flow map and shows which of your agent's changes are untested or risky. It runs as a skill inside Claude Code and Codex"
+            }
+          ],
+          "reason": "README 开篇原文直接支持：业务流程图 + 未测试/有风险改动 + 作为 skill 运行在 Claude Code 与 Codex 内。"
+        },
+        {
+          "claim": "agent 的每个步骤必须引用它依据的代码行；CLI 与冻结的仓库快照逐一比对，不匹配则整段拒绝、重试。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/GenesisAgentInfra/genesis",
+              "quote": "Every step it writes has to quote the lines of code it stands for, and the Genesis CLI checks each quote against a frozen snapshot of your repo. If one doesn't match, the whole description is rejected and the agent tries again."
+            }
+          ],
+          "reason": "README「Can I trust it?」段落逐字对应：引用代码行、与冻结快照比对、不匹配则整段拒绝并重试。"
+        },
+        {
+          "claim": "CLI 不调用模型、不发送任何东西、从不运行你的代码。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/GenesisAgentInfra/genesis",
+              "quote": "The CLI calls no model, sends nothing anywhere, and never runs your code."
+            }
+          ],
+          "reason": "README 原文直接陈述三点，与断言完全一致。"
+        },
+        {
+          "claim": "README 明确「Genesis doesn't run them」（不运行测试），测试判定来自读取你的测试。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/GenesisAgentInfra/genesis",
+              "quote": "Test verdicts come from reading your tests. Genesis doesn't run them."
+            }
+          ],
+          "reason": "README「Limits」段落原文既确认不运行测试，也确认测试判定来自读取测试代码。"
+        },
+        {
+          "claim": "基准（README 自述，未独立核实）：测试跑了却不会抓住的改动被标记频率约提升 5 倍（Claude 8%→38%、Codex 4%→23%）；误报降到约三分之一；真实风险保持稳定（真实比例 64% vs 44%、72% vs 54%）。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/GenesisAgentInfra/genesis",
+              "quote": "Changes that tests run but would not catch are flagged about five times as often. ... Claude Code flagged 8% of them on its own and 38% with Genesis. Codex flagged 4% and 23%. ... False alarms drop to about a third, and real risks hold steady. ... 64% instead of 44% for Claude Code, 72% instead of 54% for Codex."
+            }
+          ],
+          "reason": "断言内容与 README 基准表数字逐项一致（8→38、4→23、64/44、72/54）。这些数字是项目自测基准：README 自述样本仅 10 个提交、各跑 3 次、由语言模型评分而非人工；断言本身已标注「未独立核实」，本次核查同样未复现该基准，不应视为已证实的性能结论。"
+        }
+      ],
+      "scores": {
+        "usage": 7,
+        "deployment": 6,
+        "learning": 7
+      },
+      "score_reasons": {
+        "usage": "确实解决「agent 改了代码但不知道有没有被测到」这一具体痛点，输出可直接贴 PR；但仅 19 天龄、v0.1.0，除 Python 外其他语言漏掉的路径不会被标记。",
+        "deployment": "uv tool install 一条命令 + 一次 agent install 即可，无需数据库或容器；但 README 明确只支持 macOS/Linux，需 uv、Git 与 Python 3.12，Windows 用户无法直接用。",
+        "learning": "CLI + skill 分层清晰，install/usage/benchmark/AGENTS.md 文档齐全，基准方法论（含自述局限）值得参考；但仓库主语言是 HTML（生成的可视化页面），核心逻辑体量小且年轻。"
+      },
+      "grade": "B",
+      "grade_reason": "有明确实际价值且文档扎实，但处于 v0.1.0 早期、平台受限（仅 macOS/Linux）、基准为自测小样本，尚不足以评 A。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 7,
+          "deployment": 7,
+          "learning": 7
+        },
+        "reported_grade": "B",
+        "assessment": "reasonable",
+        "note": "usage 与 learning 与我的独立评分一致；deployment 我低 1 分，因为 README 明写只支持 macOS/Linux 且依赖 uv + Python 3.12，Windows 用户被排除在外。"
+      },
+      "flags": [
+        {
+          "code": "PLATFORM_MACOS_LINUX_ONLY",
+          "severity": "low",
+          "evidence": "README Quick start：`You need uv and Git, on macOS or Linux`",
+          "impact": "Windows 用户无法直接安装使用，推荐时需说明平台限制。"
+        },
+        {
+          "code": "EARLY_STAGE_V0_1",
+          "severity": "low",
+          "evidence": "仓库创建于 2026-11-06，最新 Release 为 v0.1.0（2026-11-21），星标 72。",
+          "impact": "项目非常年轻，接口与行为可能随版本变化，长期维护尚待观察。"
+        },
+        {
+          "code": "SELF_REPORTED_BENCHMARK",
+          "severity": "low",
+          "evidence": "README 自述基准仅 10 个提交、每个各跑 3 次，且由语言模型评分而非人工；README 亦写明「The sample is small」。",
+          "impact": "提升 5 倍等结论不宜当作已证实的性能数据引用。"
+        }
+      ],
+      "note": "真实仓库，元数据与数据包完全一致，当天仍有提交，维护活跃。核心断言全部可由 README 原文验证；但项目仅 19 天龄、v0.1.0，README 自述基准样本小且非人工评分，引用其效果数字时应标注来源为项目自测。"
+    },
+    {
+      "repo": "hatchet-dev/brickie",
+      "exists": true,
+      "canonical_repo": "hatchet-dev/brickie",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 120,
+          "verified": 120,
+          "status": "match"
+        },
+        "forks": {
+          "packet": 5,
+          "verified": 5,
+          "status": "match"
+        },
+        "license": {
+          "packet": "MIT",
+          "verified": "MIT",
+          "status": "match"
+        },
+        "language": {
+          "packet": "Go",
+          "verified": "Go",
+          "status": "match"
+        },
+        "updated_at": {
+          "packet": "2026-11-24T16:37:36Z",
+          "verified": "2026-11-25T03:20:02Z",
+          "status": "match"
+        },
+        "latest_commit_at": "2026-11-24T16:37:32Z",
+        "days_since_last_commit": 1,
+        "latest_release": {
+          "packet": "v0.1.7",
+          "verified": "v0.1.7",
+          "status": "match"
+        }
+      },
+      "claims": [
+        {
+          "claim": "Brickie 是一个在你自己云 / k8s 集群里运行「持久沙箱」的工具：每个沙箱会话是一个带 shell 与工作区的容器，跑在你的 Kubernetes 集群里，每次改动工作区的调用都会生成不可变快照，可用于分叉新沙箱或恢复会话。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/hatchet-dev/brickie",
+              "quote": "Each sandbox session is a container with a shell and a workspace and runs in your Kubernetes cluster with flexible runtime support ... Every call that changes the workspace produces a snapshot, which can be used to fork a new sandbox or resume an existing session."
+            }
+          ],
+          "reason": "README 原文逐点对应：容器 + shell + 工作区、跑在自有 k8s、每次改动生成快照、可 fork 或恢复。"
+        },
+        {
+          "claim": "它建立在 agent-sandbox（Kubernetes 官方 SIG 项目）之上，并叠加了自定义的快照/恢复（基于对象存储）。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/hatchet-dev/brickie",
+              "quote": "Brickie sandboxes are built on top of [agent-sandbox](https://agent-sandbox.sigs.k8s.io/) with custom snapshot/restore implemented on top of object storage."
+            }
+          ],
+          "reason": "README 原文直接陈述；其引用的 agent-sandbox 域名位于 sigs.k8s.io（Kubernetes SIG 项目域），与「官方 SIG 项目」表述相符。"
+        },
+        {
+          "claim": "每个调用是 Hatchet 任务，可重试/可观测/从自己快照重放；重试的调用找到已存快照、不重复执行命令。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/hatchet-dev/brickie",
+              "quote": "Every call is a Hatchet task, so it is retried, observable, and replayed from its own snapshot. A retried call finds the snapshot it already stored and does not run the command twice."
+            }
+          ],
+          "reason": "README「Brickie versus agent-sandbox」第 2 点逐字对应。"
+        },
+        {
+          "claim": "README 明确「Brickie is in beta. Flags, chart values and the wire contract may change before 1.0」。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/hatchet-dev/brickie",
+              "quote": "> Brickie is in beta. Flags, chart values and the wire contract may change before 1.0. See the [changelog](CHANGELOG.md)."
+            }
+          ],
+          "reason": "README 引用块原文一字不差。"
+        },
+        {
+          "claim": "README 明确同一代码路径也跑在 Docker engine 上，本地开发不需要 k8s 集群。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/hatchet-dev/brickie",
+              "quote": "The same code path runs on a Docker engine, so the Kubernetes cluster is not needed for development locally."
+            }
+          ],
+          "reason": "README「Brickie versus agent-sandbox」第 3 点逐字对应。"
+        }
+      ],
+      "scores": {
+        "usage": 6,
+        "deployment": 5,
+        "learning": 8
+      },
+      "score_reasons": {
+        "usage": "面向「agent 沙箱要可恢复、可重放」的真实需求，快照/分叉与 Hatchet 重试语义解决实际问题；但处于 beta、wire contract 与 chart values 随时可能变，且面向自有集群的团队而非个人。",
+        "deployment": "生产路径需要自备 Kubernetes 集群、S3 兼容/GCS/Azure 对象存储与 Hatchet 实例，Helm chart 与多项 flags 需配置；仅本地开发可退化为 Docker。",
+        "learning": "Go 实现，分层清晰（provider/driver/wire contract），docs 覆盖 architecture、security、drivers、wire-contract，并有 e2e-docker/e2e-kind CI、mTLS、cosign 签名与 SBOM，工程实践可迁移性高。"
+      },
+      "grade": "B",
+      "grade_reason": "核心能力扎实、工程实践优秀，但 beta 阶段接口不稳定且生产部署需要一整套自有基础设施，使用门槛明显，评 B。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 7,
+          "deployment": 5,
+          "learning": 8
+        },
+        "reported_grade": "B",
+        "assessment": "reasonable",
+        "note": "deployment 与 learning 与我的独立评分一致；usage 我低 1 分，理由是 README 自述 beta 且 wire contract 可能在 1.0 前变化，实际落地需承担接口返工成本。"
+      },
+      "flags": [
+        {
+          "code": "BETA_API_UNSTABLE",
+          "severity": "medium",
+          "evidence": "README：`Brickie is in beta. Flags, chart values and the wire contract may change before 1.0.`",
+          "impact": "升级可能带来配置与协议破坏性变更，接入方需预留迁移成本。"
+        },
+        {
+          "code": "HEAVY_INFRA_DEPENDENCY",
+          "severity": "medium",
+          "evidence": "README：沙箱跑在自有 Kubernetes 集群；快照与元数据存放于 S3 兼容存储 / GCS / Azure；每个调用是 Hatchet 任务（需 Hatchet 实例）。",
+          "impact": "生产使用需同时维护 k8s、对象存储与 Hatchet 三套组件，部署与运维成本高。"
+        }
+      ],
+      "note": "真实仓库，元数据与数据包一致，v0.1.7 与最近提交均吻合，维护活跃（近 5 次提交集中在 README 与 security 文档）。能力描述全部可由 README 验证，无夸大；主要顾虑是 beta 阶段接口不稳定与生产依赖较重。"
+    },
+    {
+      "repo": "PQCrypta/pqcrypta-proxy",
+      "exists": true,
+      "canonical_repo": "PQCrypta/pqcrypta-proxy",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 47,
+          "verified": 49,
+          "status": "match"
+        },
+        "forks": {
+          "packet": 6,
+          "verified": 6,
+          "status": "match"
+        },
+        "license": {
+          "packet": "Apache-2.0",
+          "verified": "Apache-2.0",
+          "status": "match"
+        },
+        "language": {
+          "packet": "Rust",
+          "verified": "Rust",
+          "status": "match"
+        },
+        "updated_at": {
+          "packet": "2026-11-25T02:04:39Z",
+          "verified": "2026-11-25T04:33:10Z",
+          "status": "match"
+        },
+        "latest_commit_at": "2026-11-25T00:32:13Z",
+        "days_since_last_commit": 0,
+        "latest_release": {
+          "packet": "v0.22.3",
+          "verified": "v0.22.3",
+          "status": "match"
+        }
+      },
+      "claims": [
+        {
+          "claim": "PQCrypta Proxy 是一个生产级、HTTP/3/QUIC/WebTransport 的 Rust 反向代理，集成了混合后量子（PQC）TLS（X25519MLKEM768）、三种 TLS 模式、JA3/JA4 指纹、GeoIP 封锁、熔断、ML 自适应限流、11 种负载均衡、Brotli/zstd、ACME、OCSP、Prometheus 指标与热重载。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/PQCrypta/pqcrypta-proxy",
+              "quote": "Production-ready HTTP/3/QUIC/WebTransport reverse proxy with hybrid Post-Quantum Cryptography (PQC) TLS support."
+            },
+            {
+              "source": "README（功能表）",
+              "url": "https://github.com/PQCrypta/pqcrypta-proxy",
+              "quote": "Three TLS Modes: Terminate, Re-encrypt, and Passthrough (SNI-based) ... Hybrid PQC key exchange (X25519MLKEM768) ... JA3/JA4 fingerprinting ... GeoIP blocking ... Enterprise Load Balancing: 11 algorithms, session affinity, health-aware routing, per-backend retry policies ... Compression: Brotli/gzip/deflate/zstd ... ACME Automation ... OCSP Stapling ... Prometheus Metrics ... hot-reload"
+            }
+          ],
+          "reason": "断言列举的每一项能力都能在 README 功能表与正文中找到对应条目。但「生产级（Production-ready）」是 README 的自我描述，属于宣传性表述，本次核查无法验证其生产可用性，不应据 README 认定为已证实事实。"
+        },
+        {
+          "claim": "GitHub 元数据为 Apache-2.0，README 许可证徽章写 MIT/Apache-2.0——以仓库 LICENSE 文件为准，未核实。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "GitHub API /repos",
+              "url": "https://github.com/PQCrypta/pqcrypta-proxy",
+              "quote": "license.spdx_id = \"Apache-2.0\"（License: Apache License 2.0）"
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/PQCrypta/pqcrypta-proxy",
+              "quote": "[![License](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg)](#license) ... Licensed under either of: Apache License, Version 2.0 ... MIT License"
+            }
+          ],
+          "reason": "API 返回 SPDX 为 Apache-2.0，与数据包一致；README 徽章与 License 段落确实写 MIT/Apache-2.0 双许可。断言对元数据的描述准确。"
+        },
+        {
+          "claim": "内嵌 OWASP Core Rule Set（纯 Rust SecLang 引擎，通过 CRS 回归语料每一阶段）。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/PQCrypta/pqcrypta-proxy",
+              "quote": "the OWASP Core Rule Set itself, run in-process by a pure-Rust SecLang engine that passes every stage of CRS's own regression corpus"
+            }
+          ],
+          "reason": "README 明确描述内嵌 CRS、纯 Rust SecLang 引擎；源码树亦列出 waf_crs.rs 与 vendor/zentinel-modsec。「通过回归语料每一阶段」是 README 的自述测试结论，本次未独立复跑 CRS 回归。"
+        },
+        {
+          "claim": "11 种算法、会话亲和、健康感知路由、每后端重试策略、每后端熔断覆盖、金丝雀/百分比流量拆分（粘性分配 + 自动回滚）、流量镜像。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/PQCrypta/pqcrypta-proxy",
+              "quote": "Enterprise Load Balancing: 11 algorithms, session affinity, health-aware routing, per-backend retry policies, per-backend circuit breaker overrides, canary / percentage traffic splitting with sticky assignment and auto-rollback, traffic shadowing / mirroring"
+            }
+          ],
+          "reason": "README 该行与断言逐项一一对应，另有「11 Load Balancing Algorithms」与 Canary/Traffic Splitting 专节佐证。"
+        },
+        {
+          "claim": "服务器端 ECH（RFC 9849）在 TCP 与 QUIC 上，轮换 HPKE 密钥发布到 DNS HTTPS 记录。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/PQCrypta/pqcrypta-proxy",
+              "quote": "Encrypted Client Hello: Server-side ECH (RFC 9849) on TCP and QUIC, with rotating HPKE keys published in the DNS HTTPS record"
+            }
+          ],
+          "reason": "README 原文逐字对应；功能表另有 ECH 条目说明 TCP 与 QUIC 两条路径及 ech-rotate 轮换机制。"
+        }
+      ],
+      "scores": {
+        "usage": 6,
+        "deployment": 5,
+        "learning": 8
+      },
+      "score_reasons": {
+        "usage": "HTTP/3、PQC TLS、ECH、CRS WAF 等功能确实罕见且成体系，对需要后量子与 QUIC 的场景有真实价值；但 49 星、单一组织维护、功能面极宽而外部采用证据少，实际生产可靠性无法从现有数据确认。",
+        "deployment": "需自写 TOML 配置（项目极长）、准备证书、admin token、MaxMind GeoLite2 数据库（需账号与 license key）、OpenSSL 3.5+，Redis 与对象存储为可选；无一条命令即可跑起来的路径。",
+        "learning": "Rust 实现，模块划分清晰（README 附完整源码树），对 rustls/noq 做了 vendor 改造，自研纯 Rust SecLang 引擎与 HPKE 实现，docs 极其详尽，工程参考价值高；但测试体系优劣无法仅凭 README 判断。"
+      },
+      "grade": "B",
+      "grade_reason": "技术深度与文档质量突出，但采用度低、配置与外部依赖复杂、生产可用性只有自我声明，属于「有能力但有门槛」，评 B。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 7,
+          "deployment": 6,
+          "learning": 9
+        },
+        "reported_grade": "B",
+        "assessment": "reasonable",
+        "note": "三个维度我均低 1 分，方向一致但幅度都在 1 分内：usage 因缺少外部采用证据、deployment 因配置与 GeoIP/OpenSSL 依赖、learning 因未能核验测试体系。整体属轻微乐观，未达明显高估，故记 reasonable。"
+      },
+      "flags": [
+        {
+          "code": "CONFIG_COMPLEXITY",
+          "severity": "low",
+          "evidence": "README 长达 22 万字符，配置涉及 [tls]、[waf]、[waf.crs]、[advanced_rate_limiting]、[backend_pools.*.canary]、[routes.shadow]、[acme]、[cache] 等大量小节与开关。",
+          "impact": "上手与调优成本高，误配风险大，推荐时需明确这不是开箱即用型代理。"
+        },
+        {
+          "code": "EXTERNAL_SERVICE_DEPENDENCY",
+          "severity": "medium",
+          "evidence": "GeoIP 功能依赖 MaxMind GeoLite2 数据库与 license key（README：`export MAXMIND_LICENSE_KEY=<your license key>`）；PQC 依赖 OpenSSL 3.5+ 或自编译。",
+          "impact": "部署需额外账号与特定系统库版本，环境不满足时相关功能不可用。"
+        },
+        {
+          "code": "MAINTAINER_CONCENTRATION",
+          "severity": "low",
+          "evidence": "最近 5 次提交作者为 PQCrypta 与 github-actions[bot]，星标 49、fork 6。",
+          "impact": "仅能观察到近期提交高度集中于单一组织，存在潜在维护者集中风险（不足以断言单人维护）。"
+        },
+        {
+          "code": "PRODUCTION_CLAIM_UNVERIFIED",
+          "severity": "low",
+          "evidence": "README 首行自称 `Production-ready`，但仓库 49 星、创建于 2026-01-22，本次核查无第三方生产使用证据。",
+          "impact": "「生产级」属自我声明，推荐时不应作为已验证结论引用。"
+        }
+      ],
+      "note": "真实仓库，元数据与数据包基本一致（stars 47→49，误差 4.1%，在 5% 内）；许可证需注意：GitHub 识别为 Apache-2.0，而 README 声明为 MIT/Apache-2.0 双许可，两者不矛盾但引用时应说明。功能描述详实且可核，但采用度低、配置复杂，「生产级」仅为自述。"
+    },
+    {
+      "repo": "openai/math",
+      "exists": true,
+      "canonical_repo": "openai/math",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 17832,
+          "verified": 17882,
+          "status": "match"
+        },
+        "forks": {
+          "packet": 2007,
+          "verified": 2008,
+          "status": "match"
+        },
+        "license": {
+          "packet": "Apache-2.0",
+          "verified": "Apache-2.0",
+          "status": "match"
+        },
+        "language": {
+          "packet": "Lean",
+          "verified": "Lean",
+          "status": "match"
+        },
+        "updated_at": {
+          "packet": "2026-11-25T00:18:51Z",
+          "verified": "2026-11-25T05:12:40Z",
+          "status": "match"
+        },
+        "latest_commit_at": "2026-11-25T00:18:47Z",
+        "days_since_last_commit": 0,
+        "latest_release": {
+          "packet": null,
+          "verified": null,
+          "status": "none"
+        }
+      },
+      "claims": [
+        {
+          "claim": "openai/math 是一个研究数据仓库：存放由 OpenAI 某个未公开内部模型产出的数学手稿与配套证明工件，目前目录包含 730 篇手稿、归为 375 个家族，约 42% 的顶级结果已有 Lean 形式化。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/openai/math",
+              "quote": "This repository contains mathematical manuscripts and supporting proof artifacts produced by an unnamed internal OpenAI model. ... The current catalogue contains 730 manuscripts organized into 375 families. ... The repository has ~42% top-line results formalized."
+            }
+          ],
+          "reason": "手稿数量 730、家族数 375、约 42% 顶级结果已形式化三项数字与 README 完全一致，仓库性质（研究数据）亦有原文支持。"
+        },
+        {
+          "claim": "README 明确「Not all have accompanying Lean formalizations」，约 42% 的顶级结果已形式化，其余未形式化且可能有错。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/openai/math",
+              "quote": "Not all have accompanying Lean formalizations. ... The repository has ~42% top-line results formalized. ... Some of the unformalized results could have issues."
+            }
+          ],
+          "reason": "三处原文分别支持「并非全部有 Lean 形式化」「约 42%」「未形式化部分可能有问题」。"
+        },
+        {
+          "claim": "README 明说「best understood as a form of raw research data, rather than polished academic papers」。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/openai/math",
+              "quote": "In our view, these manuscripts are best understood as a form of raw research data, rather than polished academic papers."
+            }
+          ],
+          "reason": "README 原文逐字一致。"
+        },
+        {
+          "claim": "一个未公开的 OpenAI 内部模型，在平均每次约 3 小时 ChatGPT Pro 思考算力下，被提了大约 4000 道数学题。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/openai/math",
+              "quote": "The vast majority of results were obtained with the same procedure using an unreleased internal OpenAI model. On average, each result used three hours of ChatGPT Pro thinking compute with that model. Over the course of the evaluation, the model was posed approximately 4,000 problems."
+            }
+          ],
+          "reason": "未公开内部模型、平均 3 小时 ChatGPT Pro 思考算力、约 4000 道题三项均与 README 原文对应。"
+        },
+        {
+          "claim": "无 GitHub release，仓库是研究数据存档而非程序。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "GitHub API /releases/latest",
+              "url": "https://api.github.com/repos/openai/math/releases/latest",
+              "quote": "HTTP 404 —— 无 latest release"
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/openai/math",
+              "quote": "these manuscripts are best understood as a form of raw research data, rather than polished academic papers"
+            }
+          ],
+          "reason": "Release 接口返回 404，确认无可获取的 Release；README 自述为研究数据集合，与「非程序」判断一致。"
+        }
+      ],
+      "scores": {
+        "usage": 7,
+        "deployment": 3,
+        "learning": 7
+      },
+      "score_reasons": {
+        "usage": "对数学研究者与 Lean 社区价值很高：730 篇手稿、375 个家族、42% 顶级结果附 Lean 形式化，且有推理摘要；但它是语料与数据，普通开发者无法「使用」它解决问题，且未形式化部分作者自认可能出错。",
+        "deployment": "无需部署即可浏览（克隆即得，无构建、无依赖）；但若要本地校验 Lean 形式化需完整 Lean/lake 工具链，对非数学用户门槛高。",
+        "learning": "可学的是「AI 产出的数学成果如何组织为可审计的数据集 + Lean 形式化目录」，方法学有参考价值；但仓库主体是数据与证明产物，缺少可迁移的工程架构与测试体系。"
+      },
+      "grade": "B",
+      "grade_reason": "内容独特且影响力大（1.7 万星），但它是研究数据存档而非可部署工具，使用价值高度依赖读者是否为数学研究者，且正确性由作者自认未完全验证，评 B。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 7,
+          "deployment": 2,
+          "learning": 8
+        },
+        "reported_grade": "B",
+        "assessment": "reasonable",
+        "note": "usage 一致。deployment 我给 3 而非 2：数据仓库本身零成本获取，扣分主要来自 Lean 工具链而非「部署困难」，2 分（部署困难、依赖复杂、缺少文档）并不贴切。learning 我给 7 而非 8：仓库主体是数据而非工程代码，可迁移的架构与测试实践有限。两处分差均为 1 分且方向相反。"
+      },
+      "flags": [
+        {
+          "code": "DATA_ACCURACY_CAVEAT",
+          "severity": "medium",
+          "evidence": "README：`Not all have accompanying Lean formalizations.` 与 `Some of the unformalized results could have issues.`，约 42% 顶级结果已形式化，其余未形式化。",
+          "impact": "约六成顶级结果未经机器验证，直接引用未形式化结论存在出错风险。"
+        },
+        {
+          "code": "NOT_A_SOFTWARE_PROJECT",
+          "severity": "low",
+          "evidence": "仓库无 Release（API 404），README 自述为 raw research data；无安装、构建或运行入口。",
+          "impact": "usage/deployment 两个维度对其并不完全适用，按「工具」预期评估会失真。"
+        }
+      ],
+      "note": "真实仓库，元数据与数据包一致（stars 17832→17882、forks 2007→2008，误差均远小于 5%），当天仍有提交。五条断言全部可由 README 原文验证，数据包对该仓库的描述准确。需注意它并非软件项目：约六成顶级结果未形式化，作者明确提示可能有错。"
+    }
+  ],
+  "learning_pick": {
+    "repo": "ranadhir19/mcp-server-lab",
+    "exists": true,
+    "canonical_repo": "ranadhir19/mcp-server-lab",
+    "owner_ok": true,
+    "archived": false,
+    "stars": {
+      "packet": 1,
+      "verified": 1,
+      "status": "match"
+    },
+    "license": {
+      "packet": "MIT",
+      "verified": "MIT",
+      "status": "match"
+    },
+    "flags": [],
+    "note": "轻量核查通过：仓库存在、owner 一致、未归档、License 为 MIT 与数据包一致、stars 1 与数据包一致。仓库为 MCP server 教学设计（v1/v2 两套 schema 对照 + 32 次分级试验），纯标准库实现、validate.py 自检；但仅 1 星、fork 0，几乎无外部采用，最近提交 2026-11-16（距今 9 天）。"
+  }
 }
