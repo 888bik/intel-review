@@ -1,0 +1,1384 @@
+{
+  "date": "2026-11-26",
+  "scored": 96,
+  "filtered": 50,
+  "repos": [
+    {
+      "name": "jingyaogong/minimind",
+      "repo_url": "https://github.com/jingyaogong/minimind",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 97,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "JenkinWoo/sheeridVerify",
+      "repo_url": "https://github.com/JenkinWoo/sheeridVerify",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_description",
+      "learning_candidate": false
+    },
+    {
+      "name": "duwqijlk/browser-capture",
+      "repo_url": "https://github.com/duwqijlk/browser-capture",
+      "category": "developer-tools",
+      "tags": [
+        "reverse-engineering"
+      ],
+      "score": 84,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "qybaihe/botark",
+      "repo_url": "https://github.com/qybaihe/botark",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 84,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "aoaostar/legado",
+      "repo_url": "https://github.com/aoaostar/legado",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license",
+      "learning_candidate": false
+    },
+    {
+      "name": "togg53192-cmd/jailbreaks",
+      "repo_url": "https://github.com/togg53192-cmd/jailbreaks",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license",
+      "learning_candidate": false
+    },
+    {
+      "name": "win4r/MuseAI-Skills",
+      "repo_url": "https://github.com/win4r/MuseAI-Skills",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license",
+      "learning_candidate": false
+    },
+    {
+      "name": "xuemk/linuxdo-android",
+      "repo_url": "https://github.com/xuemk/linuxdo-android",
+      "category": "android",
+      "tags": [],
+      "score": 73,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "thtbee/nectarlink",
+      "repo_url": "https://github.com/thtbee/nectarlink",
+      "category": "android",
+      "tags": [],
+      "score": 98,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "kilbertert/quick2api",
+      "repo_url": "https://github.com/kilbertert/quick2api",
+      "category": "developer-tools",
+      "tags": [
+        "reverse-engineering"
+      ],
+      "score": 68,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "datawhalechina/hello-agents",
+      "repo_url": "https://github.com/datawhalechina/hello-agents",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 92,
+      "status": "scored",
+      "learning_candidate": true
+    },
+    {
+      "name": "mvanhorn/last30days-skill",
+      "repo_url": "https://github.com/mvanhorn/last30days-skill",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 100,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "IridiumIO/CompactGUI",
+      "repo_url": "https://github.com/IridiumIO/CompactGUI",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 84,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "mlabonne/llm-course",
+      "repo_url": "https://github.com/mlabonne/llm-course",
+      "category": "productivity",
+      "tags": [
+        "reading",
+        "gis"
+      ],
+      "score": 66,
+      "status": "scored",
+      "learning_candidate": true
+    },
+    {
+      "name": "libracoder/kiri",
+      "repo_url": "https://github.com/libracoder/kiri",
+      "category": "self-hosted",
+      "tags": [
+        "docker"
+      ],
+      "score": 100,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "Ray-lea/Argus",
+      "repo_url": "https://github.com/Ray-lea/Argus",
+      "category": "productivity",
+      "tags": [],
+      "score": 94,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "kingcharleslzy-ai/dsh-purge",
+      "repo_url": "https://github.com/kingcharleslzy-ai/dsh-purge",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 95,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "Awesome-AI-Pedia/Awesome-AI-Pedia",
+      "repo_url": "https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 79,
+      "status": "scored",
+      "learning_candidate": true
+    },
+    {
+      "name": "anefzaoui/misterdownloadmanager",
+      "repo_url": "https://github.com/anefzaoui/misterdownloadmanager",
+      "category": "developer-tools",
+      "tags": [
+        "media"
+      ],
+      "score": 100,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "oinkvm/oink",
+      "repo_url": "https://github.com/oinkvm/oink",
+      "category": "productivity",
+      "tags": [
+        "media"
+      ],
+      "score": 94,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "imputnet/cobalt",
+      "repo_url": "https://github.com/imputnet/cobalt",
+      "category": "productivity",
+      "tags": [
+        "media"
+      ],
+      "score": 68,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "Thysrael/Horizon",
+      "repo_url": "https://github.com/Thysrael/Horizon",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 95,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "KKKKhazix/AIHOT",
+      "repo_url": "https://github.com/KKKKhazix/AIHOT",
+      "category": "ai-tools",
+      "tags": [
+        "docker"
+      ],
+      "score": 92,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "OpenSelena/libreget",
+      "repo_url": "https://github.com/OpenSelena/libreget",
+      "category": "productivity",
+      "tags": [
+        "media"
+      ],
+      "score": 98,
+      "status": "scored",
+      "learning_candidate": true
+    },
+    {
+      "name": "tidain/YunX-Desktop",
+      "repo_url": "https://github.com/tidain/YunX-Desktop",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 82,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "blendi-remade/prompt2rig",
+      "repo_url": "https://github.com/blendi-remade/prompt2rig",
+      "category": "developer-tools",
+      "tags": [
+        "media"
+      ],
+      "score": 74,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "hoochanlon/fq-book",
+      "repo_url": "https://github.com/hoochanlon/fq-book",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license",
+      "learning_candidate": false
+    },
+    {
+      "name": "TGrpg/awesome-telegram",
+      "repo_url": "https://github.com/TGrpg/awesome-telegram",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 89,
+      "status": "scored",
+      "learning_candidate": true
+    },
+    {
+      "name": "rockyflux/Bookmarks",
+      "repo_url": "https://github.com/rockyflux/Bookmarks",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license",
+      "learning_candidate": false
+    },
+    {
+      "name": "LingCore/WinShun",
+      "repo_url": "https://github.com/LingCore/WinShun",
+      "category": "productivity",
+      "tags": [
+        "pdf"
+      ],
+      "score": 91,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "miyuesc/blog",
+      "repo_url": "https://github.com/miyuesc/blog",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license",
+      "learning_candidate": false
+    },
+    {
+      "name": "Verlintas/NOIR",
+      "repo_url": "https://github.com/Verlintas/NOIR",
+      "category": "android",
+      "tags": [
+        "security",
+        "privacy"
+      ],
+      "score": 94,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "woai3c/introduction-to-front-end-engineering",
+      "repo_url": "https://github.com/woai3c/introduction-to-front-end-engineering",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 55,
+      "status": "scored",
+      "learning_candidate": true
+    },
+    {
+      "name": "YatSenOS/YatSenOS-Tutorial-Volume-1",
+      "repo_url": "https://github.com/YatSenOS/YatSenOS-Tutorial-Volume-1",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:stale",
+      "learning_candidate": false
+    },
+    {
+      "name": "1c7/Crash-Course-Computer-Science-Chinese",
+      "repo_url": "https://github.com/1c7/Crash-Course-Computer-Science-Chinese",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license",
+      "learning_candidate": false
+    },
+    {
+      "name": "ninetyhe-90/ai-engineering-interview-questions-company-wise-zh-cn",
+      "repo_url": "https://github.com/ninetyhe-90/ai-engineering-interview-questions-company-wise-zh-cn",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 66,
+      "status": "scored",
+      "learning_candidate": true
+    },
+    {
+      "name": "anhao/ai-pose-gallery-zh",
+      "repo_url": "https://github.com/anhao/ai-pose-gallery-zh",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 90,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "margrop/wrong-notebook",
+      "repo_url": "https://github.com/margrop/wrong-notebook",
+      "category": "ai-tools",
+      "tags": [
+        "reading"
+      ],
+      "score": 92,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "irbis-sh/zen-desktop",
+      "repo_url": "https://github.com/irbis-sh/zen-desktop",
+      "category": "developer-tools",
+      "tags": [
+        "privacy"
+      ],
+      "score": 91,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "fuzhengwei/CodeGuide",
+      "repo_url": "https://github.com/fuzhengwei/CodeGuide",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 95,
+      "status": "scored",
+      "learning_candidate": true
+    },
+    {
+      "name": "echo-loop/Echo-Loop",
+      "repo_url": "https://github.com/echo-loop/Echo-Loop",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 95,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "azl397985856/leetcode",
+      "repo_url": "https://github.com/azl397985856/leetcode",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 100,
+      "status": "scored",
+      "learning_candidate": true
+    },
+    {
+      "name": "sisterAn/JavaScript-Algorithms",
+      "repo_url": "https://github.com/sisterAn/JavaScript-Algorithms",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license,stale",
+      "learning_candidate": false
+    },
+    {
+      "name": "Advanced-Frontend/Daily-Interview-Question",
+      "repo_url": "https://github.com/Advanced-Frontend/Daily-Interview-Question",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license,stale",
+      "learning_candidate": false
+    },
+    {
+      "name": "itcharge/AlgoNote",
+      "repo_url": "https://github.com/itcharge/AlgoNote",
+      "category": "productivity",
+      "tags": [],
+      "score": 77,
+      "status": "scored",
+      "learning_candidate": true
+    },
+    {
+      "name": "girliemac/a-picture-is-worth-a-1000-words",
+      "repo_url": "https://github.com/girliemac/a-picture-is-worth-a-1000-words",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 77,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "dairongpeng/algorithm-note",
+      "repo_url": "https://github.com/dairongpeng/algorithm-note",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:stale",
+      "learning_candidate": false
+    },
+    {
+      "name": "o-Sakurajimamai-o/cet-practice",
+      "repo_url": "https://github.com/o-Sakurajimamai-o/cet-practice",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 68,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "zkep/my-geektime",
+      "repo_url": "https://github.com/zkep/my-geektime",
+      "category": "developer-tools",
+      "tags": [
+        "media"
+      ],
+      "score": 77,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "EverettFish/holo-card-studio",
+      "repo_url": "https://github.com/EverettFish/holo-card-studio",
+      "category": "developer-tools",
+      "tags": [
+        "threejs"
+      ],
+      "score": 72,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "kkk-bot/HowToGetAlong",
+      "repo_url": "https://github.com/kkk-bot/HowToGetAlong",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 72,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "yinsuecci/mockrunning",
+      "repo_url": "https://github.com/yinsuecci/mockrunning",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license",
+      "learning_candidate": false
+    },
+    {
+      "name": "ERRRC/kaogongzhentizhengliu",
+      "repo_url": "https://github.com/ERRRC/kaogongzhentizhengliu",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 64,
+      "status": "scored",
+      "learning_candidate": true
+    },
+    {
+      "name": "yorukot/superfile",
+      "repo_url": "https://github.com/yorukot/superfile",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 97,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "ossu/computer-science",
+      "repo_url": "https://github.com/ossu/computer-science",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 87,
+      "status": "scored",
+      "learning_candidate": true
+    },
+    {
+      "name": "zyj1022/awesome-threejs",
+      "repo_url": "https://github.com/zyj1022/awesome-threejs",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license,stale",
+      "learning_candidate": false
+    },
+    {
+      "name": "wu529778790/wu529778790.github.io",
+      "repo_url": "https://github.com/wu529778790/wu529778790.github.io",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license",
+      "learning_candidate": false
+    },
+    {
+      "name": "coder2gwy/coder2gwy",
+      "repo_url": "https://github.com/coder2gwy/coder2gwy",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license,stale",
+      "learning_candidate": false
+    },
+    {
+      "name": "itstudyit/it.dyqufx.com",
+      "repo_url": "https://github.com/itstudyit/it.dyqufx.com",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license,stale",
+      "learning_candidate": false
+    },
+    {
+      "name": "wsbgithub/jieke-base",
+      "repo_url": "https://github.com/wsbgithub/jieke-base",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_description,no_license,stale,too_small",
+      "learning_candidate": false
+    },
+    {
+      "name": "HackTricks-wiki/hacktricks",
+      "repo_url": "https://github.com/HackTricks-wiki/hacktricks",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license",
+      "learning_candidate": false
+    },
+    {
+      "name": "666ghj/BettaFish",
+      "repo_url": "https://github.com/666ghj/BettaFish",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 85,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "ERRRC/xingcezhenti",
+      "repo_url": "https://github.com/ERRRC/xingcezhenti",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license",
+      "learning_candidate": false
+    },
+    {
+      "name": "XxHuberrr/Mineradio-paused",
+      "repo_url": "https://github.com/XxHuberrr/Mineradio-paused",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 87,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "Ac-Wiki/Ac-Wiki",
+      "repo_url": "https://github.com/Ac-Wiki/Ac-Wiki",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 78,
+      "status": "scored",
+      "learning_candidate": true
+    },
+    {
+      "name": "bojieli/ai-agent-book",
+      "repo_url": "https://github.com/bojieli/ai-agent-book",
+      "category": "ai-tools",
+      "tags": [
+        "pdf"
+      ],
+      "score": 97,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "cheaper-inference/OmniRoute",
+      "repo_url": "https://github.com/cheaper-inference/OmniRoute",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 100,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "vikiboss/r2-web",
+      "repo_url": "https://github.com/vikiboss/r2-web",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 87,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "LyleMi/Learn-Web-Hacking",
+      "repo_url": "https://github.com/LyleMi/Learn-Web-Hacking",
+      "category": "developer-tools",
+      "tags": [
+        "security"
+      ],
+      "score": 72,
+      "status": "scored",
+      "learning_candidate": true
+    },
+    {
+      "name": "CarterPerez-dev/Cybersecurity-Projects",
+      "repo_url": "https://github.com/CarterPerez-dev/Cybersecurity-Projects",
+      "category": "ai-tools",
+      "tags": [
+        "security"
+      ],
+      "score": 93,
+      "status": "scored",
+      "learning_candidate": true
+    },
+    {
+      "name": "arnoldhao/xiadown",
+      "repo_url": "https://github.com/arnoldhao/xiadown",
+      "category": "productivity",
+      "tags": [
+        "media"
+      ],
+      "score": 66,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "dgtlmoon/changedetection.io",
+      "repo_url": "https://github.com/dgtlmoon/changedetection.io",
+      "category": "self-hosted",
+      "tags": [
+        "privacy"
+      ],
+      "score": 100,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "aakk007/RogueCleaner",
+      "repo_url": "https://github.com/aakk007/RogueCleaner",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 65,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "AmbroseX/larksnap",
+      "repo_url": "https://github.com/AmbroseX/larksnap",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 72,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "YishenTu/claudian",
+      "repo_url": "https://github.com/YishenTu/claudian",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 100,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "bergside/design-md-chrome",
+      "repo_url": "https://github.com/bergside/design-md-chrome",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 70,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "AnnaSuSu/TechSpar",
+      "repo_url": "https://github.com/AnnaSuSu/TechSpar",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 91,
+      "status": "scored",
+      "learning_candidate": true
+    },
+    {
+      "name": "vigorX777/ai-daily-digest",
+      "repo_url": "https://github.com/vigorX777/ai-daily-digest",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license",
+      "learning_candidate": false
+    },
+    {
+      "name": "hikariming/openkoto",
+      "repo_url": "https://github.com/hikariming/openkoto",
+      "category": "productivity",
+      "tags": [
+        "reading"
+      ],
+      "score": 79,
+      "status": "scored",
+      "learning_candidate": true
+    },
+    {
+      "name": "JackyST0/awesome-agent-skills",
+      "repo_url": "https://github.com/JackyST0/awesome-agent-skills",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 89,
+      "status": "scored",
+      "learning_candidate": true
+    },
+    {
+      "name": "Decade-qiu/CookHero",
+      "repo_url": "https://github.com/Decade-qiu/CookHero",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 66,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "Usagi-org/ai-goofish-monitor",
+      "repo_url": "https://github.com/Usagi-org/ai-goofish-monitor",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 85,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "pbeenigg/LittleCrawler",
+      "repo_url": "https://github.com/pbeenigg/LittleCrawler",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 61,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "zhaoolee/ChromeAppHeroes",
+      "repo_url": "https://github.com/zhaoolee/ChromeAppHeroes",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 78,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "hefengxian/my-ielts",
+      "repo_url": "https://github.com/hefengxian/my-ielts",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license",
+      "learning_candidate": false
+    },
+    {
+      "name": "anmolksachan/AI-ML-Free-Resources-for-Security-and-Prompt-Injection",
+      "repo_url": "https://github.com/anmolksachan/AI-ML-Free-Resources-for-Security-and-Prompt-Injection",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license",
+      "learning_candidate": false
+    },
+    {
+      "name": "SKeyerror/Psyduck",
+      "repo_url": "https://github.com/SKeyerror/Psyduck",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license,stale",
+      "learning_candidate": false
+    },
+    {
+      "name": "AllThingsSmitty/css-protips",
+      "repo_url": "https://github.com/AllThingsSmitty/css-protips",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 75,
+      "status": "scored",
+      "learning_candidate": true
+    },
+    {
+      "name": "jbiaojerry/ebook-treasure-chest",
+      "repo_url": "https://github.com/jbiaojerry/ebook-treasure-chest",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license",
+      "learning_candidate": false
+    },
+    {
+      "name": "index-tts/index-tts",
+      "repo_url": "https://github.com/index-tts/index-tts",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 85,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "tangshimin/MuJing",
+      "repo_url": "https://github.com/tangshimin/MuJing",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 67,
+      "status": "scored",
+      "learning_candidate": true
+    },
+    {
+      "name": "YILS-LIN/short-video-factory",
+      "repo_url": "https://github.com/YILS-LIN/short-video-factory",
+      "category": "developer-tools",
+      "tags": [
+        "media"
+      ],
+      "score": 98,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "likeadmin-likeshop/likeshop",
+      "repo_url": "https://github.com/likeadmin-likeshop/likeshop",
+      "category": "self-hosted",
+      "tags": [
+        "docker"
+      ],
+      "score": 77,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "lydiahallie/javascript-questions",
+      "repo_url": "https://github.com/lydiahallie/javascript-questions",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:stale",
+      "learning_candidate": false
+    },
+    {
+      "name": "chatanywhere/GPT_API_free",
+      "repo_url": "https://github.com/chatanywhere/GPT_API_free",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 82,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "krillinai/OpenCreator",
+      "repo_url": "https://github.com/krillinai/OpenCreator",
+      "category": "productivity",
+      "tags": [
+        "media"
+      ],
+      "score": 100,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "youhunwl/TVAPP",
+      "repo_url": "https://github.com/youhunwl/TVAPP",
+      "category": "android",
+      "tags": [],
+      "score": 95,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "0voice/Campus_recruitment_interview_questions",
+      "repo_url": "https://github.com/0voice/Campus_recruitment_interview_questions",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:stale",
+      "learning_candidate": false
+    },
+    {
+      "name": "sansan0/TrendRadar",
+      "repo_url": "https://github.com/sansan0/TrendRadar",
+      "category": "ai-tools",
+      "tags": [
+        "docker"
+      ],
+      "score": 95,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "ZuodaoTech/everyone-can-use-english",
+      "repo_url": "https://github.com/ZuodaoTech/everyone-can-use-english",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 71,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "xixu-me/xget",
+      "repo_url": "https://github.com/xixu-me/xget",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 88,
+      "status": "scored",
+      "learning_candidate": true
+    },
+    {
+      "name": "liyown/ai-trend-publish",
+      "repo_url": "https://github.com/liyown/ai-trend-publish",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 76,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "JollyToday/GhostCut_Remake_Video",
+      "repo_url": "https://github.com/JollyToday/GhostCut_Remake_Video",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license",
+      "learning_candidate": false
+    },
+    {
+      "name": "henrypp/simplewall",
+      "repo_url": "https://github.com/henrypp/simplewall",
+      "category": "productivity",
+      "tags": [],
+      "score": 98,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "shaxiu/XianyuAutoAgent",
+      "repo_url": "https://github.com/shaxiu/XianyuAutoAgent",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 72,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "Zie619/n8n-workflows",
+      "repo_url": "https://github.com/Zie619/n8n-workflows",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 74,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "ahmedkhaleel2004/gitdiagram",
+      "repo_url": "https://github.com/ahmedkhaleel2004/gitdiagram",
+      "category": "developer-tools",
+      "tags": [
+        "media"
+      ],
+      "score": 95,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "CyberCommy/geektime-books",
+      "repo_url": "https://github.com/CyberCommy/geektime-books",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license,stale",
+      "learning_candidate": false
+    },
+    {
+      "name": "sdmg15/Best-websites-a-programmer-should-visit",
+      "repo_url": "https://github.com/sdmg15/Best-websites-a-programmer-should-visit",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:stale",
+      "learning_candidate": false
+    },
+    {
+      "name": "blossom-editor/blossom",
+      "repo_url": "https://github.com/blossom-editor/blossom",
+      "category": "self-hosted",
+      "tags": [],
+      "score": 76,
+      "status": "scored",
+      "learning_candidate": true
+    },
+    {
+      "name": "helloworldpxy/thunder-https",
+      "repo_url": "https://github.com/helloworldpxy/thunder-https",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 64,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "Jeric-X/SyncClipboard",
+      "repo_url": "https://github.com/Jeric-X/SyncClipboard",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 88,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "codexu/note-gen",
+      "repo_url": "https://github.com/codexu/note-gen",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 100,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "521xueweihan/HelloGitHub",
+      "repo_url": "https://github.com/521xueweihan/HelloGitHub",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license",
+      "learning_candidate": false
+    },
+    {
+      "name": "sudheerj/javascript-interview-questions",
+      "repo_url": "https://github.com/sudheerj/javascript-interview-questions",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license",
+      "learning_candidate": false
+    },
+    {
+      "name": "stephentian/33-js-concepts",
+      "repo_url": "https://github.com/stephentian/33-js-concepts",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license,stale",
+      "learning_candidate": false
+    },
+    {
+      "name": "justjavac/free-programming-books-zh_CN",
+      "repo_url": "https://github.com/justjavac/free-programming-books-zh_CN",
+      "category": "android",
+      "tags": [
+        "pdf"
+      ],
+      "score": 71,
+      "status": "scored",
+      "learning_candidate": true
+    },
+    {
+      "name": "he2121/MyRPCFromZero",
+      "repo_url": "https://github.com/he2121/MyRPCFromZero",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:stale",
+      "learning_candidate": false
+    },
+    {
+      "name": "gohugoio/hugo",
+      "repo_url": "https://github.com/gohugoio/hugo",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 97,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "idosal/git-mcp",
+      "repo_url": "https://github.com/idosal/git-mcp",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 69,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "basarat/typescript-book",
+      "repo_url": "https://github.com/basarat/typescript-book",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:stale",
+      "learning_candidate": false
+    },
+    {
+      "name": "freeCodeCamp/freeCodeCamp",
+      "repo_url": "https://github.com/freeCodeCamp/freeCodeCamp",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 95,
+      "status": "scored",
+      "learning_candidate": true
+    },
+    {
+      "name": "codecrafters-io/build-your-own-x",
+      "repo_url": "https://github.com/codecrafters-io/build-your-own-x",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license",
+      "learning_candidate": false
+    },
+    {
+      "name": "clxering/Effective-Java-3rd-edition-Chinese-English-bilingual",
+      "repo_url": "https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:stale",
+      "learning_candidate": false
+    },
+    {
+      "name": "goabstract/Awesome-Design-Tools",
+      "repo_url": "https://github.com/goabstract/Awesome-Design-Tools",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:stale",
+      "learning_candidate": false
+    },
+    {
+      "name": "dibingfa/flash-linux0.11-talk",
+      "repo_url": "https://github.com/dibingfa/flash-linux0.11-talk",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license,stale",
+      "learning_candidate": false
+    },
+    {
+      "name": "jackfrued/Python-100-Days",
+      "repo_url": "https://github.com/jackfrued/Python-100-Days",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license",
+      "learning_candidate": false
+    },
+    {
+      "name": "GitHubDaily/GitHubDaily",
+      "repo_url": "https://github.com/GitHubDaily/GitHubDaily",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license",
+      "learning_candidate": false
+    },
+    {
+      "name": "farhanashrafdev/90DaysOfCyberSecurity",
+      "repo_url": "https://github.com/farhanashrafdev/90DaysOfCyberSecurity",
+      "category": "developer-tools",
+      "tags": [
+        "security"
+      ],
+      "score": 78,
+      "status": "scored",
+      "learning_candidate": true
+    },
+    {
+      "name": "QSCTech/zju-icicles",
+      "repo_url": "https://github.com/QSCTech/zju-icicles",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license",
+      "learning_candidate": false
+    },
+    {
+      "name": "Anduin2017/HowToCook",
+      "repo_url": "https://github.com/Anduin2017/HowToCook",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 87,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "Wechat-ggGitHub/Awesome-GitHub-Repo",
+      "repo_url": "https://github.com/Wechat-ggGitHub/Awesome-GitHub-Repo",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 61,
+      "status": "scored",
+      "learning_candidate": true
+    },
+    {
+      "name": "linyqh/NarratoAI",
+      "repo_url": "https://github.com/linyqh/NarratoAI",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 82,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "Atlas-OS/Atlas",
+      "repo_url": "https://github.com/Atlas-OS/Atlas",
+      "category": "android",
+      "tags": [
+        "security",
+        "privacy"
+      ],
+      "score": 100,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "lm-rebooter/NuggetsBooklet",
+      "repo_url": "https://github.com/lm-rebooter/NuggetsBooklet",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license",
+      "learning_candidate": false
+    },
+    {
+      "name": "youzan/vant-weapp",
+      "repo_url": "https://github.com/youzan/vant-weapp",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 82,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "ConardLi/awesome-coding-js",
+      "repo_url": "https://github.com/ConardLi/awesome-coding-js",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license,stale",
+      "learning_candidate": false
+    },
+    {
+      "name": "youzan/vant",
+      "repo_url": "https://github.com/youzan/vant",
+      "category": "android",
+      "tags": [],
+      "score": 97,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "justjavac/wechat-miniapp-radar",
+      "repo_url": "https://github.com/justjavac/wechat-miniapp-radar",
+      "category": "ai-tools",
+      "tags": [],
+      "score": 87,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "ganlvtech/down_52pojie_cn",
+      "repo_url": "https://github.com/ganlvtech/down_52pojie_cn",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:stale",
+      "learning_candidate": false
+    },
+    {
+      "name": "VSCodeVim/Vim",
+      "repo_url": "https://github.com/VSCodeVim/Vim",
+      "category": "developer-tools",
+      "tags": [],
+      "score": 97,
+      "status": "scored",
+      "learning_candidate": false
+    },
+    {
+      "name": "coderwhy/coderwhy-cli",
+      "repo_url": "https://github.com/coderwhy/coderwhy-cli",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:stale",
+      "learning_candidate": false
+    },
+    {
+      "name": "Nauxscript/Just-Vim-It",
+      "repo_url": "https://github.com/Nauxscript/Just-Vim-It",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license,stale",
+      "learning_candidate": false
+    },
+    {
+      "name": "itwanger/toBeBetterJavaer",
+      "repo_url": "https://github.com/itwanger/toBeBetterJavaer",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_license",
+      "learning_candidate": false
+    },
+    {
+      "name": "OdysseusYuan/LKY_OfficeTools",
+      "repo_url": "https://github.com/OdysseusYuan/LKY_OfficeTools",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:stale",
+      "learning_candidate": false
+    },
+    {
+      "name": "OpenNJet/OpenNJet",
+      "repo_url": "https://github.com/OpenNJet/OpenNJet",
+      "category": "",
+      "tags": [],
+      "score": 0,
+      "status": "filtered:no_description",
+      "learning_candidate": false
+    }
+  ]
+}
