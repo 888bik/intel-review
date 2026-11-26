@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-26",
+  "run_id": "ghrec-20261126",
+  "overall": {
+    "status": "failed",
+    "expected_projects": 0,
+    "checked_projects": 0,
+    "learning_pick_checked": false,
+    "failures": [
+      "PACKET_NOT_FOUND"
+    ],
+    "searched_paths": [
+      "packets\\ 下文件名含 2026-11-26 的 .json（目录内仅有 dsh-packet-2026-11-21.json、README.md）",
+      "packets\\ 下 2026-11-26 当天修改的最新 .json（无当天修改文件）",
+      "C:\\Users\\bik\\Downloads\\ 下文件名含 packet 与 2026-11-26 的 .json（仅有 packet-2026-11-22.json）",
+      "C:\\Users\\bik\\Desktop\\ 下含 2026-11-26 的 .json（无）",
+      "C:\\Users\\bik\\Documents\\ 递归深度 8 内当天修改的 .json（无数据包）",
+      "C:\\Users\\bik\\OneDrive\\ 递归深度 5 内 packet 文件（无）",
+      "远端 https://api.github.com/repos/888bik/intel-review/contents/packets（最新为 packet-2026-11-25.json，无 11-26）",
+      "远端 raw.githubusercontent.com/888bik/intel-review/main/packets/packet-2026-11-26.json（HTTP 404，重试 3 次）",
+      "远端 raw.githubusercontent.com/888bik/intel-review/main/packets/dsh-packet-2026-11-26.json（HTTP 404）"
+    ]
+  },
+  "verdicts": [],
+  "learning_pick": {
+    "repo": null,
+    "exists": null,
+    "canonical_repo": null,
+    "owner_ok": null,
+    "archived": null,
+    "stars": {
+      "packet": null,
+      "verified": null,
+      "status": "not_applicable"
+    },
+    "license": {
+      "packet": null,
+      "verified": null,
+      "status": "not_applicable"
+    },
+    "flags": [],
+    "note": "未找到 2026-11-26 的数据包，无法确定是否存在学习资料库推荐，未执行轻量核查。"
+  }
+}
