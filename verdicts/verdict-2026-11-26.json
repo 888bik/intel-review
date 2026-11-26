@@ -2,43 +2,689 @@
   "date": "2026-11-26",
   "run_id": "ghrec-20261126",
   "overall": {
-    "status": "failed",
-    "expected_projects": 0,
-    "checked_projects": 0,
-    "learning_pick_checked": false,
-    "failures": [
-      "PACKET_NOT_FOUND"
-    ],
-    "searched_paths": [
-      "packets\\ 下文件名含 2026-11-26 的 .json（目录内仅有 dsh-packet-2026-11-21.json、README.md）",
-      "packets\\ 下 2026-11-26 当天修改的最新 .json（无当天修改文件）",
-      "C:\\Users\\bik\\Downloads\\ 下文件名含 packet 与 2026-11-26 的 .json（仅有 packet-2026-11-22.json）",
-      "C:\\Users\\bik\\Desktop\\ 下含 2026-11-26 的 .json（无）",
-      "C:\\Users\\bik\\Documents\\ 递归深度 8 内当天修改的 .json（无数据包）",
-      "C:\\Users\\bik\\OneDrive\\ 递归深度 5 内 packet 文件（无）",
-      "远端 https://api.github.com/repos/888bik/intel-review/contents/packets（最新为 packet-2026-11-25.json，无 11-26）",
-      "远端 raw.githubusercontent.com/888bik/intel-review/main/packets/packet-2026-11-26.json（HTTP 404，重试 3 次）",
-      "远端 raw.githubusercontent.com/888bik/intel-review/main/packets/dsh-packet-2026-11-26.json（HTTP 404）"
-    ]
+    "status": "complete",
+    "expected_projects": 4,
+    "checked_projects": 4,
+    "learning_pick_checked": true,
+    "failures": []
   },
-  "verdicts": [],
+  "verdicts": [
+    {
+      "repo": "google-research/google-research",
+      "exists": true,
+      "canonical_repo": "google-research/google-research",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 39452,
+          "verified": 39461,
+          "status": "match"
+        },
+        "forks": {
+          "packet": 8533,
+          "verified": 8533,
+          "status": "match"
+        },
+        "license": {
+          "packet": "Apache-2.0",
+          "verified": "Apache-2.0",
+          "status": "match"
+        },
+        "language": {
+          "packet": "Jupyter Notebook",
+          "verified": "Jupyter Notebook",
+          "status": "match"
+        },
+        "updated_at": {
+          "packet": "2026-11-25T23:54:31Z",
+          "verified": "2026-11-26T05:30:49Z",
+          "status": "match"
+        },
+        "latest_commit_at": "2026-11-25T23:48:01Z",
+        "days_since_last_commit": 0,
+        "latest_release": {
+          "packet": null,
+          "verified": null,
+          "status": "none"
+        }
+      },
+      "claims": [
+        {
+          "claim": "google-research/google-research 是 Google Research 官方发布其研究代码的仓库，集中存放大量研究项目代码；README 建议按子目录按需下载（而非整仓克隆）。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/google-research/google-research/blob/master/README.md",
+              "quote": "This repository contains code released by Google Research."
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/google-research/google-research/blob/master/README.md",
+              "quote": "Because the repo is large, we recommend you download only the subdirectory of interest:"
+            }
+          ],
+          "reason": "README 开篇与第 14 行直接支持「官方研究代码仓库」与「按子目录下载」两点。"
+        },
+        {
+          "claim": "一是许可——仓库里所有数据集用 CC BY 4.0、所有源码用 Apache 2.0；二是「仓库太大」，建议只下载你关心的子目录（用 github.dev 右键下载，或浅克隆 `git clone ... --depth=1`）。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/google-research/google-research/blob/master/README.md",
+              "quote": "All datasets in this repository are released under the CC BY 4.0 International license … All source files in this repository are released under the Apache 2.0 license"
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/google-research/google-research/blob/master/README.md",
+              "quote": "Use GitHub editor to open the project. To open the editor change the url from github.com to github.dev in the address bar. … git clone git@github.com:google-research/google-research.git --depth=1"
+            }
+          ],
+          "reason": "双许可（数据集 CC BY 4.0 / 源码 Apache 2.0）与两种子目录获取方式在 README 中逐条对应。"
+        },
+        {
+          "claim": "README 末尾标注「Updated in 2023」，并声明「这不是 Google 的官方产品」。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/google-research/google-research/blob/master/README.md",
+              "quote": "Disclaimer: This is not an official Google product.  …  Updated in 2023."
+            }
+          ],
+          "reason": "README 第 31、33 行原文如此。但该「Updated in 2023」与仓库实际仍在持续提交（最近提交 2026-11-25）矛盾，属 README 内容陈旧，已记入 flags。"
+        },
+        {
+          "claim": "README 明确「repo is large」并给出子目录下载与浅克隆两种方式。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/google-research/google-research/blob/master/README.md",
+              "quote": "Because the repo is large, we recommend you download only the subdirectory of interest"
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/google-research/google-research/blob/master/README.md",
+              "quote": "If you'd like to submit a pull request, you'll need to clone the repository; we recommend making a shallow clone (without history)."
+            }
+          ],
+          "reason": "README 原文为「Because the repo is large」，断言转述一致；两种方式（github.dev 子目录下载、--depth=1 浅克隆）均有原文。"
+        },
+        {
+          "claim": "**不是一个有版本发布的项目**：无任何 GitHub release。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "GitHub API",
+              "url": "https://api.github.com/repos/google-research/google-research/releases/latest",
+              "quote": "HTTP 404（releases/latest），仓库本身 200 正常"
+            }
+          ],
+          "reason": "releases/latest 返回 404 且仓库可访问，按规范判定为「没有可获取的 latest release」。"
+        }
+      ],
+      "scores": {
+        "usage": 6,
+        "deployment": 2,
+        "learning": 8
+      },
+      "score_reasons": {
+        "usage": "按子目录提供大量可复用的研究参考实现，能解决「找某个方向官方实现」的问题，但整仓不是可安装的工具，需自行定位与适配，实际使用门槛明显。",
+        "deployment": "无 Release、无打包、无统一入口，README 明确整仓过大，只能靠 github.dev 取子目录或浅克隆，谈不上部署，属最高成本一档。",
+        "learning": "涵盖海量研究方向的真实实现与配套 notebook，是很好的参考与复现素材；但各子目录质量、文档与维护程度差异极大，不能整体视为高工程质量范本。"
+      },
+      "grade": "B",
+      "grade_reason": "研究参考价值明确且持续更新，但无发布、无统一入口、只能按子目录取用，属「有实际价值但存在使用门槛」的 B 档，而非核心能力扎实的 A 档。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 7,
+          "deployment": 2,
+          "learning": 8
+        },
+        "reported_grade": "A",
+        "assessment": "too_high",
+        "note": "部署（2）与学习（8）与我一致；usage 我给 6 而非 7——整仓不可作为工具使用，价值依赖使用者已明确要找哪个子目录。定级我下调到 B：这不是一个「核心能力扎实」的项目，而是庞杂的研究代码集合，且 README 自称「Updated in 2023」与实际仍在日更不符。"
+      },
+      "flags": [
+        {
+          "code": "LICENSE_SCOPE",
+          "severity": "medium",
+          "evidence": "README：数据集为 CC BY 4.0、源码为 Apache 2.0；数据包与 GitHub API 的 SPDX 均把整仓记为 Apache-2.0。",
+          "impact": "若按整仓 Apache-2.0 使用其中的数据集，许可证判断会出错，需按子目录内容区分。"
+        },
+        {
+          "code": "DOC_STALE",
+          "severity": "low",
+          "evidence": "README 末行「Updated in 2023」，而仓库最近提交为 2026-11-25T23:48:01Z，近 5 次提交均在 2026-11-24/25。",
+          "impact": "README 不能反映仓库当前状态，读者可能误以为项目已停更。"
+        },
+        {
+          "code": "NO_RELEASES",
+          "severity": "low",
+          "evidence": "releases/latest 返回 404，仓库无任何 Release。",
+          "impact": "没有可引用的版本号，复现时只能绑定 commit，不利于长期引用。"
+        }
+      ],
+      "note": "仓库真实、活跃、Apache-2.0 源码 + CC BY 4.0 数据集，元数据除许可范围外全部核对一致。核心问题是它不是一个项目而是一个巨型集合：无 Release、无安装路径，README 内容陈旧（自称 2023 更新）。适合作为「按方向检索参考实现」的索引，不适合作为推荐给普通用户的工具。"
+    },
+    {
+      "repo": "alesha-pro/llm.asm",
+      "exists": true,
+      "canonical_repo": "alesha-pro/llm.asm",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 415,
+          "verified": 515,
+          "status": "mismatch"
+        },
+        "forks": {
+          "packet": 61,
+          "verified": 77,
+          "status": "mismatch"
+        },
+        "license": {
+          "packet": "MIT",
+          "verified": "MIT",
+          "status": "match"
+        },
+        "language": {
+          "packet": "Assembly",
+          "verified": "Assembly",
+          "status": "match"
+        },
+        "updated_at": {
+          "packet": "2026-11-25T15:42:44Z",
+          "verified": "2026-11-26T05:36:19Z",
+          "status": "match"
+        },
+        "latest_commit_at": "2026-11-25T15:40:22Z",
+        "days_since_last_commit": 0,
+        "latest_release": {
+          "packet": null,
+          "verified": null,
+          "status": "none"
+        }
+      },
+      "claims": [
+        {
+          "claim": "llm.asm 是三个用 100% 纯 x86-64 NASM 汇编写的完整 LLM 项目：Qwen3-0.6B 推理、可启动的裸机 Qwen3 OS、以及从头写的 Mini-GPT 训练器——零 C、零 libc、零运行时依赖，总 17,252 行汇编。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/alesha-pro/llm.asm/blob/main/README.md",
+              "quote": "**Three complete LLM projects written in 100% pure x86-64 NASM assembly.** Zero C, zero C++, zero Rust, zero libc, zero libm, zero runtime dependencies."
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/alesha-pro/llm.asm/blob/main/README.md",
+              "quote": "… is hand-written x86-64 assembly (`17,252` lines total across all three projects)."
+            }
+          ],
+          "reason": "README 首段与第 6 行逐字支持三个项目、纯汇编、零依赖与 17,252 行总数。"
+        },
+        {
+          "claim": "**01-qwen3-inference**：静态 Linux ELF 跑 Qwen3-0.6B（Q8_0、内置 BPE tokenizer、GQA+QK-Norm+RoPE+SwiGLU、单次 & `--chat` 多轮 KV-cache REPL）；FAST_Q8=1 默认 126.8 tok/s @40T。",
+          "result": "unverifiable",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/alesha-pro/llm.asm/blob/main/README.md",
+              "quote": "Static Linux ELF running `Qwen/Qwen3-0.6B` (Q8_0, built-in BPE tokenizer, GQA + QK-Norm + RoPE + SwiGLU, single-shot & `--chat` multi-turn KV-cache REPL). **`FAST_Q8=1` (default):** **126.8 tok/s** decode at 40T"
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/alesha-pro/llm.asm/blob/main/README.md",
+              "quote": "**Phase 1 & 3 runtime:** Any Linux x86-64 kernel. Zero shared libraries (`readelf -d` reports no dynamic section)."
+            }
+          ],
+          "reason": "架构与功能描述（静态 ELF、Q8_0、BPE、GQA+QK-Norm+RoPE+SwiGLU、--chat 多轮）在 README 中逐项对应，可判为有据。但该条同时把「FAST_Q8=1 默认 126.8 tok/s @40T」写进断言，这一数字是 README 自述性能，本次未独立复跑；按规范「宣传性性能不得写成 true」，整条只能判 unverifiable——功能部分成立、性能部分未证实，不拆条以免掩盖后者。"
+        },
+        {
+          "claim": "与 llama.cpp 对比（同机 EPYC 7642、Qwen3-0.6B Q8_0、34 prompt/64 生成、3 次均值）——1T 20.70 vs 16.63(+24.5%)、4T +35.6%、8T +28.3%、16T +18.3%、24T +18.8%、32T +18.0%、40T +19.8%；README 注明 llama.cpp 用 batched GEMM 做 prefill、llm.asm 逐 token GEMV。",
+          "result": "unverifiable",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/alesha-pro/llm.asm/blob/main/README.md",
+              "quote": "Measured on the same machine (**AMD EPYC 7642** …), same model … `34` prompt tokens / `64` generated tokens, `3`-run average"
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/alesha-pro/llm.asm/blob/main/README.md",
+              "quote": "(`llama.cpp` uses batched GEMM for prompt prefill `pp34`, whereas `llm.asm` runs token-by-token GEMV."
+            }
+          ],
+          "reason": "README 确实逐格列出这些数字并注明 GEMM/GEMV 差异，但「比 llama.cpp 快 18%~36%」是项目自述的性能结论，GitHub 官方源无法复现该基准，按规范不得记为 true。需第三方在同机复测才能确认。"
+        },
+        {
+          "claim": "要求 x86-64 且带 AVX2 + FMA + F16C（Intel Haswell / AMD Excavator 或更新）。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/alesha-pro/llm.asm/blob/main/README.md",
+              "quote": "- **CPU:** x86-64 with **AVX2 + FMA + F16C** (Intel Haswell / AMD Excavator or newer)."
+            }
+          ],
+          "reason": "System Requirements 段落逐字对应。"
+        },
+        {
+          "claim": "无 GitHub release，需从源码 `make` 构建。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "GitHub API",
+              "url": "https://api.github.com/repos/alesha-pro/llm.asm/releases/latest",
+              "quote": "HTTP 404（releases/latest），仓库本身 200 正常"
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/alesha-pro/llm.asm/blob/main/README.md",
+              "quote": "Clone the repo and build everything with `make all`"
+            }
+          ],
+          "reason": "releases/latest 404 判定无 Release；README Quick Start 只给 make all 源码构建路径，无预编译产物。"
+        }
+      ],
+      "scores": {
+        "usage": 5,
+        "deployment": 4,
+        "learning": 9
+      },
+      "score_reasons": {
+        "usage": "能在一台带 AVX2 的普通 Linux 机器上以 14KB 二进制跑 Qwen3-0.6B 并支持多轮对话，确实解决问题；但场景极窄（0.6B 小模型、无 GPU 路径、无 OpenAI 兼容接口），多数用户用 llama.cpp 更省事。",
+        "deployment": "无需运行时依赖是巨大优势，但要自己装 nasm/binutils、用 python 脚本把 HF 权重导出成 .asmbin、再按 CPU 特性选 FAST_Q8 编译，且必须 x86-64 + AVX2/FMA/F16C，属于「按文档能做但手工步骤不少」的一档。",
+        "learning": "把完整 transformer 前向（RMSNorm/RoPE/GQA/SwiGLU/Softmax）、AVX2 GEMM、BPE、clone/futex 线程池、裸机 SMP 启动全部手写汇编并给出 PyTorch 对齐验证，是极少见的高密度工程范本，源码与分层文档都值得细读。"
+      },
+      "grade": "B",
+      "grade_reason": "技术密度极高、验证链路完整，学习价值接近满分；但实用面窄（仅 0.6B、仅 x86-64 AVX2）、无 Release、仓库上线仅一天，作为「日常可用工具」推荐只能给 B。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 5,
+          "deployment": 4,
+          "learning": 9
+        },
+        "reported_grade": "B",
+        "assessment": "reasonable",
+        "note": "三维与我完全一致。需要补充的是数据包 stars/forks 已明显落后（415→515、61→77，误差 19%/21%），说明该项目在数据包生成后仍在快速涨星，热度判断需按最新值。"
+      },
+      "flags": [
+        {
+          "code": "EARLY_STAGE",
+          "severity": "medium",
+          "evidence": "仓库创建于 2026-11-25T07:28:51Z，至核查时仅 3 个提交、上线约 1 天，无任何 Release。",
+          "impact": "项目处于最早期，接口、格式（.asmbin v1/v2）与行为都可能随时变动，不宜作为生产依赖。"
+        },
+        {
+          "code": "MAINTAINER_CONCENTRATION",
+          "severity": "low",
+          "evidence": "最近 3 次提交全部由 alesha-pro 一人提交（初始发布、KV-cache 多轮、FAST_Q8 内核）。",
+          "impact": "仅凭近期提交只能观察到作者高度集中，存在潜在单点维护风险，不能据此断言长期不可持续。"
+        },
+        {
+          "code": "SELF_REPORTED_BENCHMARK",
+          "severity": "low",
+          "evidence": "README 的 llama.cpp 对比表与 126.8 tok/s 等数字均为项目自测（自述同机、3 次均值），本次未独立复现。",
+          "impact": "「比 llama.cpp 快 18%~36%」不宜当作已证实的性能结论引用。"
+        },
+        {
+          "code": "HARDWARE_REQUIREMENT",
+          "severity": "low",
+          "evidence": "README System Requirements：x86-64 且需 AVX2 + FMA + F16C（Haswell / Excavator 或更新）。",
+          "impact": "老旧 CPU、ARM 与 Apple Silicon 无法使用，推荐时需注明。"
+        }
+      ],
+      "note": "真实且质量罕见：三个纯汇编 LLM 项目、零运行时依赖、并给出与 PyTorch 的逐张量对齐验证。主要限制是实用面窄与项目极新（上线一天、单作者、无 Release），性能优势为自述。适合作为学习与研究素材推荐，不适合当作日常推理工具推荐。"
+    },
+    {
+      "repo": "click6067-ship-it/token-tv",
+      "exists": true,
+      "canonical_repo": "click6067-ship-it/token-tv",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 129,
+          "verified": 130,
+          "status": "match"
+        },
+        "forks": {
+          "packet": 18,
+          "verified": 18,
+          "status": "match"
+        },
+        "license": {
+          "packet": "MIT",
+          "verified": "MIT",
+          "status": "match"
+        },
+        "language": {
+          "packet": "Python",
+          "verified": "Python",
+          "status": "match"
+        },
+        "updated_at": {
+          "packet": "2026-11-24T17:58:42Z",
+          "verified": "2026-11-26T05:03:36Z",
+          "status": "match"
+        },
+        "latest_commit_at": "2026-11-24T17:58:39Z",
+        "days_since_last_commit": 1,
+        "latest_release": {
+          "packet": "v0.6.2",
+          "verified": "v0.6.2",
+          "status": "match"
+        }
+      },
+      "claims": [
+        {
+          "claim": "TokenTV 把约 5 美元的 AliExpress 时钟（GeekMagic SmallTV）变成 Claude Code 与 Codex 的「像素宠物」屏：宠物会对你的 agent 做出反应，并把用量限额保持在眼前；无需刷固件。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/click6067-ship-it/token-tv/blob/main/README.md",
+              "quote": "Turn a ~$5 AliExpress clock (GeekMagic SmallTV) into pixel pets for Claude Code and Codex. They react to your agents and keep your usage limits in sight. No firmware flashing."
+            }
+          ],
+          "reason": "README 第 11 行逐字对应。"
+        },
+        {
+          "claim": "Claude Code 需要你时举手（NEEDS YOU）、对危险命令「开庭」质疑、你大喊时赌气。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/click6067-ship-it/token-tv/blob/main/README.md",
+              "quote": "**Claude Code mode:** Clawd raises a hand when Claude needs you, holds court over risky commands and sulks when you shout"
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/click6067-ship-it/token-tv/blob/main/README.md",
+              "quote": "Clawd goes on trial when Claude runs rm -rf … it turns its back when you swear and raises a hand when Claude needs permission"
+            }
+          ],
+          "reason": "举手 / 开庭 / 赌气三个场景在 README 正文与图注中均有对应描述。"
+        },
+        {
+          "claim": "live demo、`npx token-tv demo`（无需时钟/登录）、`npx token-tv start` 或 `uvx token-tv start`（需常开电脑 + Wi-Fi 时钟 + 已登录工具）。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/click6067-ship-it/token-tv/blob/main/README.md",
+              "quote": "**Try it:** [live demo](https://click6067-ship-it.github.io/token-tv/) or `npx token-tv demo`, no clock or login needed."
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/click6067-ship-it/token-tv/blob/main/README.md",
+              "quote": "**Set it up:** `npx token-tv start` (or `uvx token-tv start`) on a computer that stays on. It finds the clock on your Wi-Fi and your signed-in tools."
+            }
+          ],
+          "reason": "两种运行方式的命令、前提（无需时钟/登录；需常开机器 + Wi-Fi 时钟 + 已登录工具）与 README 完全一致。"
+        },
+        {
+          "claim": "只有 Claude Code 真正向你提问时 Clawd 才举手（修复自动模式下 NEEDS YOU 闪烁）；用 Claude Code 2.1.321 在真实会话中测试",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "Release",
+              "url": "https://github.com/click6067-ship-it/token-tv/releases/tag/v0.6.2",
+              "quote": "**Fixed: NEEDS YOU flashing in auto mode.** … Now the hand goes up only when Claude Code actually puts something to you: a permission dialog, or a question it asks you."
+            },
+            {
+              "source": "Release",
+              "url": "https://github.com/click6067-ship-it/token-tv/releases/tag/v0.6.2",
+              "quote": "Tested with Claude Code 2.1.321 in a real session, in auto mode and in manual mode."
+            }
+          ],
+          "reason": "v0.6.2 Release 说明逐条对应「仅在真正提问时举手」「修复自动模式闪烁」「用 2.1.321 真实会话测试」。"
+        },
+        {
+          "claim": "部分只在特定时段出现、部分几乎不出现（secret scenes）。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/click6067-ship-it/token-tv/blob/main/README.md",
+              "quote": "**Secret scenes:** some only at certain hours, some almost never."
+            }
+          ],
+          "reason": "README 第 24 行逐字对应。"
+        }
+      ],
+      "scores": {
+        "usage": 5,
+        "deployment": 6,
+        "learning": 4
+      },
+      "score_reasons": {
+        "usage": "把 Claude Code / Codex 的等待状态与用量限额变成抬头可见的物理显示，确实解决「一直切窗口看限额」的痛点；但完整价值依赖特定 $5 时钟硬件，没有硬件时只剩 demo，适用面窄。",
+        "deployment": "`npx token-tv start` 一条命令即可，自动发现局域网时钟与已登录工具，不用刷固件；代价是需要一台常开的电脑、2.4G Wi-Fi 与同网段时钟，属于「按文档能装但仍有环境前提」。",
+        "learning": "Python 实现、场景动画与 Claude Code 插件挂接有一定参考价值（尤其 v0.6.2 对 auto 模式误判的修法），但项目规模小、架构简单，不足以作为工程质量范本。"
+      },
+      "grade": "B",
+      "grade_reason": "功能闭环完整、有正式 Release 与文档、安装一条命令，确实解决一个真实的小痛点；但价值被特定硬件与常开设备绑死，属「有实际价值但存在使用门槛」的 B 档。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 5,
+          "deployment": 6,
+          "learning": 4
+        },
+        "reported_grade": "C",
+        "assessment": "reasonable",
+        "note": "三个维度分数与我的独立评分完全一致。定级我上调到 B 而非 C：它有 v0.6.2 正式发布、完整文档、一条命令安装，硬件依赖属于「一定门槛」而非「推荐价值弱」；若按「通用受众」口径，C 也说得通，差异仅在定级口径。"
+      },
+      "flags": [
+        {
+          "code": "HARDWARE_DEPENDENCY",
+          "severity": "medium",
+          "evidence": "README：需约 $5 的 GeekMagic SmallTV 时钟；无时钟时只有 `npx token-tv demo` 演示，且需一台常开的电脑与 2.4G Wi-Fi。",
+          "impact": "推荐时必须说明需另购硬件并保持常开设备，否则用户无法获得核心体验。"
+        },
+        {
+          "code": "SINGLE_MAINTAINER",
+          "severity": "low",
+          "evidence": "最近 5 次提交全部来自 click6067-ship-it 一个账号；仓库创建于 2026-10-02。",
+          "impact": "维护高度集中于单一账号，存在潜在单点维护风险，不能据此断言项目不可持续。"
+        },
+        {
+          "code": "UNOFFICIAL_TOOL_INTEGRATION",
+          "severity": "low",
+          "evidence": "README 与 v0.6.2 Release 表明功能依赖 Claude Code 的插件/权限提示行为（如 auto 模式分类器行为变化曾导致 NEEDS YOU 误闪）。",
+          "impact": "上游 Claude Code 行为一变就可能需要跟进修复，兼容性不能长期保证。"
+        }
+      ],
+      "note": "真实项目，元数据全部核对一致（stars/forks/license/language/Release v0.6.2 均 match）。亮点是 v0.6.2 明确修掉了 auto 模式下的误报并给出真实会话测试说明。核心限制是需要另购特定硬件并保持一台电脑常开；单人维护、上线不足两月。"
+    },
+    {
+      "repo": "danieldaeschle/rusty-teams",
+      "exists": true,
+      "canonical_repo": "danieldaeschle/rusty-teams",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 67,
+          "verified": 69,
+          "status": "match"
+        },
+        "forks": {
+          "packet": 19,
+          "verified": 21,
+          "status": "mismatch"
+        },
+        "license": {
+          "packet": "MIT",
+          "verified": "MIT",
+          "status": "match"
+        },
+        "language": {
+          "packet": "Rust",
+          "verified": "Rust",
+          "status": "match"
+        },
+        "updated_at": {
+          "packet": "2026-11-25T17:04:07Z",
+          "verified": "2026-11-26T05:32:59Z",
+          "status": "match"
+        },
+        "latest_commit_at": "2026-11-25T17:04:06Z",
+        "days_since_last_commit": 0,
+        "latest_release": {
+          "packet": "v0.6.1",
+          "verified": "v0.6.1",
+          "status": "match"
+        }
+      },
+      "claims": [
+        {
+          "claim": "rusty-teams 是一个快速、原生、GPU 渲染（GPUI）的非官方 Microsoft Teams 聊天客户端，用 Rust 编写，无需管理员审批即可在公司租户中使用。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/danieldaeschle/rusty-teams/blob/main/README.md",
+              "quote": "**A fast, native Microsoft Teams chat client. Written in Rust, rendered on the GPU. No admin approval needed.**"
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/danieldaeschle/rusty-teams/blob/main/README.md",
+              "quote": "🏢 Works in company tenants | No app registration, no admin consent: it runs on the Teams web app your account is already allowed to use"
+            }
+          ],
+          "reason": "标题句与 Why 表格同时支持「Rust/GPU(GPUI)/原生客户端」与「无需管理员审批、可用于公司租户」。"
+        },
+        {
+          "claim": "README 明确「Unofficial. Not affiliated with or endorsed by Microsoft」。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/danieldaeschle/rusty-teams/blob/main/README.md",
+              "quote": "Unofficial. Not affiliated with or endorsed by Microsoft."
+            }
+          ],
+          "reason": "README 第 22 行 NOTE 块原文逐字一致。"
+        },
+        {
+          "claim": "README 明确「never sees your password and never stores a token」，token 仅存内存、到期前清掉、从不记录。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/danieldaeschle/rusty-teams/blob/main/README.md",
+              "quote": "Rusty Teams never sees your password and never stores a token."
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/danieldaeschle/rusty-teams/blob/main/README.md",
+              "quote": "Rust sends the requests itself and keeps each token in memory until shortly before it expires, never stored or logged."
+            }
+          ],
+          "reason": "How it works 段落与「Sign-in and tokens」细节逐条对应「不存 token、仅内存、到期前刷新、不写日志」。注意这是 README 的设计自述，本次未做代码审计或流量抓包验证。"
+        },
+        {
+          "claim": "本地 MCP 服务器 http://127.0.0.1:40615/mcp（默认关，Settings > MCP）；agent 可读被允许的聊天/频道/会议/转写并「提议」带 @提及/图片或表情的回复；回复以卡片显示在编辑器上方（Send/Edit/Discard）；**agent 从不自动发送**",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/danieldaeschle/rusty-teams/blob/main/README.md",
+              "quote": "Local MCP server at `http://127.0.0.1:40615/mcp`, off by default: Settings > MCP"
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/danieldaeschle/rusty-teams/blob/main/README.md",
+              "quote": "A reply shows as a card above the composer: Send, Edit or Discard. A reaction shows as a note under the message: Accept or Discard. Agents never send"
+            }
+          ],
+          "reason": "地址、默认关闭、读取范围、提议式回复、卡片三个操作与「Agents never send」在 README 的 Agents (MCP) 小节逐项对应。"
+        },
+        {
+          "claim": "Linux 构建需 clang 21+ + mold + sccache（README）。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/danieldaeschle/rusty-teams/blob/main/README.md",
+              "quote": "Linux build needs clang 21+ (libwebrtc's hermetic libc++) + mold (set in `.cargo/config.toml`); sccache shares compiled deps across worktrees"
+            }
+          ],
+          "reason": "Quick start 的命令表格中该行与断言逐字对应。"
+        }
+      ],
+      "scores": {
+        "usage": 7,
+        "deployment": 7,
+        "learning": 8
+      },
+      "score_reasons": {
+        "usage": "直击「公司 Teams 不允许装第三方客户端 / 官方客户端吃资源」的痛点，无需 app 注册与管理员同意即可用于真实工作租户，且带离线搜索、通话、日历等完整能力，实际可用性高。",
+        "deployment": "三个平台都有预编译产物（.exe / .tar.gz / universal .app），下载即用；自行构建在 Linux 上要 clang 21+、mold、sccache，门槛偏高，但普通用户不必构建。",
+        "learning": "Rust 多 crate 工作区划分清晰（app/core/store/graph/chatsvc/calling/session/mcp），用 CDP + 页面内 fetch 复用 MSAL token 的思路、GPUI 渲染与 SQLite/FTS5 缓存都是可迁移的工程实践，测试与脚本（layout-sweep、layout_guard）也较完整。"
+      },
+      "grade": "B",
+      "grade_reason": "作为日常 Teams 客户端价值与工程质量都不错，但整机依赖 Teams 网页端未公开 API（README 自述随时可能变更）、项目上线不足两月、仍处 0.6.x，存在不可忽视的长期可用性风险，故给 B 而非 A。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 7,
+          "deployment": 7,
+          "learning": 8
+        },
+        "reported_grade": "B",
+        "assessment": "reasonable",
+        "note": "三维评分与定级均与我的独立判断一致。补充：数据包 forks 19 与实测 21 相差 9.5%（超 5% 阈值），stars 与 Release 一致，说明数据包略陈旧而非错误。"
+      },
+      "flags": [
+        {
+          "code": "UNOFFICIAL_API_DEPENDENCY",
+          "severity": "medium",
+          "evidence": "README NOTE：It uses the same web APIs as the Teams web app, which can change at any time.",
+          "impact": "一旦 Microsoft 改动 Teams 网页端接口或收紧策略，客户端可能整体失效，长期可用性无法保证。"
+        },
+        {
+          "code": "EARLY_STAGE",
+          "severity": "low",
+          "evidence": "仓库创建于 2026-10-07，最新 Release 为 v0.6.1（2026-11-24），仍处 0.x。",
+          "impact": "版本号与路线图表明功能仍在快速补齐，行为可能随版本变化。"
+        },
+        {
+          "code": "COMPLEX_BUILD_TOOLCHAIN",
+          "severity": "low",
+          "evidence": "README：Linux 构建需 clang 21+、mold、sccache，libwebrtc 依赖较重。",
+          "impact": "从源码构建的门槛明显高于普通 Rust 项目，建议直接使用预编译产物。"
+        }
+      ],
+      "note": "仓库真实、活跃（最近提交 2026-11-25）、MIT、三平台有预编译产物，元数据除 forks 略陈旧外全部一致。设计上以「运行在 Teams 网页端之上、token 只在内存」规避管理员审批与凭据落盘，MCP 侧坚持「agent 只能提议、不能发送」，边界处理较克制。主要风险是依赖非官方网页 API 与项目仍处 0.x。"
+    }
+  ],
   "learning_pick": {
-    "repo": null,
-    "exists": null,
-    "canonical_repo": null,
-    "owner_ok": null,
-    "archived": null,
+    "repo": "lsernau/grh-lean",
+    "exists": true,
+    "canonical_repo": "lsernau/grh-lean",
+    "owner_ok": true,
+    "archived": false,
     "stars": {
-      "packet": null,
-      "verified": null,
-      "status": "not_applicable"
+      "packet": 388,
+      "verified": 476,
+      "status": "mismatch"
     },
     "license": {
-      "packet": null,
-      "verified": null,
-      "status": "not_applicable"
+      "packet": "Apache-2.0",
+      "verified": "Apache-2.0",
+      "status": "match"
     },
-    "flags": [],
-    "note": "未找到 2026-11-26 的数据包，无法确定是否存在学习资料库推荐，未执行轻量核查。"
+    "flags": [
+      {
+        "code": "UNMAINTAINED_RESEARCH_ARTIFACT",
+        "severity": "low",
+        "evidence": "README 首行：「Research artifact. Not maintained and not accepting contributions.」；Status 段：「The proof has passed machine checks only … No mathematician has read it through, and no paper comes with it.」",
+        "impact": "作为学习资料只能「读」不能「跟」：不会有更新、不接受提问式贡献，且证明本身未经同行阅读，阅读时需自行判断。"
+      }
+    ],
+    "note": "轻量核查：仓库存在、owner 一致、未归档、License Apache-2.0 与数据包一致；stars 数据包 388 与实测 476 相差 18.5%（超 5%），属数据包陈旧。仓库为 Lean 4 的 RH/GRH 证明工件（grh/ 约 30 万行、grh-compact/ 约 7.6 万行），构建需 Lean v4.35.0 + Mathlib 固定 commit，12 核 24GB 约 1–2 小时。作为学习资料适合研究大规模 Lean 形式化与 Mathlib 用法，但明确声明不再维护。"
   }
 }
