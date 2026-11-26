@@ -1,0 +1,127 @@
+{
+ "date": "2026-11-26",
+ "run_id": "ghrec-20261126",
+ "projects": [
+  {
+   "repo": "google-research/google-research",
+   "description": "Google Research",
+   "kind": "regular",
+   "backfill": false,
+   "is_new": true,
+   "deep_report": "projects/productivity/google-research.md",
+   "packet_metadata": {
+    "stars": 39452,
+    "forks": 8533,
+    "license": "Apache-2.0",
+    "language": "Jupyter Notebook",
+    "updated_at": "2026-11-25T23:54:31Z",
+    "latest_release": null
+   },
+   "claims": [
+    "google-research/google-research 是 Google Research 官方发布其研究代码的仓库，集中存放大量研究项目代码；README 建议按子目录按需下载（而非整仓克隆）。",
+    "一是许可——仓库里所有数据集用 CC BY 4.0、所有源码用 Apache 2.0；二是「仓库太大」，建议只下载你关心的子目录（用 github.dev 右键下载，或浅克隆 `git clone ... --depth=1`）。",
+    "README 末尾标注「Updated in 2023」，并声明「这不是 Google 的官方产品」。",
+    "README 明确「repo is large」并给出子目录下载与浅克隆两种方式。",
+    "**不是一个有版本发布的项目**：无任何 GitHub release。"
+   ],
+   "proposed_scores": {
+    "usage": 7,
+    "deployment": 2,
+    "learning": 8
+   },
+   "proposed_grade": "A"
+  },
+  {
+   "repo": "alesha-pro/llm.asm",
+   "description": "Qwen3-0.6B inference (12 KB), bare-metal bootable OS (22 KB), and from-scratch Mini-GPT trainer with live Braille TUI (32 KB) in 100% pure x86-64 NASM assembly. Zero C, zero libc, zero dependencies.",
+   "kind": "regular",
+   "backfill": false,
+   "is_new": true,
+   "deep_report": "projects/ai-agent/llm.asm.md",
+   "packet_metadata": {
+    "stars": 415,
+    "forks": 61,
+    "license": "MIT",
+    "language": "Assembly",
+    "updated_at": "2026-11-25T15:42:44Z",
+    "latest_release": null
+   },
+   "claims": [
+    "llm.asm 是三个用 100% 纯 x86-64 NASM 汇编写的完整 LLM 项目：Qwen3-0.6B 推理、可启动的裸机 Qwen3 OS、以及从头写的 Mini-GPT 训练器——零 C、零 libc、零运行时依赖，总 17,252 行汇编。",
+    "**01-qwen3-inference**：静态 Linux ELF 跑 Qwen3-0.6B（Q8_0、内置 BPE tokenizer、GQA+QK-Norm+RoPE+SwiGLU、单次 & `--chat` 多轮 KV-cache REPL）；FAST_Q8=1 默认 126.8 tok/s @40T。",
+    "与 llama.cpp 对比（同机 EPYC 7642、Qwen3-0.6B Q8_0、34 prompt/64 生成、3 次均值）——1T 20.70 vs 16.63(+24.5%)、4T +35.6%、8T +28.3%、16T +18.3%、24T +18.8%、32T +18.0%、40T +19.8%；README 注明 llama.cpp 用 batched GEMM 做 prefill、llm.asm 逐 token GEMV。",
+    "要求 x86-64 且带 AVX2 + FMA + F16C（Intel Haswell / AMD Excavator 或更新）。",
+    "无 GitHub release，需从源码 `make` 构建。"
+   ],
+   "proposed_scores": {
+    "usage": 5,
+    "deployment": 4,
+    "learning": 9
+   },
+   "proposed_grade": "B"
+  },
+  {
+   "repo": "click6067-ship-it/token-tv",
+   "description": "Turn a ~$5 AliExpress clock into pixel pets for Claude Code and Codex. They react to your agents and keep your usage limits in sight. No firmware flashing.",
+   "kind": "regular",
+   "backfill": false,
+   "is_new": true,
+   "deep_report": "projects/ai-agent/token-tv.md",
+   "packet_metadata": {
+    "stars": 129,
+    "forks": 18,
+    "license": "MIT",
+    "language": "Python",
+    "updated_at": "2026-11-24T17:58:42Z",
+    "latest_release": "v0.6.2"
+   },
+   "claims": [
+    "TokenTV 把约 5 美元的 AliExpress 时钟（GeekMagic SmallTV）变成 Claude Code 与 Codex 的「像素宠物」屏：宠物会对你的 agent 做出反应，并把用量限额保持在眼前；无需刷固件。",
+    "Claude Code 需要你时举手（NEEDS YOU）、对危险命令「开庭」质疑、你大喊时赌气。",
+    "live demo、`npx token-tv demo`（无需时钟/登录）、`npx token-tv start` 或 `uvx token-tv start`（需常开电脑 + Wi-Fi 时钟 + 已登录工具）。",
+    "只有 Claude Code 真正向你提问时 Clawd 才举手（修复自动模式下 NEEDS YOU 闪烁）；用 Claude Code 2.1.321 在真实会话中测试",
+    "部分只在特定时段出现、部分几乎不出现（secret scenes）。"
+   ],
+   "proposed_scores": {
+    "usage": 5,
+    "deployment": 6,
+    "learning": 4
+   },
+   "proposed_grade": "C"
+  },
+  {
+   "repo": "danieldaeschle/rusty-teams",
+   "description": "A fast, native Microsoft Teams chat client.",
+   "kind": "regular",
+   "backfill": false,
+   "is_new": true,
+   "deep_report": "projects/developer-tools/rusty-teams.md",
+   "packet_metadata": {
+    "stars": 67,
+    "forks": 19,
+    "license": "MIT",
+    "language": "Rust",
+    "updated_at": "2026-11-25T17:04:07Z",
+    "latest_release": "v0.6.1"
+   },
+   "claims": [
+    "rusty-teams 是一个快速、原生、GPU 渲染（GPUI）的非官方 Microsoft Teams 聊天客户端，用 Rust 编写，无需管理员审批即可在公司租户中使用。",
+    "README 明确「Unofficial. Not affiliated with or endorsed by Microsoft」。",
+    "README 明确「never sees your password and never stores a token」，token 仅存内存、到期前清掉、从不记录。",
+    "本地 MCP 服务器 http://127.0.0.1:40615/mcp（默认关，Settings > MCP）；agent 可读被允许的聊天/频道/会议/转写并「提议」带 @提及/图片或表情的回复；回复以卡片显示在编辑器上方（Send/Edit/Discard）；**agent 从不自动发送**",
+    "Linux 构建需 clang 21+ + mold + sccache（README）。"
+   ],
+   "proposed_scores": {
+    "usage": 7,
+    "deployment": 7,
+    "learning": 8
+   },
+   "proposed_grade": "B"
+  }
+ ],
+ "learning_pick": {
+  "repo": "lsernau/grh-lean",
+  "stars": 388,
+  "license": "Apache-2.0"
+ }
+}
