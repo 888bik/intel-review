@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-27",
+  "run_id": "ghrec-20261127",
+  "overall": {
+    "status": "failed",
+    "expected_projects": null,
+    "checked_projects": 0,
+    "learning_pick_checked": false,
+    "failures": [
+      "PACKET_NOT_FOUND"
+    ]
+  },
+  "searched_paths": [
+    "C:\\Users\\bik\\Documents\\deepseek-harness\\default-workspace\\packets\\ — 文件名含 2026-11-27 的 .json：无（目录内仅有 dsh-packet-2026-11-21.json 与 README.md）",
+    "C:\\Users\\bik\\Documents\\deepseek-harness\\default-workspace\\packets\\ — 今天修改的最新 .json：无（最新修改时间为 2026-11-21）",
+    "C:\\Users\\bik\\Downloads\\ — 文件名含 packet 与 2026-11-27 的 .json：无（仅有 packet-2026-11-22.json）",
+    "补充扫描 C:\\Users\\bik\\Desktop\\、C:\\Users\\bik\\.dsh\\、工作区递归（排除 .tmp/tools/.npm）：未发现含 2026-11-27 日期的数据包，也未发现今日修改的候选文件"
+  ],
+  "verdicts": [],
+  "learning_pick": {
+    "repo": null,
+    "exists": null,
+    "canonical_repo": null,
+    "owner_ok": null,
+    "archived": null,
+    "stars": {
+      "packet": null,
+      "verified": null,
+      "status": "not_applicable"
+    },
+    "license": {
+      "packet": null,
+      "verified": null,
+      "status": "not_applicable"
+    },
+    "flags": [],
+    "note": "当天数据包未找到，未进行任何核查。"
+  },
+  "note": "按 Asia/Shanghai 当天日期 2026-11-27 执行。未在规定的三个位置找到当天数据包，严格不沿用历史数据包（最新可见数据包为 2026-11-22），故不产出任何项目核查结论。GitHub API 额度充足（remaining=5000），但无数据包即无核查对象。"
+}
