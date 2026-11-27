@@ -1,0 +1,152 @@
+{
+  "date": "2026-11-27",
+  "run_id": "ghrec-20261127",
+  "projects": [
+    {
+      "repo": "gary23w/f-ck_data_brokers",
+      "description": "fck_data_brokers.py is a free, open-source Python script that sends opt-out and deletion requests to data brokers on your behalf.",
+      "kind": "regular",
+      "backfill": false,
+      "is_new": true,
+      "deep_report": "projects/self-hosted/f-ck_data_brokers.md",
+      "packet_metadata": {
+        "stars": 478,
+        "forks": 23,
+        "license": "MIT",
+        "language": "Python",
+        "updated_at": "2026-11-27T09:04:07Z",
+        "latest_release": null
+      },
+      "claims": [
+        "一个 Python 单文件脚本，零依赖，代替用户向数据中间商发送退出与删除请求。",
+        "它覆盖 600 多家已注册的数据中间商，按用户所在地的法律生成删除与退出信函，信函从用户自己的邮箱发出，或生成好交给用户手动发送。",
+        "用户数据只存在本地 state.json，不发送街道地址或身份证件信息。",
+        "MIT 许可，数据只存本地 state.json，不经过第三方服务器。",
+        "2026-11-26 才创建，Star 快速增长但历史极短，无正式 release。"
+      ],
+      "proposed_scores": {
+        "usage": 8,
+        "deployment": 8,
+        "learning": 6
+      },
+      "proposed_grade": "B"
+    },
+    {
+      "repo": "eisenzopf/rvoip",
+      "description": "Open-source Rust SIP/VoIP stack: SIP, WebRTC, SRTP and AI voice agents behind one API. RFC 7502-benchmarked.",
+      "kind": "regular",
+      "backfill": false,
+      "is_new": true,
+      "deep_report": "projects/ai-tools/rvoip.md",
+      "packet_metadata": {
+        "stars": 416,
+        "forks": 37,
+        "license": "MIT",
+        "language": "Rust",
+        "updated_at": "2026-11-27T09:01:19Z",
+        "latest_release": "v0.5.1"
+      },
+      "claims": [
+        "Rust 实时通信库，把 SIP、RTP、WebRTC、QUIC/WebTransport/WebSocket 会话、Media over QUIC 与语音 AI agent 统一在一个调用模型下。",
+        "整个协议栈都在仓库内的 Rust crate 中，无需另外安装 SIP 服务器、媒体服务器或 RTP 引擎。",
+        "发布时公布基准数字，单进程 SIP over TLS 信令最高 8,348 CPS。",
+        "发布时门控的互通证据，覆盖 Asterisk、FreeSWITCH、Jambonz、Kamailio、OpenSIPS。",
+        "多项功能处于 developer preview，API 不稳定，无生产就绪保证。"
+      ],
+      "proposed_scores": {
+        "usage": 7,
+        "deployment": 6,
+        "learning": 9
+      },
+      "proposed_grade": "B"
+    },
+    {
+      "repo": "intel/intel-one-mono",
+      "description": "Intel One Mono font repository",
+      "kind": "regular",
+      "backfill": false,
+      "is_new": true,
+      "deep_report": "projects/developer-tools/intel-one-mono.md",
+      "packet_metadata": {
+        "stars": 10902,
+        "forks": 348,
+        "license": "OFL-1.1",
+        "language": "",
+        "updated_at": "2026-11-27T09:03:24Z",
+        "latest_release": "V1.5.0"
+      },
+      "claims": [
+        "Intel 的开源等宽字体，由 Frere-Jones Type 设计，面向开发者清晰度与低视力用户。",
+        "它提供四个字重（Light、Regular、Medium、Bold）各带斜体，覆盖 200 多种拉丁字母语言，并提供编程连字等 OpenType 特性。",
+        "最新版 V1.5.0（2026-11-04）新增盲文与 Powerline 支持、多种箭头与符号，字形总数 1,385。",
+        "以 SIL Open Font License 1.1 发布，免费使用。",
+        "印刷品建议 7pt 及以上、屏幕建议 9px 及以上使用"
+      ],
+      "proposed_scores": {
+        "usage": 9,
+        "deployment": 9,
+        "learning": 4
+      },
+      "proposed_grade": "A"
+    },
+    {
+      "repo": "antonpictures/youtube-punisher",
+      "description": "YouTube Ad Blocker - Chrome / Browser Extension",
+      "kind": "regular",
+      "backfill": false,
+      "is_new": true,
+      "deep_report": "projects/developer-tools/youtube-punisher.md",
+      "packet_metadata": {
+        "stars": 175,
+        "forks": 2,
+        "license": "MIT",
+        "language": "JavaScript",
+        "updated_at": "2026-11-27T09:04:01Z",
+        "latest_release": null
+      },
+      "claims": [
+        "检测到 YouTube 广告时自动重载页面，并保留精确播放时间戳。",
+        "3 次重载仍未清除广告时，自动跳转到无广告镜像 yout-ube.com。",
+        "每 500ms 加 MutationObserver 监听 `.ad-showing` 类、跳过按钮与广告覆盖层。",
+        "3 秒冷却防止重载循环。",
+        "直播用普通重载（没有时间戳可保留）。"
+      ],
+      "proposed_scores": {
+        "usage": 7,
+        "deployment": 7,
+        "learning": 6
+      },
+      "proposed_grade": "B"
+    },
+    {
+      "repo": "batanus/lip-dictation",
+      "description": "Silent dictation for Claude Code: mouth words at your webcam, a local lip-reading model types them into the prompt",
+      "kind": "regular",
+      "backfill": false,
+      "is_new": true,
+      "deep_report": "projects/productivity/lip-dictation.md",
+      "packet_metadata": {
+        "stars": 12,
+        "forks": 1,
+        "license": "MIT",
+        "language": "TypeScript",
+        "updated_at": "2026-11-27T07:55:36Z",
+        "latest_release": "v0.1.12"
+      },
+      "claims": [
+        "Claude Code 插件：对着摄像头默念，本地唇语识别模型把文字打进提示框。",
+        "它使用 Auto-AVSR 视觉模型 vsr_trlrs2lrs3vox2avsp_base（2.5 亿参数），识别全程在本地 Mac 上进行，不录音、不上传视频。",
+        "出声朗读在基准上约 80%，无声默念更低、因人而异",
+        "要求：macOS Apple Silicon、摄像头、约 2.5 GB 磁盘空间、Claude Code 2.1.287 或更新版本。",
+        "安装是 Claude Code 插件命令，设置步骤下载约 1.5 GB 依赖。"
+      ],
+      "proposed_scores": {
+        "usage": 5,
+        "deployment": 4,
+        "learning": 8
+      },
+      "proposed_grade": "C"
+    }
+  ],
+  "learning_pick": null
+}
