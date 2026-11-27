@@ -2,21 +2,801 @@
   "date": "2026-11-27",
   "run_id": "ghrec-20261127",
   "overall": {
-    "status": "failed",
-    "expected_projects": null,
-    "checked_projects": 0,
+    "status": "complete",
+    "expected_projects": 5,
+    "checked_projects": 5,
     "learning_pick_checked": false,
-    "failures": [
-      "PACKET_NOT_FOUND"
-    ]
+    "failures": []
   },
-  "searched_paths": [
-    "C:\\Users\\bik\\Documents\\deepseek-harness\\default-workspace\\packets\\ — 文件名含 2026-11-27 的 .json：无（目录内仅有 dsh-packet-2026-11-21.json 与 README.md）",
-    "C:\\Users\\bik\\Documents\\deepseek-harness\\default-workspace\\packets\\ — 今天修改的最新 .json：无（最新修改时间为 2026-11-21）",
-    "C:\\Users\\bik\\Downloads\\ — 文件名含 packet 与 2026-11-27 的 .json：无（仅有 packet-2026-11-22.json）",
-    "补充扫描 C:\\Users\\bik\\Desktop\\、C:\\Users\\bik\\.dsh\\、工作区递归（排除 .tmp/tools/.npm）：未发现含 2026-11-27 日期的数据包，也未发现今日修改的候选文件"
+  "verdicts": [
+    {
+      "repo": "gary23w/f-ck_data_brokers",
+      "exists": true,
+      "canonical_repo": "gary23w/f-ck_data_brokers",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 478,
+          "verified": 487,
+          "status": "match"
+        },
+        "forks": {
+          "packet": 23,
+          "verified": 23,
+          "status": "match"
+        },
+        "license": {
+          "packet": "MIT",
+          "verified": "MIT",
+          "status": "match"
+        },
+        "language": {
+          "packet": "Python",
+          "verified": "Python",
+          "status": "match"
+        },
+        "updated_at": {
+          "packet": "2026-11-27T09:04:07Z",
+          "verified": "2026-11-27T10:14:44Z",
+          "status": "match"
+        },
+        "latest_commit_at": "2026-11-26T22:01:54Z",
+        "days_since_last_commit": 1,
+        "latest_release": {
+          "packet": null,
+          "verified": null,
+          "status": "none"
+        }
+      },
+      "claims": [
+        {
+          "claim": "一个 Python 单文件脚本，零依赖，代替用户向数据中间商发送退出与删除请求。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/gary23w/f-ck_data_brokers/blob/main/README.md",
+              "quote": "One Python file. No dependencies. Free. It runs on your computer, keeps your details on your computer, and makes data brokers delete you."
+            }
+          ],
+          "reason": "README 直接说明单文件、零依赖、本地运行并代发删除/退出请求。"
+        },
+        {
+          "claim": "它覆盖 600 多家已注册的数据中间商，按用户所在地的法律生成删除与退出信函，信函从用户自己的邮箱发出，或生成好交给用户手动发送。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/gary23w/f-ck_data_brokers/blob/main/README.md",
+              "quote": "Gets the list of registered data brokers. All 600 and more. Writes each one a real legal deletion and opt-out letter in your name, quoting the law where you live. Sends the letters from your own free mailbox, or hands them to you ready to send."
+            }
+          ],
+          "reason": "README 的 What this does to them 段落逐条对应覆盖数量、按地方法律生成、用户邮箱发送或手动发送。"
+        },
+        {
+          "claim": "用户数据只存在本地 state.json，不发送街道地址或身份证件信息。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/gary23w/f-ck_data_brokers/blob/main/README.md",
+              "quote": "In one file, `state.json`, in a folder called `.fuck_data_brokers` in your home directory. ... Nothing is uploaded anywhere."
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/gary23w/f-ck_data_brokers/blob/main/README.md",
+              "quote": "It sends three things and no more: your name, your email address and your city. No street address, no birthday, no phone number, no ID."
+            }
+          ],
+          "reason": "README 明确数据只在本地 state.json，且只发送姓名/邮箱/城市，明确拒绝街道地址与身份证件。"
+        },
+        {
+          "claim": "MIT 许可，数据只存本地 state.json，不经过第三方服务器。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "GitHub API",
+              "url": "https://api.github.com/repos/gary23w/f-ck_data_brokers",
+              "quote": "license.spdx_id = \"MIT\""
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/gary23w/f-ck_data_brokers/blob/main/README.md",
+              "quote": "MIT. Take it, change it, share it. ... Nothing is uploaded anywhere."
+            }
+          ],
+          "reason": "API 返回 SPDX MIT，README 说明数据本地存储、不上传。"
+        },
+        {
+          "claim": "2026-11-26 才创建，Star 快速增长但历史极短，无正式 release。",
+          "result": "unverifiable",
+          "evidence": [
+            {
+              "source": "GitHub API",
+              "url": "https://api.github.com/repos/gary23w/f-ck_data_brokers",
+              "quote": "created_at = \"2026-11-26T17:53:07Z\""
+            },
+            {
+              "source": "GitHub API",
+              "url": "https://api.github.com/repos/gary23w/f-ck_data_brokers/releases/latest",
+              "quote": "HTTP 404: Not Found"
+            }
+          ],
+          "reason": "创建日期与无 Release 已由 API 证实；但“Star 快速增长”缺少历史快照，当前 API 只能提供当前 Stars，无法验证增长趋势。"
+        }
+      ],
+      "scores": {
+        "usage": 7,
+        "deployment": 8,
+        "learning": 6
+      },
+      "score_reasons": {
+        "usage": "单文件零依赖即可批量生成数据中间商删除/退出请求，真实解决隐私痛点，但需用户自备邮箱、处理回复且工具明确不保证真正删除，故为 7。",
+        "deployment": "Python 3.8+ 直接运行，无需服务、数据库或付费 API，仅需邮箱应用密码；自动化需自行配置定时任务，故为 8。",
+        "learning": "单文件 Python 脚本含 MCP server、自动更新与测试体系，工程实践有参考价值但架构简单，故为 6。"
+      },
+      "grade": "B",
+      "grade_reason": "实用价值明确、部署成本低，但仓库仅创建一天、功能依赖用户持续跟进且“快速增长”无法核实，综合定为 B。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 8,
+          "deployment": 8,
+          "learning": 6
+        },
+        "reported_grade": "B",
+        "assessment": "reasonable",
+        "note": "独立评分 usage 7 略低于原始 8（删除效果依赖中介与用户跟进），其余维度一致，整体合理。"
+      },
+      "flags": [
+        {
+          "code": "NEW_REPO_SHORT_HISTORY",
+          "severity": "low",
+          "evidence": "created_at = 2026-11-26T17:53:07Z，核查时仓库仅存在约 1 天。",
+          "impact": "缺少长期维护与真实删除效果的公开记录，推荐需谨慎。"
+        },
+        {
+          "code": "MAINTAINER_CONCENTRATION",
+          "severity": "low",
+          "evidence": "最近 5 次提交中 4 次作者为 gary23w，1 次为 dependabot[bot]。",
+          "impact": "潜在维护者集中风险，无法证明单人维护，但抗风险能力有限。"
+        }
+      ],
+      "note": "README 与 API 证据一致；唯一不可核实项是把“Star 快速增长”当作事实——当前数据源无法提供历史快照。"
+    },
+    {
+      "repo": "eisenzopf/rvoip",
+      "exists": true,
+      "canonical_repo": "eisenzopf/rvoip",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 416,
+          "verified": 430,
+          "status": "match"
+        },
+        "forks": {
+          "packet": 37,
+          "verified": 38,
+          "status": "match"
+        },
+        "license": {
+          "packet": "MIT",
+          "verified": "MIT",
+          "status": "match"
+        },
+        "language": {
+          "packet": "Rust",
+          "verified": "Rust",
+          "status": "match"
+        },
+        "updated_at": {
+          "packet": "2026-11-27T09:01:19Z",
+          "verified": "2026-11-27T10:28:34Z",
+          "status": "match"
+        },
+        "latest_commit_at": "2026-11-25T22:48:03Z",
+        "days_since_last_commit": 2,
+        "latest_release": {
+          "packet": "v0.5.1",
+          "verified": "v0.5.1",
+          "status": "match"
+        }
+      },
+      "claims": [
+        {
+          "claim": "Rust 实时通信库，把 SIP、RTP、WebRTC、QUIC/WebTransport/WebSocket 会话、Media over QUIC 与语音 AI agent 统一在一个调用模型下。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/eisenzopf/rvoip/blob/main/README.md",
+              "quote": "A Rust library for building communications applications. SIP, RTP, WebRTC, QUIC/WebTransport/WebSocket conversations, Media over QUIC, and voice-AI agents share one call model, and the whole stack is in the box"
+            }
+          ],
+          "reason": "README 首段直接逐项列出这些协议与能力共享一个调用模型。"
+        },
+        {
+          "claim": "整个协议栈都在仓库内的 Rust crate 中，无需另外安装 SIP 服务器、媒体服务器或 RTP 引擎。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/eisenzopf/rvoip/blob/main/README.md",
+              "quote": "Signalling, media, codecs, NAT traversal, security, and the conversation model are all Rust crates in this workspace, so a call goes from your code to the wire without a separately installed SIP proxy, media server, or RTP engine."
+            }
+          ],
+          "reason": "README 的 What rvoip is 段落明确整栈为仓库内 crate、无需单独安装 SIP/媒体/RTP 服务。"
+        },
+        {
+          "claim": "发布时公布基准数字，单进程 SIP over TLS 信令最高 8,348 CPS。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/eisenzopf/rvoip/blob/main/README.md",
+              "quote": "| SIP over TLS, signaling only | 8,348 | ~520 | n/a | 1 ms | 6 ms |"
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/eisenzopf/rvoip/blob/main/README.md",
+              "quote": "R1 TLS 8,348 and R5 UDP 8,256 sessions/s without media"
+            }
+          ],
+          "reason": "README 基准表与 RFC 7501/7502 报告链接给出该数字，且注明为 0.5.0 历史测量。"
+        },
+        {
+          "claim": "发布时门控的互通证据，覆盖 Asterisk、FreeSWITCH、Jambonz、Kamailio、OpenSIPS。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/eisenzopf/rvoip/blob/main/README.md",
+              "quote": "the release-gated interoperability evidence against Asterisk, FreeSWITCH, Jambonz, Kamailio, and OpenSIPS"
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/eisenzopf/rvoip/blob/main/README.md",
+              "quote": "| **Asterisk** | Release-gated | ... | **FreeSWITCH** | Release-gated | ... | **Jambonz OSS 0.9.15** | Release-gated | ... | **Kamailio** | Release-gated | ... | **OpenSIPS** | Release-gated |"
+            }
+          ],
+          "reason": "README 互通章节逐项列出五个系统并标注 Release-gated。"
+        },
+        {
+          "claim": "多项功能处于 developer preview，API 不稳定，无生产就绪保证。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/eisenzopf/rvoip/blob/main/README.md",
+              "quote": "**Developer preview** means implemented and published, but API-unstable or ... availability, not a blanket production-readiness statement."
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/eisenzopf/rvoip/blob/main/README.md",
+              "quote": "WebRTC ... Developer preview / UCTP substrates ... Developer preview / Media over QUIC ... Developer preview"
+            }
+          ],
+          "reason": "README 明确定义 developer preview 为 API 不稳定且非生产就绪保证，并列有多项处于该状态的功能。"
+        }
+      ],
+      "scores": {
+        "usage": 7,
+        "deployment": 6,
+        "learning": 9
+      },
+      "score_reasons": {
+        "usage": "协议覆盖广、文档与示例完整，但大量功能为 developer preview、API 不稳定，实际生产采用受限，故为 7。",
+        "deployment": "作为库可单 crate 引入、无外部 SIP/媒体服务，但投入生产需自行组合传输、后端扩展并承担 preview 风险，故为 6。",
+        "learning": "47 个 crate、分层清晰，附 RFC 基准与互通证据、迁移指南与能力矩阵，工程参考价值高，故为 9。"
+      },
+      "grade": "B",
+      "grade_reason": "技术能力扎实、证据透明度高，但半数功能处于 developer preview 且无生产就绪保证，定为 B。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 7,
+          "deployment": 6,
+          "learning": 9
+        },
+        "reported_grade": "B",
+        "assessment": "reasonable",
+        "note": "三维独立评分与原始评分完全一致，定级也一致。"
+      },
+      "flags": [
+        {
+          "code": "DEVELOPER_PREVIEW",
+          "severity": "medium",
+          "evidence": "README 定义 developer preview 为 \"API-unstable\"，WebRTC、UCTP、Media over QUIC、Voice AI 等多项均处于该状态。",
+          "impact": "API 可能变动、无生产就绪保证，采用时需自行承担升级与稳定性风险。"
+        },
+        {
+          "code": "MAINTAINER_CONCENTRATION",
+          "severity": "low",
+          "evidence": "最近 5 次提交作者均为 eisenzopf。",
+          "impact": "潜在维护者集中风险；不能据此断言单人维护。"
+        }
+      ],
+      "note": "关键断言均有 README/Release 直接证据；主要风险来自功能成熟度而非真实性。"
+    },
+    {
+      "repo": "intel/intel-one-mono",
+      "exists": true,
+      "canonical_repo": "intel/intel-one-mono",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 10902,
+          "verified": 10913,
+          "status": "match"
+        },
+        "forks": {
+          "packet": 348,
+          "verified": 348,
+          "status": "match"
+        },
+        "license": {
+          "packet": "OFL-1.1",
+          "verified": "OFL-1.1",
+          "status": "match"
+        },
+        "language": {
+          "packet": "",
+          "verified": null,
+          "status": "match"
+        },
+        "updated_at": {
+          "packet": "2026-11-27T09:03:24Z",
+          "verified": "2026-11-27T10:26:43Z",
+          "status": "match"
+        },
+        "latest_commit_at": "2026-11-04T18:02:00Z",
+        "days_since_last_commit": 23,
+        "latest_release": {
+          "packet": "V1.5.0",
+          "verified": "V1.5.0",
+          "status": "match"
+        }
+      },
+      "claims": [
+        {
+          "claim": "Intel 的开源等宽字体，由 Frere-Jones Type 设计，面向开发者清晰度与低视力用户。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/intel/intel-one-mono/blob/main/README.md",
+              "quote": "Identifying the typographically underserved low-vision developer audience, Frere-Jones Type designed the Intel One Mono typeface in partnership with the Intel Brand Team and VMLY&R, for maximum legibility to address developers' fatigue and eyestrain and reduce coding errors."
+            }
+          ],
+          "reason": "README 开篇直接说明设计方、目标人群与低视力开发者反馈。"
+        },
+        {
+          "claim": "它提供四个字重（Light、Regular、Medium、Bold）各带斜体，覆盖 200 多种拉丁字母语言，并提供编程连字等 OpenType 特性。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/intel/intel-one-mono/blob/main/README.md",
+              "quote": "The Intel One Mono fonts are provided in four weights — Light, Regular, Medium, and Bold — with matching italics ... over 200 languages using the Latin script."
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/intel/intel-one-mono/blob/main/README.md",
+              "quote": "**Programming Ligatures:** To use programming ligatures, activate the `ss01` feature"
+            }
+          ],
+          "reason": "README 明确四个字重及斜体、200 多种拉丁语言与 ss01 编程连字。"
+        },
+        {
+          "claim": "最新版 V1.5.0（2026-11-04）新增盲文与 Powerline 支持、多种箭头与符号，字形总数 1,385。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "GitHub Release",
+              "url": "https://github.com/intel/intel-one-mono/releases/tag/V1.5.0",
+              "quote": "Release Notes / Intel One Mono 2026-11-04 ... Added braille support - Added Powerline support - Added various arrows and symbols ... Number of glyphs - 1385"
+            }
+          ],
+          "reason": "V1.5.0 Release Notes 逐字列出发布日期、盲文/Powerline/箭头符号与 1385 字形。"
+        },
+        {
+          "claim": "以 SIL Open Font License 1.1 发布，免费使用。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "GitHub API",
+              "url": "https://api.github.com/repos/intel/intel-one-mono",
+              "quote": "license.spdx_id = \"OFL-1.1\""
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/intel/intel-one-mono/blob/main/README.md",
+              "quote": "It’s easier to read, and available for free, with an open-source font license."
+            }
+          ],
+          "reason": "API SPDX 为 OFL-1.1（SIL Open Font License 1.1），README 明确免费。"
+        },
+        {
+          "claim": "印刷品建议 7pt 及以上、屏幕建议 9px 及以上使用",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/intel/intel-one-mono/blob/main/README.md",
+              "quote": "We recommend using these fonts at 7 points and larger in print, 9 pixels and larger on screen."
+            }
+          ],
+          "reason": "README 的 Screen Rendering and Size Ranges 段落原文支持。"
+        }
+      ],
+      "scores": {
+        "usage": 9,
+        "deployment": 9,
+        "learning": 4
+      },
+      "score_reasons": {
+        "usage": "成熟字体家族，专为开发者与低视力用户设计，覆盖语言广、连字等特性完善，免费且无风险，故为 9。",
+        "deployment": "下载 OTF/TTF/WOFF 安装即可，编辑器只需设置字体名，几乎零配置，故为 9。",
+        "learning": "源码为 UFO 字体源文件与 hinting 资料，对字体设计者有参考价值，但对通用软件开发者的架构/工程学习价值有限，故为 4。"
+      },
+      "grade": "A",
+      "grade_reason": "使用价值与部署体验突出、许可清晰、无重大风险；学习价值偏低不影响其作为字体工具的推荐等级，定为 A。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 9,
+          "deployment": 9,
+          "learning": 4
+        },
+        "reported_grade": "A",
+        "assessment": "reasonable",
+        "note": "三维独立评分与原始评分完全一致，定级也一致。"
+      },
+      "flags": [
+        {
+          "code": "MAINTAINER_CONCENTRATION",
+          "severity": "low",
+          "evidence": "最近 5 次提交作者均为 FredShallcrass（最近提交 2026-11-04）。",
+          "impact": "潜在维护者集中风险；字体项目更新频率低属正常，不构成停更风险。"
+        }
+      ],
+      "note": "全部断言由 README 与 V1.5.0 Release Notes 直接支持；无 API 查询失败。"
+    },
+    {
+      "repo": "antonpictures/youtube-punisher",
+      "exists": true,
+      "canonical_repo": "antonpictures/youtube-punisher",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 175,
+          "verified": 191,
+          "status": "mismatch"
+        },
+        "forks": {
+          "packet": 2,
+          "verified": 3,
+          "status": "mismatch"
+        },
+        "license": {
+          "packet": "MIT",
+          "verified": "MIT",
+          "status": "match"
+        },
+        "language": {
+          "packet": "JavaScript",
+          "verified": "JavaScript",
+          "status": "match"
+        },
+        "updated_at": {
+          "packet": "2026-11-27T09:04:01Z",
+          "verified": "2026-11-27T10:18:41Z",
+          "status": "match"
+        },
+        "latest_commit_at": "2026-11-26T21:51:08Z",
+        "days_since_last_commit": 1,
+        "latest_release": {
+          "packet": null,
+          "verified": null,
+          "status": "none"
+        }
+      },
+      "claims": [
+        {
+          "claim": "检测到 YouTube 广告时自动重载页面，并保留精确播放时间戳。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/antonpictures/youtube-punisher/blob/main/README.md",
+              "quote": "the moment an ad appears, it captures your exact playback timestamp, reloads the page, and YouTube auto-seeks back to where you were"
+            },
+            {
+              "source": "Source",
+              "url": "https://github.com/antonpictures/youtube-punisher/blob/main/content.js",
+              "quote": "url.searchParams.set('t', t + 's'); ... location.replace(url.toString());"
+            }
+          ],
+          "reason": "README 功能说明与 content.js 的 &t=Xs + location.replace 实现一致。"
+        },
+        {
+          "claim": "3 次重载仍未清除广告时，自动跳转到无广告镜像 yout-ube.com。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "Source",
+              "url": "https://github.com/antonpictures/youtube-punisher/blob/main/content.js",
+              "quote": "const MAX_RELOADS = 3; ... if (reloadCount < MAX_RELOADS) { ... } else if (tabSwitchAttempts < 1) { ... } else { const youtUrl = 'https://www.yout-ube.com/watch?v=' + vid + ... ; location.replace(youtUrl); }"
+            }
+          ],
+          "reason": "源码确认 3 次重载后先自动切换标签页，仍失败则跳转 yout-ube.com；自动镜像跳转存在，但中间多一步标签切换。"
+        },
+        {
+          "claim": "每 500ms 加 MutationObserver 监听 `.ad-showing` 类、跳过按钮与广告覆盖层。",
+          "result": "false",
+          "evidence": [
+            {
+              "source": "Source",
+              "url": "https://github.com/antonpictures/youtube-punisher/blob/main/content.js",
+              "quote": "const CHECK_INTERVAL = 150;"
+            },
+            {
+              "source": "Source",
+              "url": "https://github.com/antonpictures/youtube-punisher/blob/main/content.js",
+              "quote": "}, 500); // 该 500ms 定时器用于 lastKnownTime 时间戳跟踪，不是广告检测"
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/antonpictures/youtube-punisher/blob/main/README.md",
+              "quote": "watches for `.ad-showing` class, skip buttons, and ad overlays (every 500ms + MutationObserver)"
+            }
+          ],
+          "reason": "README 称广告检测每 500ms，但当前源码是 150ms；500ms 定时器只用于记录播放位置，广告检测频率与断言不符。"
+        },
+        {
+          "claim": "3 秒冷却防止重载循环。",
+          "result": "false",
+          "evidence": [
+            {
+              "source": "Source",
+              "url": "https://github.com/antonpictures/youtube-punisher/blob/main/content.js",
+              "quote": "const RELOAD_COOLDOWN = 1200;"
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/antonpictures/youtube-punisher/blob/main/README.md",
+              "quote": "3-second guard prevents reload loops"
+            },
+            {
+              "source": "GitHub commit",
+              "url": "https://github.com/antonpictures/youtube-punisher/commit/HEAD",
+              "quote": "\"Faster reload: grace 15s->2.5s, poll 500ms->150ms, cooldown 3s->1.2s\""
+            }
+          ],
+          "reason": "当前源码冷却时间为 1200ms（1.2 秒），非断言所述 3 秒；README 未同步 v1.8.2 的改动。"
+        },
+        {
+          "claim": "直播用普通重载（没有时间戳可保留）。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/antonpictures/youtube-punisher/blob/main/README.md",
+              "quote": "Live streams — plain reload (no timestamp to preserve)"
+            },
+            {
+              "source": "Source",
+              "url": "https://github.com/antonpictures/youtube-punisher/blob/main/content.js",
+              "quote": "if (t !== null && t > 0 && vid) { ... } else { LOG('No timestamp, plain reload (attempt', reloadCount, ')'); ... location.reload(); }"
+            }
+          ],
+          "reason": "README 列出直播使用普通重载，源码在缺失时间戳时执行 location.reload()。"
+        }
+      ],
+      "scores": {
+        "usage": 6,
+        "deployment": 8,
+        "learning": 5
+      },
+      "score_reasons": {
+        "usage": "重载去广告思路简单有效且保留播放位置，但依赖 YouTube DOM 类名、可能失效，且文档与实际代码参数不一致，故为 6。",
+        "deployment": "Chrome 系扩展加载解压目录即可，无需服务端或数据库；Safari 为实验性方案，故为 8。",
+        "learning": "content.js 为直接的 DOM 监听与状态机实现，代码量小、结构清楚但技术深度有限，故为 5。"
+      },
+      "grade": "B",
+      "grade_reason": "有实际价值且部署简单，但方案脆弱、仓库很新且文档与代码参数存在不一致，定为 B。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 7,
+          "deployment": 7,
+          "learning": 6
+        },
+        "reported_grade": "B",
+        "assessment": "mixed",
+        "note": "独立 usage 6（低于原始 7，因方案脆弱且文档失同步）、deployment 8（高于原始 7，扩展加载极简）、learning 5（低于原始 6），三个维度均有差异，故为 mixed；定级 B 一致。"
+      },
+      "flags": [
+        {
+          "code": "DOC_CODE_MISMATCH",
+          "severity": "medium",
+          "evidence": "README 称检测间隔 500ms、冷却 3 秒；content.js 实际为 CHECK_INTERVAL=150、RELOAD_COOLDOWN=1200（v1.8.2 已调整）。",
+          "impact": "用户按 README 理解的行为与实际不符，属于文档可信度与维护质量问题。"
+        },
+        {
+          "code": "NEW_REPO_SHORT_HISTORY",
+          "severity": "low",
+          "evidence": "created_at = 2026-11-23T00:27:17Z，核查时仓库仅存在约 4 天。",
+          "impact": "缺少长期稳定性验证。"
+        },
+        {
+          "code": "MAINTAINER_CONCENTRATION",
+          "severity": "low",
+          "evidence": "最近 5 次提交作者均为 antonpictures。",
+          "impact": "潜在维护者集中风险；不能据此断言单人维护。"
+        }
+      ],
+      "note": "Stars（191 vs 包内 175，误差 8.4%）与 Forks（3 vs 2，误差 33%）均超过 5% 阈值，判为 mismatch；无 Release 与数据包一致。两条断言因源码与 README 参数不一致被判 false。"
+    },
+    {
+      "repo": "batanus/lip-dictation",
+      "exists": true,
+      "canonical_repo": "batanus/lip-dictation",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 12,
+          "verified": 13,
+          "status": "mismatch"
+        },
+        "forks": {
+          "packet": 1,
+          "verified": 1,
+          "status": "match"
+        },
+        "license": {
+          "packet": "MIT",
+          "verified": "MIT",
+          "status": "match"
+        },
+        "language": {
+          "packet": "TypeScript",
+          "verified": "TypeScript",
+          "status": "match"
+        },
+        "updated_at": {
+          "packet": "2026-11-27T07:55:36Z",
+          "verified": "2026-11-27T09:48:43Z",
+          "status": "match"
+        },
+        "latest_commit_at": "2026-11-26T13:20:40Z",
+        "days_since_last_commit": 1,
+        "latest_release": {
+          "packet": "v0.1.12",
+          "verified": "v0.1.12",
+          "status": "match"
+        }
+      },
+      "claims": [
+        {
+          "claim": "Claude Code 插件：对着摄像头默念，本地唇语识别模型把文字打进提示框。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/batanus/lip-dictation/blob/main/README.md",
+              "quote": "Talk to Claude Code without making a sound. Press a button above the prompt, mouth a phrase at your webcam, press again, and the words appear in the prompt box. A lip-reading model (Auto-AVSR) runs locally on your Mac: no audio is recorded and no video leaves your machine."
+            }
+          ],
+          "reason": "README 首段直接描述插件工作流、本地模型与提示框插入。"
+        },
+        {
+          "claim": "它使用 Auto-AVSR 视觉模型 vsr_trlrs2lrs3vox2avsp_base（2.5 亿参数），识别全程在本地 Mac 上进行，不录音、不上传视频。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/batanus/lip-dictation/blob/main/README.md",
+              "quote": "Recognition uses Auto-AVSR's visual-only model `vsr_trlrs2lrs3vox2avsp_base`: 250M parameters"
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/batanus/lip-dictation/blob/main/README.md",
+              "quote": "no audio is recorded and no video leaves your machine"
+            }
+          ],
+          "reason": "README 明确模型名与 250M 参数，并声明不录音、视频不离开设备。"
+        },
+        {
+          "claim": "出声朗读在基准上约 80%，无声默念更低、因人而异",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/batanus/lip-dictation/blob/main/README.md",
+              "quote": "**Speaking aloud:** TED talks, the model's published benchmark¹ | ~80% ... **Mouthing silently** at a laptop webcam | lower, varies by person"
+            }
+          ],
+          "reason": "README 的 Accuracy 表格直接给出 ~80% 基准与无声默念更低、因人而异。"
+        },
+        {
+          "claim": "要求：macOS Apple Silicon、摄像头、约 2.5 GB 磁盘空间、Claude Code 2.1.287 或更新版本。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/batanus/lip-dictation/blob/main/README.md",
+              "quote": "Requirements: macOS on Apple Silicon, a webcam, about 2.5 GB of disk, and Claude Code 2.1.287 or newer (terminal or desktop app)."
+            }
+          ],
+          "reason": "README Quick start 段落原文逐项一致。"
+        },
+        {
+          "claim": "安装是 Claude Code 插件命令，设置步骤下载约 1.5 GB 依赖。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/batanus/lip-dictation/blob/main/README.md",
+              "quote": "/plugin install lip-dictation --marketplace batanus/lip-dictation"
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/batanus/lip-dictation/blob/main/README.md",
+              "quote": "setup fetches what is missing (Python, its packages, the model) into `~/.cache/lip-dictation`, about 1.5 GB"
+            }
+          ],
+          "reason": "README 给出插件安装命令与约 1.5 GB 设置下载量。"
+        }
+      ],
+      "scores": {
+        "usage": 5,
+        "deployment": 4,
+        "learning": 8
+      },
+      "score_reasons": {
+        "usage": "概念新颖且隐私友好，但 README 自称 prototype、准确率有限，且仅限 Apple Silicon，实际使用价值受限，故为 5。",
+        "deployment": "需 macOS Apple Silicon、摄像头、约 1.5 GB 下载与 2.5 GB 磁盘，还需 Claude Code 特定版本，安装维护成本高，故为 4。",
+        "learning": "TypeScript 插件 + Python sidecar，包含 LoRA 个人模型训练、MediaPipe 人脸网格、预加载与 hook 架构，文档清楚，参考价值高，故为 8。"
+      },
+      "grade": "C",
+      "grade_reason": "原型阶段、准确率有限、平台与硬件门槛高，推荐价值较弱，定为 C。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 5,
+          "deployment": 4,
+          "learning": 8
+        },
+        "reported_grade": "C",
+        "assessment": "reasonable",
+        "note": "三维独立评分与原始评分完全一致，定级也一致。"
+      },
+      "flags": [
+        {
+          "code": "PROTOTYPE_LIMITED_ACCURACY",
+          "severity": "medium",
+          "evidence": "README: \"This is a prototype, and accuracy is modest\"；无声默念低于 ~80% 出声基准、因人而异。",
+          "impact": "识别结果需人工校对，不适合对准确性要求高的场景。"
+        },
+        {
+          "code": "PLATFORM_LIMIT",
+          "severity": "medium",
+          "evidence": "README: \"macOS on Apple Silicon\"；Contributing 列 Intel Macs、Linux、Windows 为待办。",
+          "impact": "覆盖平台极窄，大多数用户无法使用。"
+        },
+        {
+          "code": "HEAVY_SETUP",
+          "severity": "low",
+          "evidence": "设置下载约 1.5 GB，需约 2.5 GB 磁盘空间及 Command Line Tools。",
+          "impact": "首次使用门槛与存储成本较高。"
+        },
+        {
+          "code": "MAINTAINER_CONCENTRATION",
+          "severity": "low",
+          "evidence": "最近 5 次提交作者均为 batanus。",
+          "impact": "潜在维护者集中风险；不能据此断言单人维护。"
+        }
+      ],
+      "note": "Stars（13 vs 包内 12，误差 7.7%）略超 5% 阈值判 mismatch，绝对差异仅 1；所有功能断言由 README 支持。"
+    }
   ],
-  "verdicts": [],
   "learning_pick": {
     "repo": null,
     "exists": null,
@@ -34,7 +814,6 @@
       "status": "not_applicable"
     },
     "flags": [],
-    "note": "当天数据包未找到，未进行任何核查。"
-  },
-  "note": "按 Asia/Shanghai 当天日期 2026-11-27 执行。未在规定的三个位置找到当天数据包，严格不沿用历史数据包（最新可见数据包为 2026-11-22），故不产出任何项目核查结论。GitHub API 额度充足（remaining=5000），但无数据包即无核查对象。"
+    "note": "数据包 learning_pick 为 null，按规范不核查、不评分。"
+  }
 }
