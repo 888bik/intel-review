@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-28",
+  "run_id": "ghrec-20261128",
+  "overall": {
+    "status": "failed",
+    "expected_projects": 0,
+    "checked_projects": 0,
+    "learning_pick_checked": false,
+    "failures": [
+      "PACKET_NOT_FOUND",
+      "SEARCHED_1: C:\\Users\\bik\\Documents\\deepseek-harness\\default-workspace\\packets\\*.json 中文件名含 2026-11-28 的文件 —— 无命中",
+      "SEARCHED_2: C:\\Users\\bik\\Documents\\deepseek-harness\\default-workspace\\packets\\ 下 2026-11-28 当天修改的 .json —— 无命中（该目录最新文件为 packet-2026-11-27.json，修改时间 2026-11-27 18:28:14）",
+      "SEARCHED_3: C:\\Users\\bik\\Downloads\\ 下文件名同时含 packet 与 2026-11-28 的 .json —— 无命中（该目录仅有 packet-2026-11-22.json，修改时间 2026-11-22 12:41:44）",
+      "SEARCHED_4: 扩展兜底扫描 C:\\Users\\bik\\ 全盘（排除 AppData）所有 *packet*.json —— 仅命中 packets\\packet-2026-11-27.json、packets\\dsh-packet-2026-11-21.json、Downloads\\packet-2026-11-22.json、.tmp\\packet-1122.json，均非 2026-11-28 数据包",
+      "NO_GITHUB_QUERY: 未获得数据包，未对任何仓库发起 GitHub API 核查，不产出任何项目结论"
+    ]
+  },
+  "verdicts": [],
+  "learning_pick": {
+    "repo": null,
+    "exists": null,
+    "canonical_repo": null,
+    "owner_ok": null,
+    "archived": null,
+    "stars": {
+      "packet": null,
+      "verified": null,
+      "status": "not_applicable"
+    },
+    "license": {
+      "packet": null,
+      "verified": null,
+      "status": "not_applicable"
+    },
+    "flags": [],
+    "note": "未收到 2026-11-28 的核查数据包，按规范第 5 条不进行任何核查，learning_pick 各字段填 null。"
+  },
+  "note": "2026-11-28 未找到当日 PACKET JSON，按规范禁止编造：overall.status=failed，verdicts 为空。需 Muse 或 zhao 补投当日数据包后重跑核查。"
+}
