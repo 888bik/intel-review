@@ -2,20 +2,762 @@
   "date": "2026-11-28",
   "run_id": "ghrec-20261128",
   "overall": {
-    "status": "failed",
-    "expected_projects": 0,
-    "checked_projects": 0,
+    "status": "complete",
+    "expected_projects": 5,
+    "checked_projects": 5,
     "learning_pick_checked": false,
-    "failures": [
-      "PACKET_NOT_FOUND",
-      "SEARCHED_1: C:\\Users\\bik\\Documents\\deepseek-harness\\default-workspace\\packets\\*.json 中文件名含 2026-11-28 的文件 —— 无命中",
-      "SEARCHED_2: C:\\Users\\bik\\Documents\\deepseek-harness\\default-workspace\\packets\\ 下 2026-11-28 当天修改的 .json —— 无命中（该目录最新文件为 packet-2026-11-27.json，修改时间 2026-11-27 18:28:14）",
-      "SEARCHED_3: C:\\Users\\bik\\Downloads\\ 下文件名同时含 packet 与 2026-11-28 的 .json —— 无命中（该目录仅有 packet-2026-11-22.json，修改时间 2026-11-22 12:41:44）",
-      "SEARCHED_4: 扩展兜底扫描 C:\\Users\\bik\\ 全盘（排除 AppData）所有 *packet*.json —— 仅命中 packets\\packet-2026-11-27.json、packets\\dsh-packet-2026-11-21.json、Downloads\\packet-2026-11-22.json、.tmp\\packet-1122.json，均非 2026-11-28 数据包",
-      "NO_GITHUB_QUERY: 未获得数据包，未对任何仓库发起 GitHub API 核查，不产出任何项目结论"
-    ]
+    "failures": []
   },
-  "verdicts": [],
+  "verdicts": [
+    {
+      "repo": "Snailclimb/JavaGuide",
+      "exists": true,
+      "canonical_repo": "Snailclimb/JavaGuide",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 159696,
+          "verified": 159697,
+          "status": "match"
+        },
+        "forks": {
+          "packet": 46085,
+          "verified": 46085,
+          "status": "match"
+        },
+        "license": {
+          "packet": "Apache-2.0",
+          "verified": "Apache-2.0",
+          "status": "match"
+        },
+        "language": {
+          "packet": "JavaScript",
+          "verified": "JavaScript",
+          "status": "match"
+        },
+        "updated_at": {
+          "packet": "2026-11-27T13:17:09Z",
+          "verified": "2026-11-28T04:51:48Z",
+          "status": "match"
+        },
+        "latest_commit_at": "2026-11-27T13:17:09Z",
+        "days_since_last_commit": 0,
+        "latest_release": {
+          "packet": null,
+          "verified": null,
+          "status": "none"
+        }
+      },
+      "claims": [
+        {
+          "claim": "JavaGuide 是一个人气极高的 Java 面试与后端通用面试指南仓库，覆盖 Java、计算机基础、数据库、分布式、高并发、系统设计与 AI 应用开发等内容，主体为原创 Markdown 文档，并配有在线阅读站与面试突击版本。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/Snailclimb/JavaGuide/blob/main/README.md",
+              "quote": "## AI 应用开发面试指南 / ## 后端面试准备 / ## Java / ## 计算机基础 / ## 数据库 / ## 搜索引擎 / ## 开发工具 / ## 系统设计 / ## 分布式 / ## 高性能 / ## 高可用"
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/Snailclimb/JavaGuide/blob/main/README.md",
+              "quote": "- 推荐在线阅读（体验更好，速度更快）：[javaguide.cn](https://javaguide.cn/)\n- 面试突击版本（只保留重点，附带精美 PDF 下载）：[interview.javaguide.cn](https://interview.javaguide.cn/)"
+            }
+          ],
+          "reason": "README 目录章节逐项对应断言列举的领域（并发见「### 并发」，高并发相关内容见「## 高性能」），正文为 Markdown 链接集合，并给出在线阅读站与面试突击版两个地址。"
+        },
+        {
+          "claim": "AI 智能面试辅助平台 + RAG 知识库（Spring Boot 4.0 + Java 21 + Spring AI 2.0），定位学习门槛低、适合学习与简历项目。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/Snailclimb/JavaGuide/blob/main/README.md",
+              "quote": "**大模型实战项目**： [⭐AI 智能面试辅助平台 + RAG 知识库](https://javaguide.cn/zhuanlan/interview-guide.html)（基于 Spring Boot 4.0 + Java 21 + Spring AI 2.0，非常适合作为学习和简历项目，学习门槛低）。"
+            }
+          ],
+          "reason": "README 首屏引用块逐字包含技术栈版本与「学习门槛低」「适合学习和简历项目」的定位表述。"
+        },
+        {
+          "claim": "javaguide.cn（推荐）；面试突击版 interview.javaguide.cn（只保留重点，附 PDF 下载）。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/Snailclimb/JavaGuide/blob/main/README.md",
+              "quote": "- 推荐在线阅读（体验更好，速度更快）：[javaguide.cn](https://javaguide.cn/)\n- 面试突击版本（只保留重点，附带精美 PDF 下载）：[interview.javaguide.cn](https://interview.javaguide.cn/)"
+            }
+          ],
+          "reason": "两个域名与「只保留重点」「附 PDF 下载」的描述均与 README 原文一致。"
+        },
+        {
+          "claim": "基础、集合、IO、并发、JVM（参考《深入理解 Java 虚拟机（第 3 版）》）、新特性（Java 8–Java 25）。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/Snailclimb/JavaGuide/blob/main/README.md",
+              "quote": "### 基础 / ### 集合 / ### IO / ### 并发 / ### JVM（必看 :+1:） / ### 新特性"
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/Snailclimb/JavaGuide/blob/main/README.md",
+              "quote": "JVM 这部分内容主要参考 [JVM 虚拟机规范-Java8](https://docs.oracle.com/javase/specs/jvms/se8/html/index.html) 和周志明老师的[《深入理解 Java 虚拟机（第 3 版）》](https://book.douban.com/subject/34907497/) （强烈建议阅读多遍！）。"
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/Snailclimb/JavaGuide/blob/main/README.md",
+              "quote": "**Java 8**：[Java 8 新特性总结（翻译）]…[Java 9 新特性概览]…[Java 24 新特性概览](./docs/java/new-features/java24.md)\n- [Java 25 新特性概览](./docs/java/new-features/java25.md)"
+            }
+          ],
+          "reason": "五个小节标题齐全，JVM 小节明确写出参考《深入理解 Java 虚拟机（第 3 版）》，新特性小节从 Java 8 连续覆盖到 Java 25。"
+        },
+        {
+          "claim": "GitHub 无 release，内容以提交演进，版本追踪不便。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "GitHub API",
+              "url": "https://api.github.com/repos/Snailclimb/JavaGuide/releases/latest",
+              "quote": "HTTP 404（仓库本身 200 正常，故表示没有可获取的 latest release）"
+            },
+            {
+              "source": "GitHub API",
+              "url": "https://api.github.com/repos/Snailclimb/JavaGuide/commits?per_page=5",
+              "quote": "a67570a 2026-11-27T13:17:09Z Merge pull request #2951 from wangqin2004/patch-2 / fc209b4 2026-11-27T13:15:10Z docs: 精简 Git 简介并规范参考链接"
+            }
+          ],
+          "reason": "releases/latest 返回 404 且仓库元数据正常，确认没有 Release；最近 5 次提交全部是 docs/merge 类内容提交，「内容以提交演进」成立。"
+        }
+      ],
+      "scores": {
+        "usage": 9,
+        "deployment": 9,
+        "learning": 8
+      },
+      "score_reasons": {
+        "usage": "159k star 的中文 Java 后端面试体系化资料，章节从基础到分布式、高可用再到 AI 应用开发，且有在线阅读站与面试突击版两种消费方式，对目标用户（Java 后端求职者）直接解决问题。",
+        "deployment": "纯 Markdown 文档仓库，无需安装、无依赖、无服务，打开 javaguide.cn 或 clone 即可读，使用成本接近零；不因「没有可部署的软件」而扣分。",
+        "learning": "内容质量高但主体是文档而非工程代码，可学的「工程实践」主要是 JVM/集合/并发源码分析文章，缺少可迁移的项目架构与测试体系，故不给 9。"
+      },
+      "grade": "A",
+      "grade_reason": "资料体系成熟、维护活跃、无任何风险信号，实际价值突出；但它是文档资料库而非软件项目，没有版本化发行物，且首屏夹带付费专栏与「求 Star」推广，综合定为 A 而非 S。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 9,
+          "deployment": 1,
+          "learning": 9
+        },
+        "reported_grade": "S",
+        "assessment": "mixed",
+        "note": "usage 9 与我一致。deployment 给 1 分与我的 9 分相差 8 分：文档仓库的「部署成本」应是使用成本，实际为零成本，给 1 分是把「没有可部署产物」误当成「部署困难」，属明显低估。learning 9 略高于我的 8 分，理由是主体为文档、工程实践可迁移性弱于代码项目。"
+      },
+      "flags": [],
+      "note": "元数据与数据包高度一致（stars/forks 误差 0%）。updated_at 从数据包的 2026-11-27T13:17:09Z 漂移到 2026-11-28T04:51:48Z，属 star/issue 活动引起的正常漂移，pushed_at 与数据包完全一致。该仓库被数据包归为 kind=regular，但实质是学习资料库，deployment 维度对它并不适用。"
+    },
+    {
+      "repo": "legend-of-alan/ghostmode",
+      "exists": true,
+      "canonical_repo": "legend-of-alan/ghostmode",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 11,
+          "verified": 12,
+          "status": "mismatch"
+        },
+        "forks": {
+          "packet": 1,
+          "verified": 1,
+          "status": "match"
+        },
+        "license": {
+          "packet": "MIT",
+          "verified": "MIT",
+          "status": "match"
+        },
+        "language": {
+          "packet": "Rust",
+          "verified": "Rust",
+          "status": "match"
+        },
+        "updated_at": {
+          "packet": "2026-11-27T12:19:13Z",
+          "verified": "2026-11-28T05:03:24Z",
+          "status": "match"
+        },
+        "latest_commit_at": "2026-11-27T12:17:46Z",
+        "days_since_last_commit": 0,
+        "latest_release": {
+          "packet": "v0.1.1",
+          "verified": "v0.1.1",
+          "status": "match"
+        }
+      },
+      "claims": [
+        {
+          "claim": "Ghost Mode 是一个给 agent 带来「Code Mode」能力的 Rust 库：让模型写一段短 Python 脚本来自行串联工具调用，中间结果不回到模型，从而大幅减少 token 与成本，并有沙箱化的 execute/poll 工具。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/legend-of-alan/ghostmode/blob/main/README.md",
+              "quote": "Ghost Mode is a Rust library that brings Code Mode to agents. With normal tool calls, every result goes back to the model before it can ask for the next one. Ghost Mode lets the model write a short Python script that chains the calls itself, so intermediate results never go back to the model."
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/legend-of-alan/ghostmode/blob/main/README.md",
+              "quote": "give a `Sandbox` your tools, or point it at an MCP server, and hand the model only two function definitions, `execute` and `poll`."
+            }
+          ],
+          "reason": "README 明确写出 Rust 库、Python 脚本串联、中间结果不回模型，以及只暴露 execute 与 poll 两个函数定义。注意「大幅减少 token 与成本」的具体幅度来自 README 引用的第三方论文/博客，不是本项目自测数据，仅作定性认可。"
+        },
+        {
+          "claim": "普通工具调用=回商店 30 次，Code Mode=一次购物清单",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/legend-of-alan/ghostmode/blob/main/README.md",
+              "quote": "Think about it like this: normal tool calling is like going back to the store 30 times to get 30 items. Code Mode is one trip with a shopping list."
+            }
+          ],
+          "reason": "README 原文逐字包含该比喻，属于文档中的类比说明。"
+        },
+        {
+          "claim": "默认 Monty 在进程内运行，无容器/无额外服务",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/legend-of-alan/ghostmode/blob/main/README.md",
+              "quote": "The Monty backend runs the script inside your process, so there's no container or extra service."
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/legend-of-alan/ghostmode/blob/main/README.md",
+              "quote": "`Monty`, from the `monty` feature that is on by default, runs the script inside your process and isn't crash-isolated."
+            }
+          ],
+          "reason": "monty 特性默认开启且为进程内执行，README 明确说无容器、无额外服务。"
+        },
+        {
+          "claim": "MontyPool 在 10 MiB 后停止收集打印输出（v0.1.1）",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "源码 src/backend/monty/pool.rs（v0.1.1 tag）",
+              "url": "https://github.com/legend-of-alan/ghostmode/blob/v0.1.1/src/backend/monty/pool.rs",
+              "quote": "/// A print callback that adds what the script prints to `streams`. The worker sends a print in pieces, and the first piece that would take both streams together past 10 MiB sets `print_cap_reached`, so it and every later piece are dropped and the output stays a prefix of what the script printed."
+            },
+            {
+              "source": "源码 src/backend/monty/pool.rs（v0.1.1 tag）",
+              "url": "https://github.com/legend-of-alan/ghostmode/blob/v0.1.1/src/backend/monty/pool.rs",
+              "quote": "*print_cap_reached = *print_cap_reached || printed_bytes + text.len() > DEFAULT_MAX_PRINT_COLLECT_BYTES;"
+            }
+          ],
+          "reason": "在 v0.1.1 tag 的 pool.rs 中直接读到 10 MiB 收集上限与 print_cap_reached 的置位逻辑，stdout 与 stderr 合计计算。"
+        },
+        {
+          "claim": "`Limits` 限制任何单结果可增加的量（默认 40,000 字符）",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "源码 src/sandbox.rs",
+              "url": "https://github.com/legend-of-alan/ghostmode/blob/main/src/sandbox.rs",
+              "quote": "impl Default for Limits { … output_chars: 40_000, … }"
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/legend-of-alan/ghostmode/blob/main/README.md",
+              "quote": "In Ghost Mode, the `Limits` you build the `Sandbox` with cap how much any one result can add (40,000 characters by default)."
+            }
+          ],
+          "reason": "Limits::default 的 output_chars 为 40_000，README 与源码一致；截断逻辑在 src/sandbox/output.rs 中按字符数执行。"
+        }
+      ],
+      "scores": {
+        "usage": 6,
+        "deployment": 7,
+        "learning": 8
+      },
+      "score_reasons": {
+        "usage": "针对 agent 工具调用的真实痛点（中间结果反复回到模型），execute/poll 两个定义即可接入，且默认进程内运行；但只服务 Rust 侧宿主，使用方必须自己写 host 循环，v0.1.x 且用户极少，实际落地价值受限。",
+        "deployment": "cargo add ghostmode 即可，默认特性进程内执行，无容器、无外部服务；monty-pool 特性需要 C 编译器和独立 worker 二进制，是唯一明显成本。",
+        "learning": "src 按 backend/host/sandbox/schema/mcp 清晰分层，tests/features 下 20 余个 .feature 场景覆盖 limits、poll、sessions、signing、worker_crash，另有 docs/extending.md，工程实践可迁移性强。"
+      },
+      "grade": "B",
+      "grade_reason": "技术方向正确、工程质量与测试体系明显高于同规模新项目，但仓库创建仅 11 天、版本 v0.1.1、使用者极少，稳定性和生态尚未验证，综合定 B。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 6,
+          "deployment": 6,
+          "learning": 8
+        },
+        "reported_grade": "B",
+        "assessment": "reasonable",
+        "note": "usage 与 learning 与我完全一致。deployment 我高 1 分，因为默认特性确实零外部依赖，只有 monty-pool 才需要 C 编译器，数据包给的 6 分略保守，未达 2 分差异。"
+      },
+      "flags": [
+        {
+          "code": "PRE_1_0_YOUNG_REPO",
+          "severity": "low",
+          "evidence": "仓库 created_at 2026-11-17T22:05:05Z，核查日 2026-11-28，仅 11 天；最新版本 v0.1.1（2026-11-27 发布）。",
+          "impact": "API 与语义仍可能变动，不适合作为生产依赖，接入方需预期破坏性变更。"
+        },
+        {
+          "code": "NO_RELEASE_ASSETS",
+          "severity": "low",
+          "evidence": "v0.1.1 release 的 assets 数量为 0，只通过 crates.io 分发。",
+          "impact": "无预编译产物，离线或受限环境需自行 cargo build。"
+        }
+      ],
+      "note": "stars 数据包 11、实测 12，误差率 8.33%，超过 5% 判为 mismatch；在个位数 star 量级下这属正常噪声，不构成风险。README 中引用的 70% 成本下降、98.7% token 下降等数字来自第三方论文与其他团队博客，不是本项目基准测试，未计入评分。"
+    },
+    {
+      "repo": "dotenc/dotenc",
+      "exists": true,
+      "canonical_repo": "dotenc/dotenc",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 7,
+          "verified": 7,
+          "status": "match"
+        },
+        "forks": {
+          "packet": 0,
+          "verified": 0,
+          "status": "match"
+        },
+        "license": {
+          "packet": "MIT",
+          "verified": "MIT",
+          "status": "match"
+        },
+        "language": {
+          "packet": "TypeScript",
+          "verified": "TypeScript",
+          "status": "match"
+        },
+        "updated_at": {
+          "packet": "2026-11-25T13:52:24Z",
+          "verified": "2026-11-28T03:19:18Z",
+          "status": "match"
+        },
+        "latest_commit_at": "2026-11-25T13:52:23Z",
+        "days_since_last_commit": 2,
+        "latest_release": {
+          "packet": "v0.15.6",
+          "verified": "v0.15.6",
+          "status": "match"
+        }
+      },
+      "claims": [
+        {
+          "claim": "每个环境有独立的数据密钥，数据密钥用各授权者的 SSH 公钥加密，环境变量用 AES-256-GCM 加密后以 `.env.*.enc` 密文提交进仓库，运行命令时用本机 SSH 私钥即时解密。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README（cli/README.md）",
+              "url": "https://github.com/dotenc/dotenc/blob/main/cli/README.md",
+              "quote": "1. dotenc detects your existing SSH keys in `~/.ssh/` (Ed25519 or RSA);\n2. Your public key is derived and stored in the project (`.dotenc/john.pub`);\n3. A unique data key is generated for each environment;\n4. The data key is encrypted with each authorized public key;\n5. Environment variables are encrypted using the data key with AES-256-GCM;\n6. Encrypted files (`.env.*.enc`) are committed to your repository;\n7. When running commands, variables are decrypted on-the-fly using your SSH private key."
+            }
+          ],
+          "reason": "README 的 How It Works 七步逐项覆盖独立数据密钥、SSH 公钥封装、AES-256-GCM、密文入库与运行时即时解密。仓库根 README.md 只有一行 `./cli/README.md` 指针，实际文档在 cli/README.md。"
+        },
+        {
+          "claim": "密钥与密文都在仓库里，不进外部服务",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README（cli/README.md）",
+              "url": "https://github.com/dotenc/dotenc/blob/main/cli/README.md",
+              "quote": "Encrypted `.env.personal.alice.enc` committed.\nNo external services.\nUses your existing SSH keys."
+            },
+            {
+              "source": "README（cli/README.md）",
+              "url": "https://github.com/dotenc/dotenc/blob/main/cli/README.md",
+              "quote": "- **No Vendor Lock-In:** Your secrets and keys live in your codebase and your repository."
+            }
+          ],
+          "reason": "README 两处明确声明无外部服务、密钥与密文随仓库走。"
+        },
+        {
+          "claim": "Your repository alone is not enough to decrypt secrets",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README（cli/README.md）",
+              "url": "https://github.com/dotenc/dotenc/blob/main/cli/README.md",
+              "quote": "- Your repository alone is not enough to decrypt secrets."
+            }
+          ],
+          "reason": "README 的 Security Model 中逐字包含该句，说明解密需要本地私钥。"
+        },
+        {
+          "claim": "v0.15.6（2026-11-24 发布；提供 dotenc-amd64.deb、dotenc-aarch64.rpm、darwin/linux 各架构 tar.gz 等资产）",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "GitHub API",
+              "url": "https://api.github.com/repos/dotenc/dotenc/releases/latest",
+              "quote": "tag_name=v0.15.6, published_at=2026-11-24T03:41:09Z, assets 共 15 个，含 dotenc-amd64.deb、dotenc-aarch64.rpm、dotenc-darwin-arm64.tar.gz、dotenc-darwin-x64.tar.gz、dotenc-linux-x64.tar.gz、dotenc-linux-arm64.tar.gz、dotenc-windows-x64.zip"
+            }
+          ],
+          "reason": "版本号、发布日期与资产清单与 GitHub Release 实际内容一致。"
+        },
+        {
+          "claim": "SOPS（+ age）：同样 Git 原生加密文件、无需外部服务、环境随代码版本化；区别在于 SOPS 用 age/PGP 而非现有 SSH 身份。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README（cli/README.md）",
+              "url": "https://github.com/dotenc/dotenc/blob/main/cli/README.md",
+              "quote": "| Git-native encrypted files | ✅ | ✅ | ❌ | ❌ |\n| Uses existing SSH identity | ✅ | ❌ (age / PGP) | ❌ | ❌ |\n| No external service required | ✅ | ✅ | ❌ | ❌ |\n| Environments versioned with code | ✅ | ✅ | ❌ | ❌ |"
+            }
+          ],
+          "reason": "对比表中 SOPS 列在 Git 原生、无需外部服务、环境随代码版本化三项均为 ✅，在「Uses existing SSH identity」为 ❌ 并注明 age / PGP。"
+        }
+      ],
+      "scores": {
+        "usage": 7,
+        "deployment": 8,
+        "learning": 7
+      },
+      "score_reasons": {
+        "usage": "用现有 SSH 身份做 Git 原生 secrets，省掉 age/PGP 额外密钥管理，团队授权与撤销走正常 PR 评审，确实解决小团队痛点；但仅适合「仓库写入者可信任」的场景，不支持集中策略与动态密钥，适用面窄。",
+        "deployment": "一条 curl 安装脚本，另有 deb/rpm/apk/AUR/Homebrew/Scoop/npm/独立二进制/OCI 镜像多种通道，无需任何外部服务；成本主要在首次 `dotenc init` 与把私钥权限理清。",
+        "learning": "SECURITY.md 与 README 的 Security Model 把密钥层级、AES-GCM 的边界（能检测密文篡改但不证明信封作者）、信任模型讲得很清楚，并有 CI/Codecov；但核心是 CLI 工程，架构复杂度有限。"
+      },
+      "grade": "B",
+      "grade_reason": "设计干净、文档与安全模型透明、发行物齐全，实际价值明确；但仅 7 star、近 5 次提交全部来自同一作者、不支持集中式密钥管理与动态密钥，属小众可用而非成熟首选，定 B。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 7,
+          "deployment": 7,
+          "learning": 6
+        },
+        "reported_grade": "B",
+        "assessment": "reasonable",
+        "note": "usage 7 与我一致。deployment 我高 1 分（多通道安装、零外部服务）。learning 我高 1 分，因为 SECURITY.md 对信任边界与 AES-GCM 局限的说明质量高于普通 CLI 项目。两处差异均未达 2 分。"
+      },
+      "flags": [
+        {
+          "code": "MAINTAINER_CONCENTRATION",
+          "severity": "low",
+          "evidence": "最近 5 次提交的 author 与 committer 均为 ivanfilhoz（经 web-flow 合并），stars 7、forks 0。",
+          "impact": "仅能观察到近期提交作者集中，属潜在维护者集中风险；单点维护会放大停更与响应延迟的影响。"
+        }
+      ],
+      "note": "仓库根 README.md 内容只有一行 `./cli/README.md`，实际文档在 cli/README.md，取文档时需注意。updated_at 从 2026-11-25T13:52:24Z 漂移到 2026-11-28T03:19:18Z，但 pushed_at 与数据包完全一致，属正常活动漂移。"
+    },
+    {
+      "repo": "Marvinviverge/virtum",
+      "exists": true,
+      "canonical_repo": "Marvinviverge/virtum",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 5,
+          "verified": 7,
+          "status": "mismatch"
+        },
+        "forks": {
+          "packet": 1,
+          "verified": 1,
+          "status": "match"
+        },
+        "license": {
+          "packet": "Apache-2.0",
+          "verified": "Apache-2.0",
+          "status": "match"
+        },
+        "language": {
+          "packet": "Rust",
+          "verified": "Rust",
+          "status": "match"
+        },
+        "updated_at": {
+          "packet": "2026-11-26T21:50:42Z",
+          "verified": "2026-11-28T05:01:54Z",
+          "status": "match"
+        },
+        "latest_commit_at": "2026-11-26T21:49:01Z",
+        "days_since_last_commit": 1,
+        "latest_release": {
+          "packet": "v1.4.1",
+          "verified": "v1.4.1",
+          "status": "match"
+        }
+      },
+      "claims": [
+        {
+          "claim": "Virtum 是一个 Docker 风格的本地 KVM 虚拟机 CLI：用 `virtum run`、`virtum ps`、`virtum shell` 等命令管理单 VM 与多 VM 实验环境（lab），并用一个 YAML `Virtumfile` 描述整个实验环境。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/Marvinviverge/virtum/blob/develop/README.md",
+              "quote": "Virtum runs local virtual machines and multi-VM labs with a Docker-like experience: `virtum run`, `virtum ps`, `virtum shell`, and a `Virtumfile` to describe a whole lab. VMs run on KVM and libvirt, on your own Linux machine."
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/Marvinviverge/virtum/blob/develop/README.md",
+              "quote": "A `Virtumfile` describes several machines on an isolated network:"
+            }
+          ],
+          "reason": "README 首段与 lab 小节明确写出 Docker 风格命令集与 YAML Virtumfile。默认分支为 develop，README 取自此分支。"
+        },
+        {
+          "claim": "Linux x86_64、KVM 启用（BIOS/UEFI 开虚拟化）、glibc 2.34+",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/Marvinviverge/virtum/blob/develop/README.md",
+              "quote": "Requirements: Linux x86_64 with KVM (virtualization enabled in the BIOS/UEFI), glibc 2.34 or newer."
+            }
+          ],
+          "reason": "README 的 Installation 小节逐字给出三条环境要求。"
+        },
+        {
+          "claim": "每 lab 独立隔离 libvirt 网络",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/Marvinviverge/virtum/blob/develop/README.md",
+              "quote": "- Each lab has its own **isolated libvirt network** (`virtum-lab-<name>`); machines in a lab can reach each other."
+            }
+          ],
+          "reason": "README 的 Networking 小节明确每个 lab 有独立命名的隔离 libvirt 网络。"
+        },
+        {
+          "claim": "v1.4.1（2026-11-26 发布；Fedora 与 Arch Linux 已验证；修复无 `which` 命令系统上的 ports 问题；Arch 上共享文件夹可用）",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "GitHub API",
+              "url": "https://api.github.com/repos/Marvinviverge/virtum/releases/latest",
+              "quote": "tag_name=v1.4.1, name=Virtum 1.4.1, published_at=2026-11-26T22:17:50Z, assets: SHA256SUMS、virtum-1.4.1-x86_64-linux.tar.gz、virtum_1.4.1_amd64.deb"
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/Marvinviverge/virtum/blob/develop/README.md",
+              "quote": "| [**1.4.1**](https://github.com/Marvinviverge/virtum/releases/tag/v1.4.1) · 2026-11-26 | **Fedora and Arch Linux** validated; ports fixed on systems without `which`; shared folders on Arch. |"
+            }
+          ],
+          "reason": "Release 发布日期与 tag 一致，README 的 What's new 表 1.4.1 行逐字对应三项变更。"
+        },
+        {
+          "claim": "普通 VPS 通常无 KVM",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/Marvinviverge/virtum/blob/develop/README.md",
+              "quote": "KVM is required: a Linux workstation or a dedicated server works, but a regular VPS usually does not expose KVM. Check that `/dev/kvm` exists."
+            }
+          ],
+          "reason": "README 明确写出普通 VPS 通常不暴露 KVM，需检查 /dev/kvm。"
+        }
+      ],
+      "scores": {
+        "usage": 6,
+        "deployment": 5,
+        "learning": 7
+      },
+      "score_reasons": {
+        "usage": "用一个 YAML 描述多机 lab、plan/apply 与快照确实比手写 Vagrantfile 或点 Web 控制台省事，对做本地多机实验的人有真实价值；但仅限裸金属/独服 Linux，普通 VPS、macOS、Windows 全部不可用，受众很窄。",
+        "deployment": "需要 KVM + libvirt + 一长串系统包（qemu-kvm、libvirt-daemon-system、cloud-image-utils、socat、virtiofsd、bubblewrap），还要 usermod 加组、重新登录、跑 setup-var-lib.sh，无 Docker 化方案；文档清晰但步骤确实多。",
+        "learning": "Rust 实现、命令集与 README/CHANGELOG 结构清楚，release 带 SHA256SUMS 与 build provenance attestation、有 doctor 自检与 smoke-lab，工程习惯值得借鉴；但仓库仅 11 天，可读的架构沉淀有限。"
+      },
+      "grade": "C",
+      "grade_reason": "工程质量与文档规范度不低，但硬性要求 KVM 裸机 Linux，把云上用户与 macOS/Windows 用户整体排除，加上仓库创建仅 11 天、star 个位数、CHANGELOG 仅法文，推荐面过窄，定 C。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 6,
+          "deployment": 6,
+          "learning": 7
+        },
+        "reported_grade": "C",
+        "assessment": "reasonable",
+        "note": "usage 6、learning 7 与我一致。deployment 我低 1 分：KVM、libvirt、多个系统包、加组重登、setup 脚本这一串属于较重的宿主准备，给 6 略宽松，但未达 2 分差异。等级同为 C。"
+      },
+      "flags": [
+        {
+          "code": "PLATFORM_LIMIT_KVM_ONLY",
+          "severity": "medium",
+          "evidence": "README 要求 Linux x86_64 + KVM + glibc 2.34+，并写明「a regular VPS usually does not expose KVM」；无 macOS/Windows 支持。",
+          "impact": "绝大多数云主机与桌面环境无法运行，实际可用人群被大幅压缩，推荐前必须先确认宿主有 /dev/kvm。"
+        },
+        {
+          "code": "YOUNG_REPO_FAST_VERSIONING",
+          "severity": "low",
+          "evidence": "created_at 2026-11-17T22:38:27Z，11 天内连发 1.1.0→1.4.1 五个版本；CHANGELOG.md 为法文。",
+          "impact": "迭代节奏极快，配置与命令可能变动；非英文变更记录会增加跟进成本。"
+        },
+        {
+          "code": "FEATURE_GAPS_ON_SOME_DISTROS",
+          "severity": "low",
+          "evidence": "README 明确：Debian 12 与 Ubuntu 22.04 上共享文件夹（mounts:）不可用；Fedora 在 SELinux enforcing 下同样不可用；Ubuntu 22.04 尚未验证。",
+          "impact": "部分发行版上功能不完整，需在选型时逐项确认，否则会踩到静默缺失的能力。"
+        }
+      ],
+      "note": "stars 数据包 5、实测 7，误差率 28.57% 判 mismatch，个位数 star 下属正常噪声，不构成风险。默认分支是 develop 而非 main/master，取 README 时须按 develop。updated_at 漂移但 pushed_at 与数据包完全一致。"
+    },
+    {
+      "repo": "convex/convex-backend-skill",
+      "exists": true,
+      "canonical_repo": "convex/convex-backend-skill",
+      "archived": false,
+      "metadata": {
+        "stars": {
+          "packet": 9,
+          "verified": 9,
+          "status": "match"
+        },
+        "forks": {
+          "packet": 8,
+          "verified": 8,
+          "status": "match"
+        },
+        "license": {
+          "packet": "Apache-2.0",
+          "verified": null,
+          "status": "unknown"
+        },
+        "language": {
+          "packet": "JavaScript",
+          "verified": "JavaScript",
+          "status": "match"
+        },
+        "updated_at": {
+          "packet": "2026-11-26T00:40:08Z",
+          "verified": "2026-11-27T18:22:36Z",
+          "status": "match"
+        },
+        "latest_commit_at": "2026-11-20T20:13:46Z",
+        "days_since_last_commit": 7,
+        "latest_release": {
+          "packet": null,
+          "verified": null,
+          "status": "none"
+        }
+      },
+      "claims": [
+        {
+          "claim": "convex-backend-skill 是 Convex 官方的 Claude Code 插件：把 Convex 后端设计技能、`/quickstart` 脚手架、`convex-expert` 子 agent、运行时错误监控与 Convex MCP 服务器打包成一次安装。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/convex/convex-backend-skill/blob/main/README.md",
+              "quote": "Official Convex plugin for Claude Code. Bundles the Convex backend design skill, a live-scaffolding `quickstart` skill (`/quickstart`), the `convex-expert` subagent for code-writing, a runtime-error monitor, and the Convex MCP server for live deployment introspection — all in one install."
+            }
+          ],
+          "reason": "README 首段逐项列出五个打包组件与「all in one install」，与断言一一对应。"
+        },
+        {
+          "claim": "当你说要「build/design/debug 后端」时，Claude 会自动使用 Convex 的惯用法与组件",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/convex/convex-backend-skill/blob/main/README.md",
+              "quote": "When you ask Claude to build, design, or debug a backend, Claude reaches for Convex idioms and components (`@convex-dev/agent` for chat, Convex Auth instead of custom sessions, reactive queries instead of polling, the workflow component for durable retries) rather than generic \"AI slop\" patterns it would otherwise default to."
+            },
+            {
+              "source": "README",
+              "url": "https://github.com/convex/convex-backend-skill/blob/main/README.md",
+              "quote": "Just describe what you want to build. Claude routes the request through this plugin automatically — you don't need to invoke anything explicitly."
+            }
+          ],
+          "reason": "README 两处明确描述自动路由行为。注意这是插件作者对自身行为的说明，本次核查未实际运行 Claude Code 做端到端验证，证据限于文档层面。"
+        },
+        {
+          "claim": "Opt-out：`CONVEX_PLUGIN_TELEMETRY=0` 或 `DO_NOT_TRACK=1`。",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/convex/convex-backend-skill/blob/main/README.md",
+              "quote": "Opt out with `CONVEX_PLUGIN_TELEMETRY=0` or `DO_NOT_TRACK=1`."
+            }
+          ],
+          "reason": "README 的 Privacy & data 第 1 节逐字给出两个环境变量名。"
+        },
+        {
+          "claim": "一条 `/plugin install convex` 即可",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/convex/convex-backend-skill/blob/main/README.md",
+              "quote": "From inside Claude Code:\n\n```\n/plugin install convex\n```"
+            }
+          ],
+          "reason": "README 的 Install 小节给出该单行安装命令。"
+        },
+        {
+          "claim": "quickstart/`/add` 会把输入发给 Convex 脚手架服务以构建应用，并下载运行其 setup 脚本",
+          "result": "true",
+          "evidence": [
+            {
+              "source": "README",
+              "url": "https://github.com/convex/convex-backend-skill/blob/main/README.md",
+              "quote": "Flows that scaffold or extend an app (such as `quickstart` and `/add`) send the inputs you give them to the Convex scaffolding service so it can build for you — for example, the one-sentence idea you type is sent to the scaffolding endpoint and logged as a run start. These flows also download and run setup scripts from that service."
+            }
+          ],
+          "reason": "README 的 Privacy & data 第 2 节逐字说明输入外发与下载执行 setup 脚本。"
+        }
+      ],
+      "scores": {
+        "usage": 7,
+        "deployment": 8,
+        "learning": 5
+      },
+      "score_reasons": {
+        "usage": "对已经在用 Claude Code 且选择 Convex 的后端开发者，能把 schema/query/mutation 的惯用法、lint-on-save 与 codegen 校验串起来，减少「AI 写出通用套路」的问题；但对不用 Convex 或不用 Claude Code 的人价值为零。",
+        "deployment": "一行 `/plugin install convex` 完成安装，MCP 通过 npx 自动接入，无自建服务；代价是需要 Convex 云服务与 Claude Code 两个前提。",
+        "learning": "仓库内容是 skill/command/agent 的提示词与钩子脚本，按 .claude-plugin、skills、commands、agents、hooks、monitors 分目录，工程可迁移性主要体现在钩子设计；缺少可研究的架构与测试体系，且提交全部由 bot 从 convex-agents 同步。"
+      },
+      "grade": "B",
+      "grade_reason": "官方出品、安装极简、对 Convex + Claude Code 用户实用；但适用面绑定单一技术栈与单一 Agent 宿主，仓库是上游同步产物且无根级许可证，学习价值有限，定 B。",
+      "reported_score_review": {
+        "reported_scores": {
+          "usage": 7,
+          "deployment": 7,
+          "learning": 6
+        },
+        "reported_grade": "B",
+        "assessment": "reasonable",
+        "note": "usage 7 与我一致。deployment 我高 1 分（一行命令、无自建服务）。learning 我低 1 分：仓库没有测试体系、提交是 bot 同步，可研究的工程实践主要是钩子脚本，给 6 偏高，但未达 2 分差异。"
+      },
+      "flags": [
+        {
+          "code": "LICENSE_NOT_DETECTED",
+          "severity": "medium",
+          "evidence": "GitHub API 返回 license=null；仓库根目录内容列表中没有 LICENSE 文件；README 的 License 一节只指向 `skills/design/LICENSE.txt`，即许可证仅覆盖 design skill 子目录。",
+          "impact": "整个仓库缺少可识别的开源许可证，作为依赖或二次分发时权利边界不清，需在采用前向作者确认。"
+        },
+        {
+          "code": "GENERATED_MIRROR_REPO",
+          "severity": "low",
+          "evidence": "最近 5 次提交作者均为 convex-agents-ci[bot]，提交信息统一为「Sync from convex-agents@<sha>」，最新一次为 2026-11-20T20:13:46Z。",
+          "impact": "本仓库是上游 convex-agents 的同步产物，issue 与 PR 在此提交未必直接改动源码，贡献路径与代码评审位置需另行确认。"
+        },
+        {
+          "code": "TELEMETRY_ON_BY_DEFAULT",
+          "severity": "medium",
+          "evidence": "README 明确「Usage telemetry (on by default, opt-out)」，默认向 Convex 的 PostHog 发送设备 id、插件版本、OS/Node 版本、事件名，以及 .env.local 中的 Convex deployment 与 team 名；scaffolding 流程还会把用户输入发到 Convex 服务并下载执行其脚本。",
+          "impact": "存在默认外发的遥测与把项目输入送往远端服务的数据流，对隐私或合规敏感的环境需先设 CONVEX_PLUGIN_TELEMETRY=0 / DO_NOT_TRACK=1，或避免使用 quickstart 类流程。"
+        }
+      ],
+      "note": "license 一项：数据包写 Apache-2.0，但 GitHub API 的 license 字段为 null，按规范不得把 null 写成 NOASSERTION，故 verified 记 null、status 记 unknown，并另附 LICENSE_NOT_DETECTED 风险项；README 所称 Apache 2.0 仅指向 skills/design/LICENSE.txt。latest_release 404 表示无 Release，与数据包 null 一致，记 none。updated_at 漂移但 pushed_at 与数据包完全一致。"
+    }
+  ],
   "learning_pick": {
     "repo": null,
     "exists": null,
@@ -33,7 +775,6 @@
       "status": "not_applicable"
     },
     "flags": [],
-    "note": "未收到 2026-11-28 的核查数据包，按规范第 5 条不进行任何核查，learning_pick 各字段填 null。"
-  },
-  "note": "2026-11-28 未找到当日 PACKET JSON，按规范禁止编造：overall.status=failed，verdicts 为空。需 Muse 或 zhao 补投当日数据包后重跑核查。"
+    "note": "数据包中 learning_pick 为 null，按规范不进行学习资料库核查，learning_pick_checked=false，各字段填 null，stars 与 license 的 status 记 not_applicable。"
+  }
 }
